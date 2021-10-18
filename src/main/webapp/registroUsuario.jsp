@@ -62,8 +62,7 @@ function comprobarClave()
     } 
       
     }
-</script>
-
+</script> 
     </head>
     <center>
     <body oncopy="return false" onpaste="return false" style="font-family: 'cocogoose'">
@@ -149,7 +148,7 @@ function comprobarClave()
                          términos y condiciones</a> de la aplicación
                   <br>
                   <br>                  
-                  <input class="btn" type="submit" name="registrar" id="registrar" value="Registrar"/>
+                  <input class="btn" type="submit" name="registrar" id="registrar" value="Registrar" />                
                   <br>
                   <br>
                   <input class="btn" type="reset" value="Cancelar"/>
@@ -158,7 +157,7 @@ function comprobarClave()
 
                   <p>Ya tienes una cuenta? ... <a class="span" href="iniciarSesion.jsp" >Inicia Sesión</a></p>                  
               </form>
-            </div>          
+            </div> 
                       
     </body>
     </center> 

@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.mysql.cj.result.Row;
+
 
 public class consultas extends conexion 
 {
@@ -53,14 +55,14 @@ public class consultas extends conexion
         PreparedStatement pst = null;
         try 
         {
-            String consulta = "insert into empleados (id_empresa, Usuario, Contraseña, correo, privilegio, MAC) values(?,?,?,?,?,?)";
+            String consulta = "insert into empleados (id_empresa, Usuario, Contraseña, correo, privilegio, MAC) values(?,?,?,?,?,?)";            
             pst=getConnection().prepareStatement(consulta);
             pst.setString(1,idempresa);
             pst.setString(2,usuario);
             pst.setString(3,pass);
             pst.setString(4,correo);
             pst.setString(5,privilegio);
-            pst.setString(6,MAC);
+            pst.setString(6,MAC);            
             if(pst.executeUpdate()==1)
             {
                 return true;

@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.protobuf.Extension.MessageType;
+
 /**
  *
  * @author NEMESIS
@@ -41,15 +43,20 @@ public class registroUsuarios extends HttpServlet
         String privilegio=request.getParameter("privilegio");
         String MAC=request.getParameter("MAC");
         consultas co=new consultas();
-        if(co.registrar(idempresa, usuario, pass, correo, privilegio, MAC))
-        {      
-           response.sendRedirect("iniciarSesion.jsp");     
-           
-        }
-        else
-        {          
-            response.sendRedirect("registroUsuario.jsp");
-        }
+        try {
+        	if(co.registrar(idempresa, usuario, pass, correo, privilegio, MAC))
+            {      
+               response.sendRedirect("iniciarSesion.jsp"); 
+            }
+            else
+            {   
+                    	
+            }
+		} catch (Exception e) 
+        {
+			log("Datos de Registro inválidos, intente nuevamente"); 
+		}
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
