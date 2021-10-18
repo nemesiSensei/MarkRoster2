@@ -22,6 +22,6 @@
       	
     <body>
         <h1>Términos y Condiciones</h1>
-        <p> Hola desde eclipse </p>
+        
     </body>
 </html>
