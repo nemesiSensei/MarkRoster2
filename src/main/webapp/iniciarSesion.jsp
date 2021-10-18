@@ -66,8 +66,7 @@
                   <br>
                   <input class="btn" type="reset" value="Cancelar"/>
                   <br> 
-                  <br>
-                 
+                  <br>                 
                   <p>Olvidaste tu contraseña?... Recupérala  <a class="span" href="index.jsp" >Aquí</a></p>
                   <p>Volver a la   <a class="span" href="index.jsp" >Pagina principal</a></p>
               </form>

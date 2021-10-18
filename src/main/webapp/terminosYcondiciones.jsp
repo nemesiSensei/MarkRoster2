@@ -18,10 +18,8 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
         crossorigin="anonymous">
         </script>  
-        <title>Términos y Condiciones</title>
-      	
+        <title>Términos y Condiciones</title>      	
     <body>
-        <h1>Términos y Condiciones</h1>
-        
+        <h1>Términos y Condiciones</h1>        
     </body>
 </html>
