@@ -1,0 +1,471 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12/09/2021, 10:13:42 AM
+    Author     : NEMESIS
+*/
+
+
+.button {
+background-color: #00FFCC ;
+border-radius: 0px;
+border: none;
+color: #000000;
+cursor: pointer;
+font-size: 16px;
+padding: 16px 24px;
+text-align: center;
+text-transform: uppercase;
+width: auto;
+}
+.button:hover {
+background-color: #35A8E0;
+color: #fff;
+}
+@font-face
+{
+    font-family: 'cocogoose';    
+    src:url('media/fuentes/ARLRDBD.TTF')format('truetype');
+    font-weight: normal;
+    font-style: normal;   
+}
+.iconoreg
+{
+    width: 50%;
+    height: auto;
+    display:inline-block;    
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+
+.logo2
+{
+    width: 48%;
+    max-width: 400px;
+    margin: 0 auto;    
+}
+.atras
+{
+   display:initial;
+    width: 48%;
+    max-width: 50px;
+    margin: 0 auto;    
+}
+.side0 
+{
+   display:inline-block;
+    width: 48%;
+    max-width: 147px;
+    margin: 0 auto;     
+}
+.side 
+{
+   display:inline-block;
+    width: 48%;
+    max-width: 260px;
+    margin: 0 auto;     
+}
+.side1 
+{
+   display:inline-block;
+    width: 48%;
+    max-width: 150px;
+    margin: 0 auto;
+}
+img
+{
+width: 100%;
+height: auto;
+}
+.title1 
+{
+    display:  inline-table;
+    text-transform: capitalize;
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: whitesmoke;    
+    
+}
+
+body 
+{
+    height: 100vh;    
+    background-color: #35A8E0;
+}
+
+.login-container 
+{
+    height: 43.75em;
+    width: 60em;
+    margin: 6em auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.fuenteBlanca
+{
+    color: #ffffff;
+}
+.content-input input,
+.content-select select
+{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.content-select{
+	max-width: 250px;
+	position: relative;
+}
+ 
+.content-select select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;	
+	font-size: 1em;	
+	font-family: 
+	'cocogoose';
+	border:none;
+    border-radius: 15px;
+    position: relative;    
+}
+ 
+
+.content-select i
+{
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 13px);
+	width: 16px;
+	height: 16px;
+	display: block;
+	border-left:4px solid #575756;
+	border-bottom:4px solid #575756;
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+	
+}
+ 
+
+.ocultar 
+{
+    display: none;
+}
+ .pregunta 
+ {
+    color: rgba(134, 10, 10, 0.863);
+}
+.mostrar 
+{
+    display: block;
+}
+
+
+.title {
+    text-transform: capitalize;
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: whitesmoke;
+    
+}
+
+.social-login {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.social-login-element {
+    width: 12.5rem;
+    height: 3.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 5px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-login-element img {
+    width: 1.875rem;
+    height: 1.875rem;
+    position: relative;
+    top: 0;
+    left: -0.625rem;
+}
+
+.social-login-element:hover {
+    background-color: #fff;
+}
+
+.login-info-container > p 
+{
+    font-size: 1em;
+    margin-top: 3em;
+    color: whitesmoke;
+}
+
+.inputs-container {
+    height: 55%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input, .btn {
+    width: auto;
+    height: 2.5rem;
+    font-size: 1em;
+}
+
+.input {
+    padding-left: 20px;
+    border: none;
+    border-radius: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: content-box;
+}
+
+
+.btn {
+    width: auto;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #575756;
+    border: none;
+    border-radius: 15px;
+    background-color: #00FFFF;
+    cursor: pointer;
+}
+
+.btn1 {
+    width: fit-content;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #575756;
+    border: none;
+    border-radius: 15px;
+    background-color: #00FFFF;
+    cursor: pointer;
+}
+
+.inputs-container p {
+    margin: 0;
+}
+
+.span {
+    color : #D6D6D6;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .login-container {
+        width: 100%;
+        margin-top: 3rem;
+    }
+    .login-info-container {
+        width: 100%;
+        border-radius: 15px;
+    }
+    
+    .image-container {
+        display: none;
+    }  
+}
+
+form .txt_field{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+.txt_field input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.txt_field label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+.txt_field span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #2691d9;
+  transition: .5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+  top: -5px;
+  color: #2691d9;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+  width: 100%;
+}
+.abs-center 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .form 
+  {
+    width: 450px;
+  }
+.logo {
+    width: 3%;
+    display: inline-block;
+}
+
+.titulo {
+    width: 45%;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    color: wheat;
+}
+
+.tituloprin {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    background-color: #092327;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.tipovi {
+    text-align: center;
+    list-style: none;
+    padding: 0;    
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.pregunta {
+    color: rgba(134, 10, 10, 0.863);
+}
+
+.imagenPrincipal {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+.imagensecu {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+.parrafoPrincipal {
+    text-align: justify;
+    width: 80%;
+    font-size: 1.2em;
+    line-height: 39px;
+    font-family: verdana;
+    margin-top: 46px;
+    margin-left: 150px;
+    color: seashell;
+}
+
+.linkVerMas {
+    text-decoration: none;
+    color: seashell;
+    font-size: 1.8em;
+    margin: 0 auto;
+    display: table;
+}
+
+.footer {
+    text-align: center;
+    color: #888888;
+    padding: 30px 0;
+}
+
+.imagenprincipal {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+.titulo {
+    width: 45%;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    background-color: #173b8a;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    display: block;
+}
+
+.menu li {
+    display: inline-block;
+    text-align: center;
+}
+
+.menu li a:hover {
+    background: #ffffff;
+}
+
+.video {
+    position: fixed;
+    min-width: 100%;
+    top: 50%;
+    left: 50%;
+    
+}
+.fondo
+{
+    
+    
+    opacity: inherit;
+}
