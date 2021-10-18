@@ -22,6 +22,7 @@
         </script>  
         <link rel="stylesheet" href="estilos1.css">        
         <title>MarkRoster - Inicio</title>
+        <p> Hola </p>
     </head>    
         <header>            
             <div class="container-fluid">
