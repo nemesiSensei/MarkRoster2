@@ -67,7 +67,7 @@
                   <input class="btn" type="reset" value="Cancelar"/>
                   <br> 
                   <br>
-                  <p>No tienes cuenta? ... <a class="span" href="registroUsuario.jsp">Regístrate</a></p><br>
+                 
                   <p>Olvidaste tu contraseña?... Recupérala  <a class="span" href="index.jsp" >Aquí</a></p>
                   <p>Volver a la   <a class="span" href="index.jsp" >Pagina principal</a></p>
               </form>
