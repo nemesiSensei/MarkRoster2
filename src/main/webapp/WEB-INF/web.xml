@@ -9,4 +9,25 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+        <servlet-name>inicioSesion</servlet-name>
+        <servlet-class>servlet.inicioSesion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>registroUsuarios</servlet-name>
+        <servlet-class>servlet.registroUsuarios</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>inicioSesion</servlet-name>
+        <url-pattern>/iniciar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registroUsuarios</servlet-name>
+        <url-pattern>/registrar</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
 </web-app>
