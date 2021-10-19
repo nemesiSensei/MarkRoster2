@@ -13,6 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">              
         <link rel="icon" href="media/imagenes/MarkRosterlogo.ico"/> 
         <title>MarkRoster - Iniciar Sesión</title>
+      
          <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
         rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
@@ -43,6 +44,7 @@
         <br>
             <div class="login-info-container">                
               <h1 class="title">Inicio de Sesión</h1>
+        
               <br>                  
               <form  action="iniciar" method="post">                  
                   <label class="label" type="label" title="Ingrese su Nombre de Usuario">
@@ -69,6 +71,8 @@
                   <br>                 
                   <p>Olvidaste tu contraseña?... Recupérala  <a class="span" href="index.jsp" >Aquí</a></p>
                   <p>Volver a la   <a class="span" href="index.jsp" >Pagina principal</a></p>
+             
+                  
               </form>
             </div>      
         

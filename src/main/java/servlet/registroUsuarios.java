@@ -8,6 +8,8 @@ package servlet;
 import controlador.consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -43,19 +45,28 @@ public class registroUsuarios extends HttpServlet
         String privilegio=request.getParameter("privilegio");
         String MAC=request.getParameter("MAC");
         consultas co=new consultas();
-        try {
+     
         	if(co.registrar(idempresa, usuario, pass, correo, privilegio, MAC))
             {      
                response.sendRedirect("iniciarSesion.jsp"); 
             }
-            else
-            {   
-                    	
+            else {
+            	PrintWriter pw=response.getWriter();
+            	RequestDispatcher rd=request.getRequestDispatcher("registroUsuarios.jsp");
+            	
+            	rd.include(request, response);
+            	  pw.println("<script type=\"text/javascript\">");
+                  pw.println("alert('Uno o más datos duplicados');");
+                  pw.println("</script>");
+                
+                
+                 response.setContentType("text/html");
+                 // aca esta el cambio
             }
-		} catch (Exception e) 
-        {
-			log("Datos de Registro inválidos, intente nuevamente"); 
-		}
+            
+                    	
+            
+		
         
     }
 

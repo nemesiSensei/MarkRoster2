@@ -8,6 +8,8 @@ package servlet;
 import controlador.consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -43,8 +45,20 @@ public class inicioSesion extends HttpServlet
         }
         else
         {
+        	
+        	PrintWriter pw=response.getWriter();
+        	RequestDispatcher rd=request.getRequestDispatcher("iniciarSesion.jsp");
+        	rd.include(request, response);
+            pw.println("<script type=\"text/javascript\">");
+            pw.println("alert('Invalid Username or Password');");
+            pw.println("</script>");
+           
+           
+           
+            response.setContentType("text/html");
             
-            response.sendRedirect("iniciarSesion.jsp");            
+            
+           
         }
     }
 
