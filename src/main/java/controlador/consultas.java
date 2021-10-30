@@ -74,10 +74,10 @@ public class consultas extends conexion
         }
         finally
         {
-          try 
-            {
+            try 
+              {
                if(getConnection()!=null)getConnection().close();
-               if(pst!=null)pst.close();               
+                  if(pst!=null)pst.close();               
             } catch (SQLException e) 
             {
                 System.err.println("ERROR"+e);

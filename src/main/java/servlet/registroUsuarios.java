@@ -45,24 +45,27 @@ public class registroUsuarios extends HttpServlet
         String privilegio=request.getParameter("privilegio");
         String MAC=request.getParameter("MAC");
         consultas co=new consultas();
+           try {
+        	   if(co.registrar(idempresa, usuario, pass, correo, privilegio, MAC))
+               {      
+                  response.sendRedirect("iniciarSesion.jsp"); 
+               }
+			
+		} catch (Exception e) {
+
+        	
+        	response.sendRedirect("registroUsuario.jsp"); 
+        	
+        	
+        	
+           
+             
+		}
      
-        	if(co.registrar(idempresa, usuario, pass, correo, privilegio, MAC))
-            {      
-               response.sendRedirect("iniciarSesion.jsp"); 
-            }
-            else {
-            	PrintWriter pw=response.getWriter();
-            	RequestDispatcher rd=request.getRequestDispatcher("registroUsuarios.jsp");
-            	
-            	rd.include(request, response);
-            	  pw.println("<script type=\"text/javascript\">");
-                  pw.println("alert('Uno o más datos duplicados');");
-                  pw.println("</script>");
-                
-                
-                 response.setContentType("text/html");
+        	
+             
                  // aca esta el cambio
-            }
+            
             
                     	
             
