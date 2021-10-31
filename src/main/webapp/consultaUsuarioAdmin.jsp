@@ -18,7 +18,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
         crossorigin="anonymous">
-        </script>  
+        </script> 
+        <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script> 
         <link rel="stylesheet" href="estilos1.css">  
     </head>
     <header>
@@ -29,7 +30,7 @@
    <h1 class="text-center"> USERS</h1>
    <br>
   <div class="container text-center"> 
-  <a class="btn btn-success" role="button"><strong>Agregar nuevo usuario</strong></a>
+  <a class="btn btn-success" role="button"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
   <br>
   <br>
 
@@ -50,8 +51,8 @@
 	<td>${r.getCorreo()}</td>
 	<td>${r.getPass()}</td>
 	<td>${r.getPrivilegio()}</td>
-	<td> <a class="btn btn-danger" role="button"><strong>Eliminar</strong></a></td>
-	<td> <a class="btn btn-warning" role="button"><strong>EDITAR</strong></a></td>
+	<td> <a class="btn btn-danger" role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
+	<td> <a class="btn btn-warning" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
 	</tr>
 </c:forEach>
 </table>
