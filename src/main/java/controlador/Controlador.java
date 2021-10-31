@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Controlador")
 public class Controlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	getters listaempleados = new getters();
+	getters r = new getters();
 	empleadosDAO empleadosDAO = new empleadosDAO();
        
     /**
@@ -37,9 +37,10 @@ public class Controlador extends HttpServlet {
 		
 		try {
 			if (accion!=null) {
+				System.out.println("Entro al switch");
 				switch (accion) {
 				case "Listarusuarios":
-					System.out.println("Entro al metodo listar usuarios");
+					System.out.println("Entro al  caso Listarusuarios");
 					
 					
 					Listarusuarios(request,response);
@@ -61,16 +62,16 @@ public class Controlador extends HttpServlet {
 		
 	}
 private  void Listarusuarios(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	
 		try {
-			System.out.print("Entro al metodo listarusuarios ");
+			System.out.print("Entro al metodo listarusuarios o empleados ");
 			
 			
 		
 			 List empleados =empleadosDAO.Listarusuarios();
 			 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda
-			
-			 request.getRequestDispatcher("prueba.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		
+			 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 			.forward(request, response);
 			
 		} catch (Exception e) {

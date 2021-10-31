@@ -19,8 +19,9 @@ public class empleadosDAO {
 	int register;
 	int id;
 	public List Listarusuarios() throws SQLException {
+		System.out.println("Ingreso al metodo listar usuarios");
 		List<getters> empleados= new ArrayList<>();
-		sql="SELECT * FROM  tbusuario";
+		sql="SELECT * FROM  empleados";
 		try {
 			con=c.getConnection(); // opening the connection to database 
 			ps=con.prepareStatement(sql); // prepare that sentence 
@@ -34,10 +35,12 @@ public class empleadosDAO {
 			
 			getters r = new getters();
 			 // se puede usar la posicion de la columna  o el nombre de la columna  que quremos obtener
-			r.setIdempresa(rs.getInt("id_empleados "));
+		
 			r.setCorreo(rs.getString("correo"));
 			r.setPass(rs.getString("Contraseña"));
 			r.setPrivilegio(rs.getString("privilegio"));
+			r.setIdempresa(rs.getInt("id_empleados"));
+
 			System.out.println("Se hizo la consulta ");
 			
 			

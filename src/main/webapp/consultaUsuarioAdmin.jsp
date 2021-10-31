@@ -1,10 +1,7 @@
-<%-- 
-    Document   : consultaUsuarioAdmin
-    Created on : 20/09/2021, 07:19:03 PM
-    Author     : NEMESIS
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,67 +23,52 @@
     </head>
     <header>
         <a href="menu.jsp"><img src="media/imagenes/btnAtras.png" alt="" class="atras" width="50" height="50"/></a>        
-        <img class="logo2" src="media/imagenes/MarkRosterLogo2.png" align="right"> 
+        <img class="logo2" src="media/imagenes/MarkRosterLogo2.png" align="right" alt="50" with="170"> 
     </header> 
-    <center>   
-        <body style="font-family: 'cocogoose'">        
-        <br>
-        <br>         
-        
-            <div class="container">
-                <div class="iconoreg">
-                <img src="media/imagenes/UsuariosOpen.png" alt=""
-              width="580" height="396"/>
-                </div>
-                <h1 class="title1" ><strong>Gestión de<br>Usuarios</strong></h1> 
-               <br>
-               <br>
-               <br>
-               
-            <div class="d-grid gap-2 d-md-block"> 
-                <a href="registroUsuario.jsp" class="btn">Nuevo Usuario</a>
-                <a href="registroUsuario.jsp" class="btn">Editar Existente</a>
-                <a href="registroUsuario.jsp" class="btn">Eliminar Usuario</a>
-                <a href="consultaUsuarioAdmin.jsp" class="btn">Consultar Registros</a>                             
-            </div>
-        <br>
-        <br>  
-        <br>
-              <br>
-              <h1 class="title1" ><strong>Consulta de<br>Registros</strong></h1>
-              <br>
-              <br>
-              <br>
-              <form action="consultar" method="post" name="formulario" id="formulario"> 
-                  <label class='fuenteBlanca' title="Si deja en blanco, se mostrarán todos los usuarios"></label><h4><strong>Usuario a Consultar</strong></h4>                   
-                  <input class="input" name="inicio" type="text"
-                         title="Nombre de Usuario"  autofocus pattern="[A-Za-z0-9]{2,30}" 
-                         title="Letras o numeros. Tamaño mínimo: 2. Tamaño máximo: 30"
-                         minlength="2" maxlength="30"required><span class="text-danger"></span>
-                   <br>
-                   <br>   
-                  <label class='fuenteBlanca' title="Ingrese primera fecha"></label><h4><strong>Desde</strong></h4>                   
-                  <input class="input" name="inicio" type="datetime-local"
-                         title="Fecha de inicio de la consulta" required><span class="text-danger"></span>
-                   <br>
-                   <br>                                           
-                       <label class="fuenteBlanca" title="Ingrese segunda fecha"></label><h4><strong>Hasta</strong></h4>                  
-                  <input class="input" name="final" type="datetime-local" required><span class="text-danger"></span>
-                  <br>
-                  <br>
-                  
-                  <input class="btn" type="submit" name="consultar" id="consultar" value="Consultar"/>
-                  <br>
-                  <br>
-                  <input class="btn" type="reset" value="Cancelar"/>
-                  <br> 
-                  <br>                               
-              </form>
-            </div>          
-   
-<footer class="footer">
-</footer>
+   <body>
+   <h1 class="text-center"> USERS</h1>
+  <div class="container text-center"> 
+
+
+<table  class="table table-dark table-striped">
+<tr>
+<th>ID</th>
+
+<th> Corrreo</th>
+<th> contraseña </th>
+<th> privilegio </th>
+<th> eliminar </th>
+<th> editar </th>
+
+
+
+
+</tr>
+
+<c:forEach items="${usuarios}" var="r">
+
+			
+	<tr>
+	<td>${r.getIdempresa() }</td>
+	<td>${r.getCorreo()}</td>
+	<td>${r.getPass()}</td>
+	<td>${r.getPrivilegio()}</td>
+	<td> <a class="btn btn-danger" role="button">Eliminar</a></td>
+	<td> <a class="btn btn-warning" role="button">EDITAR</a></td>
+	
+	
+
+	
+	
+	
+	</tr>
+</c:forEach>
+</table>
+</div>		
+
 </body>
-      </center>  
+   </body>
+
+
    
 </html>
