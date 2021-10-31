@@ -66,6 +66,44 @@ public class empleadosDAO {
 		return empleados;
 			
 		}
+	public int eliminar(int id) throws SQLException {
+		System.out.println("Entro a la sentencia preparada  ");
+		sql="delete from empleados WHERE  id_empleados="+id;
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 
+		
+			System.out.println(ps);
+			
+				
+				
+			
+			
+		
+			
+			
+			
+			
+			ps.executeUpdate(sql); // en sentencias select siempre va el executeQuery 
+			System.out.print("Ya hizo la consulta  ");
+			// Solo las consultas se guardan en un resulset 
+			System.out.println("Entro a la consulta  ");
+			
+			// y el execute update va a ser utilizado en sentencias  de insert,update y delete.                                                                                      
+		// El siguiente paso es asignar los valores de este interrogante 
+	
+		System.out.println("Se elimino  un usuario ");
+	
+			
+		
+		} 
+		catch (Exception e) {
+			System.out.print("Error al eliminar usuario ");
+		}
+		return id;
+			// TODO: handle exception
+		}	
+
 	
 	
 
