@@ -27,7 +27,11 @@
     </header> 
    <body>
    <h1 class="text-center"> USERS</h1>
+   <br>
   <div class="container text-center"> 
+  <a class="btn btn-success" role="button"><strong>Agregar nuevo usuario</strong></a>
+  <br>
+  <br>
 
 
 <table  class="table table-dark table-striped">
@@ -39,28 +43,15 @@
 <th> privilegio </th>
 <th> eliminar </th>
 <th> editar </th>
-
-
-
-
 </tr>
-
 <c:forEach items="${usuarios}" var="r">
-
-			
 	<tr>
 	<td>${r.getIdempresa() }</td>
 	<td>${r.getCorreo()}</td>
 	<td>${r.getPass()}</td>
 	<td>${r.getPrivilegio()}</td>
-	<td> <a class="btn btn-danger" role="button">Eliminar</a></td>
-	<td> <a class="btn btn-warning" role="button">EDITAR</a></td>
-	
-	
-
-	
-	
-	
+	<td> <a class="btn btn-danger" role="button"><strong>Eliminar</strong></a></td>
+	<td> <a class="btn btn-warning" role="button"><strong>EDITAR</strong></a></td>
 	</tr>
 </c:forEach>
 </table>
@@ -68,7 +59,4 @@
 
 </body>
    </body>
-
-
-   
 </html>
