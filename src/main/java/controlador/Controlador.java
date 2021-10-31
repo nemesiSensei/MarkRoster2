@@ -46,6 +46,10 @@ public class Controlador extends HttpServlet {
 					Listarusuarios(request,response);
 					
 					break;
+				case "eliminar":
+					System.out.println("Se entro al metodo eliminar");
+					eliminar(request,response);
+				
 			
 				default:
 					response.sendRedirect("login.jsp");
@@ -81,5 +85,37 @@ private  void Listarusuarios(HttpServletRequest request, HttpServletResponse res
 			}
 		}
 
+private  void eliminar (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	if (request.getParameter("id") !=null) {
+		r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+		
+		System.out.println("Llego el id");
+	}
 
+	try {
+		
+		 
+		 empleadosDAO.eliminar(r.getIdempresa());
+		 response.sendRedirect("Controlador?accion=Listarusuarios");
+		 
+	
+	
+	 
+     
 }
+	 catch (Exception e) {
+		
+		 System.out.print(" no Entro al metodo eliminar");
+		
+	 }
+}
+}
+
+		
+	
+	
+
+
+
+	
+

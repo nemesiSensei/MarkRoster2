@@ -51,7 +51,7 @@
 	<td>${r.getCorreo()}</td>
 	<td>${r.getPass()}</td>
 	<td>${r.getPrivilegio()}</td>
-	<td> <a class="btn btn-danger" role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
+	<td> <a class="btn btn-danger" href="Controlador?accion=eliminar&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
 	<td> <a class="btn btn-warning" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
 	</tr>
 </c:forEach>

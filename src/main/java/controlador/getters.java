@@ -2,13 +2,16 @@ package controlador;
 
 public class getters {
 	int idempresa;
-	public getters(int idempresa, String usuario, String pass, String correo, String privilegio, String mAC) {
+	
+
+	public getters(int idempresa, String usuario, String pass, String correo, String privilegio, String mAC, int id_empleados) {
 		super();
 		this.idempresa = idempresa;
 		this.usuario = usuario;
 		this.pass = pass;
 		this.correo = correo;
 		this.privilegio = privilegio;
+		
 		MAC = mAC;
 	}
 	public int getIdempresa() {
