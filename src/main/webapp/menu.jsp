@@ -46,10 +46,10 @@
                 <a href="registrarHuella.jsp" class="btn" id="Rhuella">Registrar Huella</a>
                  <br>
                   <br>
-                <a href="consultaUsuarioAdmin.jsp" class="btn" id="consultasUsuario">Consultar Registros</a>
+                <a href="consultaUsuario.jsp" class="btn" id="consultasUsuario">Consultar Registros</a>
                  <br>
                   <br>
-                <a href="consultaUsuarioAdmin.jsp" class="btn" id="consultasAdmin">Opciones Administrativas</a>
+                <a href="Controlador?accion=Listarusuarios" class="btn" id="consultasAdmin">Opciones Administrativas</a>
                  <br>
                   <br>
                 <a href="iniciarSesion.jsp" class="btn" id="cerrarSesion">Cerrar Sesión</a>
