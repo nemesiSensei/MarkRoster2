@@ -30,7 +30,7 @@
    <h1 class="text-center"> USERS</h1>
    <br>
   <div class="container text-center"> 
-  <a class="btn btn-success" role="button"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
+  <a class="btn btn-success" href="registroUsuario.jsp" role="button"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
   <br>
   <br>
 
