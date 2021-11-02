@@ -49,6 +49,9 @@ public class Controlador extends HttpServlet {
 				case "eliminar":
 					System.out.println("Se entro al metodo eliminar");
 					eliminar(request,response);
+				case "ver":
+					System.out.println("Entro al metodo consultar");
+					ver(request,response);
 				
 			
 				default:
@@ -109,7 +112,32 @@ private  void eliminar (HttpServletRequest request, HttpServletResponse response
 		
 	 }
 }
+private  void ver(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+
+	try {
+		if (request.getParameter("id")!=null) {
+			
+			System.out.print("Se recibio el id");
+		}
+		System.out.print("Entro al metodo consultar");
+		
+		r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+	r=empleadosDAO.consulta(r.getIdempresa());
+		 request.setAttribute("usuarios", r);// esto es para enviar los resultados de la busqueda
+		
+		 request.getRequestDispatcher("editarusuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		.forward(request, response);
+		
+	} catch (Exception e) {
+		
+	}
+	finally {
+		}
+	}
 }
+
+
 
 		
 	

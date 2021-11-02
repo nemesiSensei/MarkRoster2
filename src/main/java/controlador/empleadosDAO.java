@@ -103,6 +103,54 @@ public class empleadosDAO {
 		return id;
 			// TODO: handle exception
 		}	
+	public getters consulta(int id ) throws SQLException {
+		getters r = new getters();
+		sql="SELECT * FROM  empleados WHERE id_empleados=" +id;
+		System.out.print("Entro a la consulta de editar");
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 
+			ps.executeQuery(sql); // en sentencias select siempre va el executeQuery
+			rs=ps.executeQuery();
+			System.out.print("Se ejecuto la consulta");
+			
+			
+			
+			// y el execute update va a ser utilizado en sentencias  de insert,update y delete.
+			
+		while (rs.next()) {
+			r.setCorreo(rs.getString("correo"));
+			r.setPass(rs.getString("Contraseña"));
+			r.setPrivilegio(rs.getString("privilegio"));
+			r.setIdempresa(rs.getInt("id_empleados"));
+			System.out.print("Entro al ciclo while");
+			
+		
+			
+			
+			
+			
+		
+			
+			
+		}
+
+			
+			
+		} catch (Exception e) {
+			System.out.println("Consulta no exitosa "+e.getMessage());
+			ps.close();
+			
+		}
+		finally {
+			
+		}
+		
+		return r;
+			
+		}
+
+
 
 	
 	
