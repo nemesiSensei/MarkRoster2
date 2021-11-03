@@ -25,7 +25,7 @@
   
     <div class="form-group">
     <label for="exampleInputEmail1j">Correo</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="${usuarios. getCorreo()   }">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""  name="correo"value="${usuarios. getCorreo()   }">
    
   </div>
     <div class="form-group">
@@ -33,7 +33,7 @@
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="${usuarios. getPass()   }">
    
   </div>
-  
+  <button type="submit" class="btn btn-primary">Guardar</button>
   
   
   

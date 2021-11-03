@@ -142,17 +142,28 @@ private  void ver(HttpServletRequest request, HttpServletResponse response) thro
 	}
 private  void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 if(request.getParameter("id")!=null && request.getParameter("privilegio") !=null) {
+	
 		
 		r.setIdempresa(Integer.parseInt(request.getParameter("id")));
-		
-	}
-	System.out.println("No llego el nombre ");
-	if (request.getParameter("correo") !=null) {
-		r.setCorreo(request.getParameter("correo"));
+		r.setPrivilegio(request.getParameter("privilegio"));
+		System.out.print("Llego el id y el privilegio");
 		
 	}
 	
-
+	if (request.getParameter("correo") !=null) {
+		r.setCorreo(request.getParameter("correo"));
+	
+		
+	
+	
+try {
+	empleadosDAO.edit(r);
+	response.sendRedirect("Controlador?accion=Listarusuarios");
+	System.out.print("Se  actualizo el usuario");
+	
+} catch (Exception e) {
+	System.out.println("No se actualizo el usuario ");
+}
 
 
 
