@@ -52,6 +52,11 @@ public class Controlador extends HttpServlet {
 				case "ver":
 					System.out.println("Entro al metodo consultar");
 					ver(request,response);
+					break;
+				case "edit":
+					System.out.print("Entro al metodo editar");
+					edit(request,response);
+					break;
 				
 			
 				default:
@@ -135,7 +140,28 @@ private  void ver(HttpServletRequest request, HttpServletResponse response) thro
 	finally {
 		}
 	}
+private  void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+if(request.getParameter("id")!=null && request.getParameter("privilegio") !=null) {
+		
+		r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+		
+	}
+	System.out.println("No llego el nombre ");
+	if (request.getParameter("correo") !=null) {
+		r.setCorreo(request.getParameter("correo"));
+		
+	}
+	
+
+
+
+
+
+
+
 }
+}
+
 
 
 
