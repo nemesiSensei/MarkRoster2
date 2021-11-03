@@ -12,14 +12,28 @@
 <form action="Controlador?accion=edit" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1">id</label>
-    <input type="text" class="form-control" id="id" aria-describedby="emailHelp" placeholder="" name="id" value="${usuarios.Idempresa}">
+    <input type="text" class="form-control" id="id" aria-describedby="emailHelp" placeholder="" name="id" value="${usuarios. getIdempresa()  }" >
+   
+  </div>
+  
+    <div class="form-group">
+    <label for="exampleInputEmail1j">Privilegio</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="${usuarios. getPrivilegio()   }">
+   
+  </div>
+  </div>
+  
+    <div class="form-group">
+    <label for="exampleInputEmail1j">Correo</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="${usuarios. getCorreo()   }">
    
   </div>
     <div class="form-group">
-    <label for="exampleInputEmail1j">Correo</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value=>
+    <label for="exampleInputEmail1j">Contraseñas</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="${usuarios. getPass()   }">
    
   </div>
+  
   
   
   

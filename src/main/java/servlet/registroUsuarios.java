@@ -48,7 +48,7 @@ public class registroUsuarios extends HttpServlet
            try {
         	   if(co.registrar(idempresa, usuario, pass, correo, privilegio, MAC))
                {      
-                  response.sendRedirect("consultaUsuarioAdmin.jsp"); 
+                  response.sendRedirect("iniciarSesion.jsp"); 
                }
 			
         	   
