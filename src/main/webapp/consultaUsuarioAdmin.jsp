@@ -39,19 +39,28 @@
 <table  class="table table-dark table-striped">
 <tr>
 <th>ID</th>
+<th>Usuario</th>
 
 <th> Corrreo</th>
 <th> contraseña </th>
 <th> privilegio </th>
+<th> Estado </th>
 <th> eliminar </th>
 <th> editar </th>
 </tr>
 <c:forEach items="${usuarios}" var="r">
 	<tr>
 	<td>${r.getIdempresa() }</td>
+	<td>${r.getNombreusuario() }</td>
+	
 	<td>${r.getCorreo()}</td>
 	<td>${r.getPass()}</td>
 	<td>${r.getPrivilegio()}</td>
+	<td><c:if test="${r.getEstado()==0}">
+	<button type="button" class="btn btn-danger">Inactivo</button>
+	</c:if> <c:if test="${r.getEstado()>0}">
+	<button type="button" class="btn btn-success">Activo</button>
+	</c:if></td>
 	<td> <a class="btn btn-danger" href="Controlador?accion=eliminar&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
 	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
 	</tr>

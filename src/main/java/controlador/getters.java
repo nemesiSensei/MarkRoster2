@@ -2,9 +2,23 @@ package controlador;
 
 public class getters {
 	int idempresa;
+	String Nombreusuario;
+	int Estado;
 	
 
-	public getters(int idempresa, String usuario, String pass, String correo, String privilegio, String mAC, int id_empleados) {
+	public String getNombreusuario() {
+		return Nombreusuario;
+	}
+	public void setNombreusuario(String nombreusuario) {
+		Nombreusuario = nombreusuario;
+	}
+	public int getEstado() {
+		return Estado;
+	}
+	public void setEstado(int estado) {
+		Estado = estado;
+	}
+	public getters(int idempresa, String usuario, String pass, String correo, String privilegio, String mAC, int id_empleados, String Nombreusuario,int Estado) {
 		super();
 		this.idempresa = idempresa;
 		this.usuario = usuario;
