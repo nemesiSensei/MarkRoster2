@@ -43,6 +43,7 @@
 <th> Corrreo</th>
 <th> contraseña </th>
 <th> privilegio </th>
+<th> Estado </th>
 <th> eliminar </th>
 <th> editar </th>
 </tr>
@@ -54,6 +55,7 @@
 	<td>${r.getCorreo()}</td>
 	<td>${r.getPass()}</td>
 	<td>${r.getPrivilegio()}</td>
+	<td>${r.getEstado()}</td>
 	<td> <a class="btn btn-danger" href="Controlador?accion=eliminar&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
 	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
 	</tr>
