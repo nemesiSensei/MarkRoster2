@@ -40,6 +40,7 @@ public class empleadosDAO {
 			r.setPass(rs.getString("Contraseña"));
 			r.setPrivilegio(rs.getString("privilegio"));
 			r.setIdempresa(rs.getInt("id_empleados"));
+			r.setNombreusuario(rs.getString("usuario"));
 
 			System.out.println("Se hizo la consulta ");
 			

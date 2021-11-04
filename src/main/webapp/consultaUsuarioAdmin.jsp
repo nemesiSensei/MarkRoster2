@@ -38,6 +38,7 @@
 <table  class="table table-dark table-striped">
 <tr>
 <th>ID</th>
+<th>Usuario</th>
 
 <th> Corrreo</th>
 <th> contraseña </th>
@@ -48,6 +49,8 @@
 <c:forEach items="${usuarios}" var="r">
 	<tr>
 	<td>${r.getIdempresa() }</td>
+	<td>${r.getNombreusuario() }</td>
+	
 	<td>${r.getCorreo()}</td>
 	<td>${r.getPass()}</td>
 	<td>${r.getPrivilegio()}</td>
