@@ -72,7 +72,13 @@
 <script>
 var myTable = document.querySelector("#usuarios");
 var dataTable = new DataTable("#usuarios", {
-	
+	perPage:5,
+	labels: {
+	    placeholder: "Buscar usuario...",
+	    perPage: "{select} Registros en pagina ",
+	    noRows: "No se encuentra el usuario",
+	    info: "Mostrando {start}  al  {end} de   {rows} filas",
+	}
 });
 
 </script>
