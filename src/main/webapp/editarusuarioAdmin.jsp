@@ -11,8 +11,8 @@
 <body>
 <form action="Controlador?accion=edit" method="post">
   <div class="form-group">
-    <label for="exampleInputEmail1">id</label>
-    <input type="text" class="form-control" id="id" aria-describedby="emailHelp" placeholder="" name="id" value="${usuarios. getIdempresa()  }" >
+    
+    <input type="hidden" class="form-control" id="id" aria-describedby="emailHelp" placeholder="" name="id" value="${usuarios. getIdempresa()  }" >
    
   </div>
   

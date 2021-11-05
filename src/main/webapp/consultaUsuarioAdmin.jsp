@@ -5,7 +5,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <script scr="prueba2.js"></script>
+    <script src="alertas.js"></script>
+   
         <meta charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
         </script> 
         <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script> 
         <link rel="stylesheet" href="estilos1.css">  
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <header>
         <a href="menu.jsp"><img src="media/imagenes/btnAtras.png" alt="" class="atras" width="50" height="50"/></a>        
@@ -34,7 +36,7 @@
   <a class="btn btn-success" href="registroUsuario.jsp" role="button"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
   <br>
   <br>
-
+ 
 
 <table  class="table table-dark table-striped">
 <tr>
@@ -61,7 +63,7 @@
 	</c:if> <c:if test="${r.getEstado()>0}">
 	<button type="button" class="btn btn-success">Activo</button>
 	</c:if></td>
-	<td> <a class="btn btn-danger" href="Controlador?accion=eliminar&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
+	<td> <a class="btn btn-danger"  onclick="hola(event,${r.getIdempresa() },'Controlador')"role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
 	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
 	</tr>
 </c:forEach>
