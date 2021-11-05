@@ -42,7 +42,7 @@
 <th>Usuario</th>
 
 <th> Corrreo</th>
-<th> contraseña </th>
+
 <th> privilegio </th>
 <th> Estado </th>
 <th> eliminar </th>
@@ -54,7 +54,7 @@
 	<td>${r.getNombreusuario() }</td>
 	
 	<td>${r.getCorreo()}</td>
-	<td>${r.getPass()}</td>
+	
 	<td>${r.getPrivilegio()}</td>
 	<td><c:if test="${r.getEstado()==0}">
 	<button type="button" class="btn btn-danger">Inactivo</button>

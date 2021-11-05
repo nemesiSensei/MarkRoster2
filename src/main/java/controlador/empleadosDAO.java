@@ -130,6 +130,7 @@ public class empleadosDAO {
 			r.setPass(rs.getString("Contraseña"));
 			r.setPrivilegio(rs.getString("privilegio"));
 			r.setIdempresa(rs.getInt("id_empleados"));
+			r.setNombreusuario(rs.getString("usuario"));
 			System.out.print("Entro al ciclo while");
 			
 		
@@ -157,12 +158,17 @@ public class empleadosDAO {
 			
 		}
 	public int edit(getters r) throws SQLException {
-		sql="UPDATE empleados SET correo=?, privilegio=? WHERE id_empleados="+r.getIdempresa();
+		sql="UPDATE empleados SET correo=?,  privilegio=?, Usuario=? WHERE id_empleados="+r.getIdempresa();
 		
 		try {
 			con=c.getConnection(); //Abriendo la conexión a la BD
 			ps=con.prepareStatement(sql); //preparar sentencia
 			ps.setString(1, r.getCorreo());
+			ps.setString(2, r.getPrivilegio());
+			System.out.println("Heloooo");
+
+			ps.setString(3, r.getNombreusuario());
+			
 			
 			
 			System.out.println(ps);
@@ -171,10 +177,10 @@ public class empleadosDAO {
 			System.out.println("Se cambió el rol");
 			
 		}catch(Exception e) {
-			System.out.println("Error al cambiar el rol" +e.getMessage());
+			System.out.println("Error al cambiar el usuario" +e.getMessage());
 		}
 		finally {
-			con.close();
+			
 		}
 		return id;//Retorna cantidad de filas afectadas
 	}

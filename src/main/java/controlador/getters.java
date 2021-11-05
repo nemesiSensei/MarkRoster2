@@ -6,12 +6,7 @@ public class getters {
 	int Estado;
 	
 
-	public String getNombreusuario() {
-		return Nombreusuario;
-	}
-	public void setNombreusuario(String nombreusuario) {
-		Nombreusuario = nombreusuario;
-	}
+
 	public int getEstado() {
 		return Estado;
 	}
@@ -25,8 +20,13 @@ public class getters {
 		this.pass = pass;
 		this.correo = correo;
 		this.privilegio = privilegio;
+		this.Nombreusuario=Nombreusuario;
 		
 		MAC = mAC;
+	}
+
+	public void setNombreusuario(String nombreusuario) {
+		Nombreusuario = nombreusuario;
 	}
 	public int getIdempresa() {
 		return idempresa;
@@ -55,6 +55,9 @@ public class getters {
 	public String getPrivilegio() {
 		return privilegio;
 	}
+	public String getNombreusuario() {
+		return Nombreusuario;
+	}
 	public void setPrivilegio(String privilegio) {
 		this.privilegio = privilegio;
 	}
@@ -63,6 +66,7 @@ public class getters {
 		
 		
 	}
+	
 	
 
 

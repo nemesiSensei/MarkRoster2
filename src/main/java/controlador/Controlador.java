@@ -73,6 +73,10 @@ public class Controlador extends HttpServlet {
 		}
 		
 	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
 private  void Listarusuarios(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		try {
@@ -150,11 +154,11 @@ if(request.getParameter("id")!=null && request.getParameter("privilegio") !=null
 		
 	}
 	
-	if (request.getParameter("correo") !=null) {
+	if (request.getParameter("correo") !=null)  {
 		r.setCorreo(request.getParameter("correo"));
 	
 		
-	
+	}
 	
 try {
 	empleadosDAO.edit(r);
@@ -172,7 +176,7 @@ try {
 
 	}
 }
-}
+
 
 
 
