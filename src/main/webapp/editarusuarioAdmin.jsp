@@ -30,7 +30,7 @@
   </div>
     <div class="form-group">
     <label for="exampleInputEmail1j">Usuario</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="${usuarios. getNombreusuario() }">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" name="usuario" value="${usuarios. getNombreusuario() }">
    
   </div>
   <button type="submit" class="btn btn-primary">Guardar</button>

@@ -150,6 +150,7 @@ if(request.getParameter("id")!=null && request.getParameter("privilegio") !=null
 		
 		r.setIdempresa(Integer.parseInt(request.getParameter("id")));
 		r.setPrivilegio(request.getParameter("privilegio"));
+		r.setNombreusuario(request.getParameter("usuario"));
 		System.out.print("Llego el id y el privilegio");
 		
 	}
