@@ -1,4 +1,4 @@
-function hola  (e,id,con){
+function borrar (e,id,con){
 	e.preventDefault();
 	console.log(id);
 	console.log(con);
@@ -17,9 +17,23 @@ function hola  (e,id,con){
 	window.setTimeout(function(){window.location.href=ruta},2000);
     Swal.fire(
       'Usuario eliminado!',
-      'Base de datos actualizada.',
+      'Base de datos actualizada.'
       
     )
   }
-})
+else {
+	 Swal.fire(
+      
+      'Tarea  cancelada.'
+)
+	
 }
+
+})
+
+	
+}
+
+
+
+	

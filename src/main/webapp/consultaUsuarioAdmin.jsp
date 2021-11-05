@@ -24,6 +24,7 @@
         <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script> 
         <link rel="stylesheet" href="estilos1.css">  
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
     </head>
     <header>
         <a href="menu.jsp"><img src="media/imagenes/btnAtras.png" alt="" class="atras" width="50" height="50"/></a>        
@@ -38,7 +39,7 @@
   <br>
  
 
-<table  class="table table-dark table-striped">
+<table  class="table table-dark table-striped" id="usuarios">
 <tr>
 <th>ID</th>
 <th>Usuario</th>
@@ -63,11 +64,18 @@
 	</c:if> <c:if test="${r.getEstado()>0}">
 	<button type="button" class="btn btn-success">Activo</button>
 	</c:if></td>
-	<td> <a class="btn btn-danger"  onclick="hola(event,${r.getIdempresa() },'Controlador')"role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
+	<td> <a class="btn btn-danger"  onclick="borrar(event,${r.getIdempresa() },'Controlador')"role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
 	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
 	</tr>
 </c:forEach>
 </table>
+<script>
+var myTable = document.querySelector("#usuarios");
+var dataTable = new DataTable("#usuarios", {
+	
+});
+
+</script>
 </div>		
 
 </body>
