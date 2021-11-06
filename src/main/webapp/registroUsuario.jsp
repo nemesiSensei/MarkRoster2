@@ -135,8 +135,13 @@ function comprobarClave()
                         <i></i>
                     </div> 
                   <br>
-               
-                 
+                  <label class='fuenteBlanca' title="Ingrese la MAC del dispositivo inscrito"></label><h4><strong>MAC</strong></h4>                   
+                  <input class="input" name="MAC" type="text"
+                         required title="Hexadecimal. 2 digitos separados por dos puntos (:)"
+                         minlength="17" maxlength="17" required
+                         ><span class="text-danger"></span>
+                  <br>
+                  <br>
 
                   <input class="checkbox" name="aceptar" type="checkbox"
                          required><strong>ACEPTO</strong> los <a class="span" href="terminosYcondiciones.jsp">

@@ -14,7 +14,7 @@ function borrar (e,id,con){
 }).then((result) => {
   if (result.isConfirmed) {
 	ruta=con+"?accion=eliminar&id="+id
-	window.setTimeout(function(){window.location.href=ruta},1000);
+	window.setTimeout(function(){window.location.href=ruta},2000);
     Swal.fire(
       'Usuario eliminado!',
       'Base de datos actualizada.'
