@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
  <link rel="stylesheet" href="index.css"> 
  <meta charset="UTF-8">     
@@ -15,8 +16,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="media/imagenes/MarkRosterlogo.png">
         <title>MarkRoster - Inicio</title>
-  </head>      
-  <body>           
+  </head>  
+  <body>               
   <div class="area"></div><nav class="main-menu">       
             <ul>
             	<li>
@@ -33,9 +34,17 @@
                         </span>
                     </a>                  
                 </li>
+                 <li>
+                   <a href="iniciarSesion.jsp">
+                       <i class="fa fa-user"></i>
+                        <span class="nav-text">
+                            <strong>Login de clientes</strong>
+                        </span>
+                    </a>
+                </li>     
                 <li class="has-subnav">
                     <a href="#markroster">
-                        <i class="fa fa-laptop fa-2x"></i>
+                        <i class="fa fa-fingerprint"></i>
                         <span class="nav-text">
                             <strong>MarkRoster</strong>
                         </span>
@@ -51,7 +60,7 @@
                 </li>
                 <li class="has-subnav">
                     <a href="#ventajas">
-                       <i class="fa fa-folder-open fa-2x"></i>
+                       <i class="fa fa-bar-chart-o fa-2x"></i>
                         <span class="nav-text">
                             <strong>Ventajas</strong>
                         </span>
@@ -59,7 +68,7 @@
                 </li>
                 <li>
                     <a href="#contacto">
-                        <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <i class="fa fa-handshake"></i>                        
                         <span class="nav-text">
                             <strong>Contacto</strong>
                         </span>
@@ -67,20 +76,12 @@
                 </li>
                 <li>
                     <a href="#soporte">
-                        <i class="fa fa-font fa-2x"></i>
+                        <i class="fa fa-tools"></i>
                         <span class="nav-text">
                            <strong>Soporte</strong>
                         </span>
                     </a>
-                </li>
-                <li>
-                   <a href="iniciarSesion.jsp">
-                       <i class="fa fa-table fa-2x"></i>
-                        <span class="nav-text">
-                            <strong>Login de clientes</strong>
-                        </span>
-                    </a>
-                </li>                
+                </li>                          
                 <li>
                     <a href="#">
                        <i class="fa fa-info fa-2x"></i>
@@ -101,14 +102,13 @@
                 </li>  
             </ul>
         </nav>
-        <section>
-        <img class="img-fluid" src="media/imagenes/header foto.png" alt=""/>
+        <section style="margin:0px 0px 0px 56px">
+        <img src="media/imagenes/header foto.png" class="img-fluid" alt="Responsive image" width="1920" height="auto"/>
         <br>
         <br>
-        <br>        
-    
+        <br>
         <div class="container">
-        <img id="markroster" src="media/imagenes/logo2.png" alt="" width="478" height="auto"/>
+        <img class="body" id="markroster" src="media/imagenes/logo2.png" alt="" width="478" height="auto"/>
         <br>
         <br>
         <br>
@@ -157,7 +157,7 @@
       <br>
       <div class="col">
   <div class="col-md-8"><img src="media/imagenes/exactitud.png" width="200" height="auto"></img></div>
-  <br></br>
+  <br>
   <div class="col-md-8"><h3><strong>EXACTITUD</strong></h3>
       <br>
       <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
@@ -234,8 +234,7 @@
     <br>
     <br>        
         </section>
-        <section class="footer-distributed">
-			<div class="container">
+        <section class="footer-distributed" style="margin:0px 0px 0px 56px">			
 			<div class="footer-left">
 				<img src="media/imagenes/MarkRosterBlack.png"  width="128" height="auto"></img>
 				<p class="footer-links">
@@ -274,7 +273,7 @@
 					<a href="#"><i class="fa fa-github"></i></a>
 				</div>
 			</div>
-			</div>
+			
 		</section>
   </body> 
     </html>
