@@ -7,64 +7,112 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>        
-        <meta charset="UTF-8">     
+  <head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+ <link rel="stylesheet" href="index.css"> 
+ <meta charset="UTF-8">     
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="media/imagenes/MarkRosterlogo.png">
-        
-        <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
-            rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
-            crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
-            crossorigin="anonymous">                 
-        </script>  
-        <link rel="stylesheet" href="estilos1.css">        
         <title>MarkRoster - Inicio</title>
-    
-    </head>    
-        <header>            
-            <div class="container-fluid">
-        <div style="float: right;width:100px">
-        <div class="row">
-        <a href="iniciarSesion.jsp" class="button"><i class="fas fa-fingerprint fa-2x" style="color: #3095FF"></i> <strong> Login</strong></a>
-        </div>  
-        </div> 
-        <nav class="navbar navbar-light bg-light">            
-                <form class="container" >                     
-                    <div style="float: left">
-                        <img class="iconoreg" src="media/imagenes/MarkRosterlogo.png" width="128" height="auto"/>
-                        <br>
-                        <br>
-                    </div>                       
-                    <div style="align-self: flex-end">                        
-                    <a class="btn" /><i class="fas fa-fingerprint"  style="color: #3095FF"></i><strong>     Inicio</strong></a>                   
-                    <a class="btn" href="#markroster"/><i class="fas fa-fingerprint"  style="color: #3095FF"></i><strong>      MarkRoster</strong></a>
-                    <a class="btn" href="#caracteristicas"/><i class="fas fa-fingerprint"  style="color: #3095FF"></i><strong>      Características</strong></a>
-                    <a class="btn" href="#ventajas"/><i class="fas fa-fingerprint"  style="color: #3095FF"></i><strong>       Ventajas</strong></a>
-                    <a class="btn" href="#soporte"/><i class="fas fa-fingerprint"  style="color: #3095FF"></i><strong>        Soporte</strong></a>
-                    <a class="btn" href="#contacto"/><i class="fas fa-fingerprint"  style="color: #3095FF"></i><strong>       Contacto</strong></a>
-                    </div>                    
-                </form>
+  </head>      
+  <body>           
+  <div class="area"></div><nav class="main-menu">       
+            <ul>
+            	<li>
+                    <a href="index.jsp">
+                        <img src="media/imagenes/MarkRosterlogo.png" width="56" height="auto"/>
+					<br><br><br> 
+                    </a>                  
+                </li>
+                <li>
+                    <a href="index.jsp">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Inicio</strong>
+                        </span>
+                    </a>                  
+                </li>
+                <li class="has-subnav">
+                    <a href="#markroster">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>MarkRoster</strong>
+                        </span>
+                    </a>                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#caracteristicas">
+                       <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Características</strong>
+                        </span>
+                    </a>                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#ventajas">
+                       <i class="fa fa-folder-open fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Ventajas</strong>
+                        </span>
+                    </a>                   
+                </li>
+                <li>
+                    <a href="#contacto">
+                        <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Contacto</strong>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#soporte">
+                        <i class="fa fa-font fa-2x"></i>
+                        <span class="nav-text">
+                           <strong>Soporte</strong>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                   <a href="iniciarSesion.jsp">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Login de clientes</strong>
+                        </span>
+                    </a>
+                </li>                
+                <li>
+                    <a href="#">
+                       <i class="fa fa-info fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Documentación</strong>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="logout">
+                <li>
+                   <a href="#">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                          <strong>Cerrar Sesión</strong>
+                        </span>
+                    </a>
+                </li>  
+            </ul>
         </nav>
-        </div>
-        <br>
-        </header>
-    <body class="bg-light" style="font-family: 'cocogoose'">
-        
+        <section>
         <img class="img-fluid" src="media/imagenes/header foto.png" alt=""/>
         <br>
         <br>
         <br>        
-    <center>
+    
         <div class="container">
-        <img class="logo2" id="markroster" src="media/imagenes/logo2.png" alt="" width="478" height="auto"/>
+        <img id="markroster" src="media/imagenes/logo2.png" alt="" width="478" height="auto"/>
         <br>
         <br>
         <br>
-        <h3>
+        <h5>
           Somos una marca dedicada al control de horarios por medios biométricos móviles 
           (usando el lector de huellas dactilares del teléfono móvil), con desarrolladores
           capacitados en diferentes tecnologías (Java, HTML, CSS, MySQL, entre otras) con 
@@ -73,7 +121,7 @@
           de nómina, con interfaces intuitivas y amigables con el usuario, haciendo uso de 
           aplicaciones basadas en web, lo que garantiza su portabilidad y compatibilidad con
           multiples dispositivos, y su uso unipersonal e higiénico.
-      </h3>
+      </h5>
         <br>
         <br>
         <br>
@@ -87,11 +135,11 @@
   <br>
   <div class="col-md-8"><h3><strong>PORTABILIDAD</strong></h3>
       <br>
-      <h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+      <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
           sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
           magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
           quis nostrud exerci tation ullam
-      </h4></div>
+      </h5></div>
       </div> 
       <br>
       <div class="col">
@@ -99,11 +147,11 @@
       <br>
       <div class="col-md-8"><h3><strong>EFICIENCIA</strong></h3>
       <br>
-      <h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+      <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
           sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
           magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
           quis nostrud exerci tation ullam
-      </h4>
+      </h5>
       </div>
       </div>
       <br>
@@ -112,11 +160,11 @@
   <br></br>
   <div class="col-md-8"><h3><strong>EXACTITUD</strong></h3>
       <br>
-      <h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+      <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
           sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
           magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
           quis nostrud exerci tation ullam
-      </h4></div>
+      </h5></div>
       </div> 
       </div>
       <br>
@@ -133,23 +181,23 @@
       <div class="col-md-6">
       <div class="row">
       <div class="col-md-3"><img src="media/imagenes/item1.png" width="100" height="auto"></img></div>        
-      <h4 class="col-md-8" style="text-align: left">
+      <h5 class="col-md-8" style="text-align: left">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
           sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
           magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
           quis nostrud exerci tation ullam
-      </h4>        
+      </h5>        
         </div>         
       </div>
       <div class="col-md-6">
       <div class="row">
       <div class="col-md-3"><img src="media/imagenes/item1.png" width="100" height="auto"></img></div>        
-      <h4 class="col-md-8" style="text-align: left">
+      <h5 class="col-md-8" style="text-align: left">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
           sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
           magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
           quis nostrud exerci tation ullam
-      </h4>        
+      </h5>        
         </div>        
       </div>
       </div>
@@ -160,44 +208,73 @@
       <div class="col-md-6">
       <div class="row">
       <div class="col-md-3"><img src="media/imagenes/item1.png" width="100" height="auto"></img></div>        
-      <h4 class="col-md-8" style="text-align: left">
+      <h5 class="col-md-8" style="text-align: left">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
           sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
           magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
           quis nostrud exerci tation ullam
-      </h4>        
+      </h5>        
         </div>         
       </div>
       <div class="col-md-6">
       <div class="row">
       <div class="col-md-3"><img src="media/imagenes/item1.png" width="100" height="auto"></img></div>        
-      <h4 class="col-md-8" style="text-align: left">
+      <h5 class="col-md-8" style="text-align: left">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
           sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
           magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
           quis nostrud exerci tation ullam
-      </h4>        
+      </h5>        
         </div>        
       </div>
       </div>
-      </div>
-    </center>
+      </div>    
     <br>
     <br>
     <br>
-    <br>    
-    </body>
-    <footer> 
-        <footer class="bg-secondary text-white">
-      <br>
-      <br>
-      <div class="col-md-1"><img src="media/imagenes/MarkRosterBlack.png"></img></div> 
-        <br>
-        <br>
-        <div class="text-end">
-      <p class="blockquote">Copyright © Valhalla Technologies S.A.S. 2021</p>
-      </div>
-      <br></br>           
-    </footer>
-    </footer>
-</html>
+    <br>        
+        </section>
+        <section class="footer-distributed">
+			<div class="container">
+			<div class="footer-left">
+				<img src="media/imagenes/MarkRosterBlack.png"  width="128" height="auto"></img>
+				<p class="footer-links">
+					<a href="#" class="link-1">Inicio</a>					
+					<a href="#">Nosotros</a>				
+					<a href="#">Precios</a>				
+					<a href="#">Sobre</a>					
+					<a href="#">Terminos y condiciones</a>					
+					<a href="#">Contacto</a>
+				</p>
+				<p class="footer-company-name">Copyright © Valhalla Technologies S.A.S. 2021</p>
+			</div>
+			<div class="footer-center">
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>Calle 11c sur #23-18 Este</span> Bogotá, Colombia</p>
+				</div>
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>322 714 7140</p>
+				</div>
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">jdjimenez9378@misena.edu.co</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>Sobre la compañía</span>
+					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+				</p>
+				<div class="footer-icons">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+			</div>
+		</section>
+  </body> 
+    </html>
