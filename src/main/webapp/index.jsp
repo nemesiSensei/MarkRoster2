@@ -63,7 +63,7 @@
                        <i class="fa fa-bar-chart-o fa-2x"></i>
                         <span class="nav-text">
                             <strong>Ventajas</strong>
-                        </span>
+                        </                                                                                                                                                                                                                                                                                                                                                                                                                                                                       span>
                     </a>                   
                 </li>
                 <li>
@@ -258,8 +258,11 @@
 				</div>
 				<div>
 					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">jdjimenez9378@misena.edu.co</a></p>
+					<p><a href="mailto:support@company.com">jdjimenez9378@misena.edu.co</a></p><br>
+					<p><a href="mailto:support@company.com">smendez67@misena.edu.co</a></p>
 				</div>
+				</div>
+				
 			</div>
 			<div class="footer-right">
 				<p class="footer-company-about">
