@@ -41,7 +41,7 @@ public class inicioSesion extends HttpServlet
         consultas co=new consultas();
         if(co.autenticacion(usuario, pass))
         {
-            response.sendRedirect("menu.jsp");
+            response.sendRedirect("consultaUsuarioAdmin.jsp");
         }
         else
         {
