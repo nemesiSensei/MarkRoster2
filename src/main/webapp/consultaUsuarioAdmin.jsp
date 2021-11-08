@@ -99,11 +99,7 @@
 	<td>${r.getCorreo()}</td>
 	
 	<td>${r.getPrivilegio()}</td>
-	<td><c:if test="${r.getEstado()==0}">
-	<button type="button" class="badge bg-danger">Inactivo</button>
-	</c:if> <c:if test="${r.getEstado()>0}">
-	<button type="button" class="btn btn-success">Activo</button>
-	</c:if></td>
+	
 	<td> <a class="btn btn-danger"  onclick="borrar(event,${r.getIdempresa() },'Controlador')"role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
 	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
 	</tr>
