@@ -50,19 +50,18 @@ public class consultas extends conexion
         return false;
     }
     
-    public boolean registrar(String idempresa, String usuario, String pass, String correo, String privilegio, String MAC)
+    public boolean registrar(String idempresa, String usuario, String pass, String correo, String privilegio)
     {
         PreparedStatement pst = null;
         try 
         {
-            String consulta = "insert into empleados (id_empresa, Usuario, Contraseña, correo, privilegio, MAC) values(?,?,?,?,?,?)";            
+            String consulta = "insert into empleados (id_empresa, Usuario, Contraseña, correo, privilegio) values(?,?,?,?,?)";            
             pst=getConnection().prepareStatement(consulta);
             pst.setString(1,idempresa);
             pst.setString(2,usuario);
             pst.setString(3,pass);
             pst.setString(4,correo);
-            pst.setString(5,privilegio);
-            pst.setString(6,MAC);            
+            pst.setString(5,privilegio);                        
             if(pst.executeUpdate()==1)
             {
                 return true;

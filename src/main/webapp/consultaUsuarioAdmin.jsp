@@ -13,32 +13,112 @@
         <link rel="icon" href="media/imagenes/MarkRosterlogo.ico"/>
         <link rel="icon" href="media/imagenes/MarkRosterlogo.png"> 
         <title>Gestión de Usuarios-Administrador</title>
+        <link rel="stylesheet" href="index.css"> 
         <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
         rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
-        crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" t6 
-        crossorigin="anonymous">
-        </script> 
-        <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script> 
-        <link rel="stylesheet" href="estilos1.css">  
+        crossorigin="anonymous">        
+        <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>          
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
     </head>
     <header>
-        <a href="menu.jsp"><img src="media/imagenes/btnAtras.png" alt="" class="atras" width="50" height="50"/></a>        
-        <img class="logo2" src="media/imagenes/MarkRosterLogo2.png" align="right" alt="50" with="170"> 
+    <a href="index.jsp"><img src="media/imagenes/btnAtras.png" alt="" width="50" height="auto"/></a>
+        <div class="area"></div><nav class="main-menu">       
+            <ul>
+            	<li>
+                    <a href="index.jsp">
+                        <img src="media/imagenes/MarkRosterlogo.png" width="56" height="auto"/>
+					<br><br><br> 
+                    </a>                  
+                </li>
+                <li>
+                    <a href="index.jsp">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Inicio</strong>
+                        </span>
+                    </a>                  
+                </li>
+                 <li>
+                   <a href="Controlador?accion=Listarusuarios">
+                       <i class="fa fa-user"></i>
+                        <span class="nav-text">
+                            <strong>Opciones administrativas</strong>
+                        </span>
+                    </a>
+                </li>     
+                <li class="has-subnav">
+                    <a href="#markroster">
+                        <i class="fa fa-fingerprint"></i>
+                        <span class="nav-text">
+                            <strong>MarkRoster</strong>
+                            
+                        </span>
+                    </a>                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#caracteristicas">
+                       <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Características</strong>
+                        </span>
+                    </a>                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#ventajas">
+                       <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Ventajas</strong>
+                        </                                                                                                                                                                                                                                                                                                                                                                                                                                                                       span>
+                    </a>                   
+                </li>
+                <li>
+                    <a href="#contacto">
+                    <i class="fa fa-handshake"></i>                        
+                        <span class="nav-text">
+                            <strong>Contacto</strong>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#soporte">
+                        <i class="fa fa-tools"></i>
+                        <span class="nav-text">
+                           <strong>Soporte</strong>
+                        </span>
+                    </a>
+                </li>                          
+                <li>
+                    <a href="#">
+                       <i class="fa fa-info fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Documentación</strong>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="logout">
+                <li>
+                   <a href="#">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                          <strong>Cerrar Sesión</strong>
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+        
     </header> 
-   <body>
-   <h1 class="text-center"> USERS</h1>
+   <body class="container text-center">     
+   <h1 class="text-center">Gestión de usuarios</h1>
    <br>
   <div class="container text-center"> 
   <a class="btn btn-success" href="registroUsuario.jsp" role="button"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
   <br>
-  <br>
- 
-
+  <br> 
+</div>
 <table  class="table table-dark table-striped" id="usuarios">
 <tr>
 <th>ID</th>
@@ -82,8 +162,8 @@ var dataTable = new DataTable("#usuarios", {
 });
 
 </script>
-</div>		
+		
 
 </body>
-   </body>
+ 
 </html>

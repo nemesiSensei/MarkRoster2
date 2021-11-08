@@ -28,10 +28,9 @@
    
    <div class="wrapper fadeInDown">
   <div id="formContent">
-    <!-- Tabs Titles -->
-    <h2 class="active"> Iniciar sesión </h2>
-   
-
+    <br><br>
+    <img src="media/imagenes/MarkRosterlogo.png" width="128" height="auto"/><br>
+    <h2 class="active"> Iniciar sesión </h2> 
     <!-- Icon -->
   
     <!-- Login Form -->

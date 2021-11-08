@@ -13,6 +13,8 @@
 <body>
   <div class="wrapper fadeInDown">
   <div id="formContent">
+   <br><br>
+    <img src="media/imagenes/MarkRosterlogo.png" width="128" height="auto"/><br>
     <!-- Tabs Titles -->
     <h2 class="active"> Editar usuario </h2>
    
