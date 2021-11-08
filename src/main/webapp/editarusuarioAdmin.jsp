@@ -30,7 +30,11 @@
             <input type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()   }"   >
                <input type="text" id="usuario" class="fadeIn second" name="usuario" value="${usuarios. getNombreusuario() }">
     
+<<<<<<< HEAD
       <input type="submit"  onclick="editar(event,${r.getIdempresa() },'Controlador')"class="fadeIn fourth" value="Actualizar">
+=======
+      <input type="submit" class="fadeIn fourth" onclick="editar(event,${r.getIdempresa() },'Controlador')" role="button" value="Actualizar">
+>>>>>>> registro
     </form>
 
     <!-- Remind Passowrd -->
@@ -41,4 +45,6 @@
   
   
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="alertas2.js"></script>
 </html>
