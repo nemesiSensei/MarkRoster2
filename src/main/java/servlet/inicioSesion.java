@@ -6,8 +6,13 @@
 package servlet;
 
 import controlador.consultas;
+import controlador.empleadosDAO;
+import controlador.getters;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,10 +35,15 @@ public class inicioSesion extends HttpServlet
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws SQLException 
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException 
+            throws ServletException, IOException, SQLException 
     {
+    	
+    	getters r = new getters();
+    	empleadosDAO empleadosDAO = new empleadosDAO();
+           
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String usuario=request.getParameter("usuario");
@@ -41,7 +51,12 @@ public class inicioSesion extends HttpServlet
         consultas co=new consultas();
         if(co.autenticacion(usuario, pass))
         {
-            response.sendRedirect("consultaUsuarioAdmin.jsp");
+       	 List empleados =empleadosDAO.Listarusuarios();
+		 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda
+	
+		 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		.forward(request, response);
+		
         }
         else
         {
@@ -74,7 +89,12 @@ public class inicioSesion extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+			processRequest(request, response);
+		} catch (ServletException | IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     /**
@@ -88,7 +108,12 @@ public class inicioSesion extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+			processRequest(request, response);
+		} catch (ServletException | IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     /**
