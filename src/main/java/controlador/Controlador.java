@@ -184,6 +184,8 @@ private  void cambiarestado (HttpServletRequest request, HttpServletResponse res
 		r.setIdempresa(Integer.parseInt(request.getParameter("id")));
 		r.setEstado(Boolean.parseBoolean(request.getParameter("es")));
 		
+		System.out.print(" Entro al metodo actualizar"+r.getIdempresa());
+		System.out.print(" Entro al metodo actualizar"+r.isEstado());
 		
 
 	try {
