@@ -37,7 +37,7 @@
     <!-- Login Form -->
     <form   action="iniciar" method="post">
       <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Ingresar usuario">
-      <input type="text" id="pass" class="fadeIn third" name="pass" placeholder="Ingresar contraseña">
+      <input type="password" id="pass" class="fadeIn third" name="pass" placeholder="Ingresar contraseña">
       <input type="submit" class="fadeIn fourth" value="Iniciar sesión">
     </form>
 

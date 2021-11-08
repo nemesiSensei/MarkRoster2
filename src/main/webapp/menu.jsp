@@ -22,44 +22,20 @@
         crossorigin="anonymous">
         </script>  
         </script>  
-        <link rel="stylesheet" href="estilos1.css">  
+        <link rel="stylesheet" href="menu.css">  
     </head>
     <header>
         <a href="index.jsp"><img src="media/imagenes/btnAtras.png" alt="" class="atras" width="50" height="50"/></a>        
         <img class="logo2" src="media/imagenes/MarkRosterLogo2.png" align="right"> 
     </header>
     <body style="font-family: 'cocogoose'">        
-        <br>
-        <br>         
-        <center> 
-            <div class="container">
-                <div class="iconoreg">
-                <img src="media/imagenes/UsuariosOpen.png" alt=""
-              width="580" height="396"/>
-                </div>
-                <h1 class="title1" ><strong>Menú<br>Principal</strong></h1> 
-               <br>
-               <br>
-               <br>
-               
-            <div class="container-lg"> 
-                <a href="registrarHuella.jsp" class="btn" id="Rhuella">Registrar Huella</a>
-                 <br>
-                  <br>
-                <a href="consultaUsuario.jsp" class="btn" id="consultasUsuario">Consultar Registros</a>
-                 <br>
-                  <br>
-                <a href="Controlador?accion=Listarusuarios" class="btn" id="consultasAdmin">Opciones Administrativas</a>
-                 <br>
-                  <br>
-                <a href="iniciarSesion.jsp" class="btn" id="cerrarSesion">Cerrar Sesión</a>
-            </div>
-        <br>
-        <br>  
-        <br>
-        <footer>
-            
-        </footer>
-    </center>                    
+<nav>
+  <ul>
+    <li><span>Home</span></li>
+    <li><span>Products</span></li>
+    <li><span>Services</span></li>
+    <li><span>Contact</span></li>
+  </ul>
+</nav> 
     </body>
 </html>
