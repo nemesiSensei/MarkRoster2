@@ -47,56 +47,16 @@
                             <strong>Opciones administrativas</strong>
                         </span>
                     </a>
-                </li>     
+                </li> 
                 <li class="has-subnav">
-                    <a href="#markroster">
-                        <i class="fa fa-fingerprint"></i>
-                        <span class="nav-text">
-                            <strong>MarkRoster</strong>
-                            
-                        </span>
-                    </a>                    
-                </li>
-                <li class="has-subnav">
-                    <a href="#caracteristicas">
-                       <i class="fa fa-list fa-2x"></i>
-                        <span class="nav-text">
-                            <strong>Características</strong>
-                        </span>
-                    </a>                    
-                </li>
-                <li class="has-subnav">
-                    <a href="#ventajas">
+                    <a href="consultaUsuario.jsp">
                        <i class="fa fa-bar-chart-o fa-2x"></i>
                         <span class="nav-text">
-                            <strong>Ventajas</strong>
-                        </                                                                                                                                                                                                                                                                                                                                                                                                                                                                       span>
+                            <strong>Consultar registros</strong>
+                            </span>                                                                                                                                                                                                                                                                                                                                                                              
                     </a>                   
-                </li>
-                <li>
-                    <a href="#contacto">
-                    <i class="fa fa-handshake"></i>                        
-                        <span class="nav-text">
-                            <strong>Contacto</strong>
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#soporte">
-                        <i class="fa fa-tools"></i>
-                        <span class="nav-text">
-                           <strong>Soporte</strong>
-                        </span>
-                    </a>
-                </li>                          
-                <li>
-                    <a href="#">
-                       <i class="fa fa-info fa-2x"></i>
-                        <span class="nav-text">
-                            <strong>Documentación</strong>
-                        </span>
-                    </a>
-                </li>
+                </li>    
+                
             </ul>
             <ul class="logout">
                 <li>
