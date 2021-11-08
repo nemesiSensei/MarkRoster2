@@ -21,7 +21,7 @@
   
     <!-- Login Form -->
     <form   action="Controlador?accion=edit" method="post">
-      <input type="text" id="id" class="fadeIn second" name="id"  value="${usuarios. getIdempresa()  }"  >
+      <input type="hidden" id="id" class="fadeIn second" name="id"  value="${usuarios. getIdempresa()  }"  >
          <input type="text" id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()   }"  >
             <input type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()   }"   >
                <input type="text" id="usuario" class="fadeIn second" name="usuario" value="${usuarios. getNombreusuario() }">
