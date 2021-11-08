@@ -100,7 +100,7 @@
 	
 	<td>${r.getPrivilegio()}</td>
 	<td><c:if test="${r.getEstado()==0}">
-	<button type="button" class="btn btn-danger">Inactivo</button>
+	<button type="button" class="badge bg-danger">Inactivo</button>
 	</c:if> <c:if test="${r.getEstado()>0}">
 	<button type="button" class="btn btn-success">Activo</button>
 	</c:if></td>
