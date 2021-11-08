@@ -184,6 +184,44 @@ public class empleadosDAO {
 		}
 		return id;//Retorna cantidad de filas afectadas
 	}
+	public int cambiarestado(getters r) throws SQLException {
+		System.out.println("Entro a la sentencia preparada  ");
+		sql="UPDATE empleados SET estado=? WHERE  id_empleados="+r.getIdempresa();
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 
+			ps.setBoolean(1, r.isEstado());
+		
+			System.out.println(ps);
+			
+				
+				
+			
+			
+		
+			
+			
+			
+			
+			ps.executeUpdate(sql); // en sentencias select siempre va el executeQuery 
+			System.out.print("Ya hizo la consulta  ");
+			// Solo las consultas se guardan en un resulset 
+			System.out.println("Entro a la consulta  ");
+			
+			// y el execute update va a ser utilizado en sentencias  de insert,update y delete.                                                                                      
+		// El siguiente paso es asignar los valores de este interrogante 
+	
+		System.out.println("Se Actualizo el estado  ");
+	
+			
+		
+		} 
+		catch (Exception e) {
+			System.out.print("Error al cambiar  usuario ");
+		}
+		return id;
+			// TODO: handle exception
+		}	
 	
 	}
 

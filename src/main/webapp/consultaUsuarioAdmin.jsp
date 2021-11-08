@@ -141,11 +141,11 @@
 	<td>${r.getPrivilegio()}</td>
 	<td><c:if test="${r.isEstado()==false}">
 	<button type="button" class="badge bg-danger">Inactivo</button>
-		<a class="btn btn-success btn-sm" onclick="cambiare(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Activar</a>
+		<a class="btn btn-success btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Activar</a>
 		
 	</c:if> <c:if test="${r.isEstado()==true}">
 	<button type="button" class="badge bg-success">Activo</button>
-	<a class="btn btn-danger btn-sm" onclick="cambiare(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Inactivar</a>
+	<a class="btn btn-danger btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Inactivar</a>
 	</c:if></td>
 	<td> <a class="btn btn-danger"  onclick="borrar(event,${r.getIdempresa() },'Controlador')"role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
 	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
@@ -165,7 +165,7 @@ var dataTable = new DataTable("#usuarios", {
 });
 
 </script>
-		
+		<script src="cambiarestado.js"></script>
 
 </body>
  

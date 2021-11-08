@@ -57,6 +57,9 @@ public class Controlador extends HttpServlet {
 					System.out.print("Entro al metodo editar");
 					edit(request,response);
 					break;
+				case "cambiarestado":
+					System.out.print("Entro al meto cambiar estado");
+					cambiarestado(request,response);
 				
 			
 				default:
@@ -176,6 +179,30 @@ try {
 
 
 	}
+private  void cambiarestado (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+		r.setEstado(Boolean.parseBoolean(request.getParameter("es")));
+		
+		
+
+	try {
+		
+		 
+		 empleadosDAO.cambiarestado(r);
+		 response.sendRedirect("Controlador?accion=Listarusuarios");
+		 
+	
+	
+	 
+     
+}
+	 catch (Exception e) {
+		
+		 System.out.print(" no Entro al metodo actualizar");
+		
+	 }
+}
 }
 
 
