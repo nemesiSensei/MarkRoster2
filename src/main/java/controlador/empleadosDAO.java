@@ -186,12 +186,11 @@ public class empleadosDAO {
 	}
 	public int cambiarestado(getters r) throws SQLException {
 		System.out.println("Entro a la sentencia preparada  ");
-		sql="UPDATE empleados SET estado=? WHERE  id_empleados="+r.getIdempresa();
+		sql="UPDATE empleados SET estado="+r.isEstado() +" WHERE id_empleados="+r.getIdempresa();
 		try {
 			con=c.getConnection(); // opening the connection to database 
 			ps=con.prepareStatement(sql); // prepare that sentence 
-			ps.setBoolean(1, r.isEstado());
-		
+			
 			System.out.println(ps);
 			
 				
@@ -217,7 +216,7 @@ public class empleadosDAO {
 		
 		} 
 		catch (Exception e) {
-			System.out.print("Error al cambiar  usuario ");
+			System.out.print("Error al cambiar  usuario "+e.getMessage());
 		}
 		return id;
 			// TODO: handle exception
