@@ -251,17 +251,18 @@
 			<div class="footer-center">
 				<div>
 					<i class="fa fa-map-marker"></i>
-					<p><span>Calle 11c sur #23-18 Este</span> Bogotá, Colombia</p>
-					<p><span>Calle 11c sur #23-18 Este</span> Bogotá, Colombia</p>
+					<p><span>Calle 11c sur #23-18 Este</span> Bogotá, Colombia</p><br>
+					<p><span>Calle 77  #107a 16   </span> Bogotá, Colombia</p>
 				</div>
 				<div>
 					<i class="fa fa-phone"></i>
-					<p>322 714 7140</p>
+					<p>322 714 7140</p><br>
+					<p>320 333 4385</p>
 				</div>
 				<div>
 					<i class="fa fa-envelope"></i>
 					<p><a href="mailto:support@company.com">jdjimenez9378@misena.edu.co</a></p><br>
-					<p><a href="mailto:support@company.com">smendez67@misena.edu.co</a></p>
+				
 				</div>
 				</div>
 				
