@@ -47,6 +47,7 @@
                         <i class="fa fa-fingerprint"></i>
                         <span class="nav-text">
                             <strong>MarkRoster</strong>
+                            
                         </span>
                     </a>                    
                 </li>
@@ -250,6 +251,7 @@
 			<div class="footer-center">
 				<div>
 					<i class="fa fa-map-marker"></i>
+					<p><span>Calle 11c sur #23-18 Este</span> Bogotá, Colombia</p>
 					<p><span>Calle 11c sur #23-18 Este</span> Bogotá, Colombia</p>
 				</div>
 				<div>

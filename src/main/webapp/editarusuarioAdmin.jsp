@@ -6,36 +6,34 @@
 
 <meta charset="ISO-8859-1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="iniciar.css"> 
 <title>Insert title here</title>
 
 </head>
 <body>
-<form action="Controlador?accion=edit" method="post">
-  <div class="form-group">
+  <div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Editar usuario </h2>
+   
+
+    <!-- Icon -->
+  
+    <!-- Login Form -->
+    <form   action="Controlador?accion=edit" method="post">
+      <input type="text" id="id" class="fadeIn second" name="id"  value="${usuarios. getIdempresa()  }"  >
+         <input type="text" id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()   }"  >
+            <input type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()   }"   >
+               <input type="text" id="usuario" class="fadeIn second" name="usuario" value="${usuarios. getNombreusuario() }">
     
-    <input type="hidden" class="form-control" id="id" aria-describedby="emailHelp" placeholder="" name="id" value="${usuarios. getIdempresa()  }" >
+      <input type="submit" class="fadeIn fourth" value="Actualizar">
+    </form>
+
+    <!-- Remind Passowrd -->
    
+
   </div>
-  
-    <div class="form-group">
-    <label for="exampleInputEmail1j">Privilegio</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="privilegio"placeholder="" value="${usuarios. getPrivilegio()   }">
-   
-  </div>
-  </div>
-  
-    <div class="form-group">
-    <label for="exampleInputEmail1j">Correo</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""  name="correo"value="${usuarios. getCorreo()   }">
-   
-  </div>
-    <div class="form-group">
-    <label for="exampleInputEmail1j">Usuarioo</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" name="usuario" value="${usuarios. getNombreusuario() }">
-   
-  </div>
-  <button type="submit" class="btn btn-primary">Guardar</button>
-  
+</div>
   
   
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

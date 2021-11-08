@@ -25,6 +25,7 @@ nav ul li {
 	overflow: hidden;
 	margin: 0.5em;
 	cursor: pointer;
+	padding: 2;
 }
 
 nav ul li span {

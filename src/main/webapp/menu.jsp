@@ -21,21 +21,98 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
         crossorigin="anonymous">
         </script>  
-        </script>  
-        <link rel="stylesheet" href="menu.css">  
+   
+        <link rel="stylesheet" href="index.css">  
     </head>
     <header>
         <a href="index.jsp"><img src="media/imagenes/btnAtras.png" alt="" class="atras" width="50" height="50"/></a>        
         <img class="logo2" src="media/imagenes/MarkRosterLogo2.png" align="right"> 
     </header>
     <body style="font-family: 'cocogoose'">        
-<nav>
-  <ul>
-    <li><span>Home</span></li>
-    <li><span>Products</span></li>
-    <li><span>Services</span></li>
-    <li><span>Contact</span></li>
-  </ul>
-</nav> 
+<div class="area"></div><nav class="main-menu">       
+            <ul>
+            	<li>
+                    <a href="index.jsp">
+                        <img src="media/imagenes/MarkRosterlogo.png" width="56" height="auto"/>
+					<br><br><br> 
+                    </a>                  
+                </li>
+                <li>
+                    <a href="index.jsp">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Inicio</strong>
+                        </span>
+                    </a>                  
+                </li>
+                 <li>
+                   <a href="Controlador?accion=Listarusuarios">
+                       <i class="fa fa-user"></i>
+                        <span class="nav-text">
+                            <strong>Opciones administrativas</strong>
+                        </span>
+                    </a>
+                </li>     
+                <li class="has-subnav">
+                    <a href="#markroster">
+                        <i class="fa fa-fingerprint"></i>
+                        <span class="nav-text">
+                            <strong>MarkRoster</strong>
+                            
+                        </span>
+                    </a>                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#caracteristicas">
+                       <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Características</strong>
+                        </span>
+                    </a>                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#ventajas">
+                       <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Ventajas</strong>
+                        </                                                                                                                                                                                                                                                                                                                                                                                                                                                                       span>
+                    </a>                   
+                </li>
+                <li>
+                    <a href="#contacto">
+                    <i class="fa fa-handshake"></i>                        
+                        <span class="nav-text">
+                            <strong>Contacto</strong>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#soporte">
+                        <i class="fa fa-tools"></i>
+                        <span class="nav-text">
+                           <strong>Soporte</strong>
+                        </span>
+                    </a>
+                </li>                          
+                <li>
+                    <a href="#">
+                       <i class="fa fa-info fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Documentación</strong>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="logout">
+                <li>
+                   <a href="#">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                          <strong>Cerrar Sesión</strong>
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
     </body>
 </html>
