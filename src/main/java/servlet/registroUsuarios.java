@@ -43,10 +43,10 @@ public class registroUsuarios extends HttpServlet
         String pass=request.getParameter("pass");
         String correo=request.getParameter("correo");
         String privilegio=request.getParameter("privilegio");
-        String MAC=request.getParameter("MAC");
+       
         consultas co=new consultas();
            try {
-        	   if(co.registrar(idempresa, usuario, pass, correo, privilegio, MAC))
+        	   if(co.registrar(idempresa, usuario, pass, correo, privilegio))
                {      
                   response.sendRedirect("Controlador?accion=Listarusuarios"); 
                }
