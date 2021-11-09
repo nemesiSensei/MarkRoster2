@@ -46,12 +46,7 @@ public class empleadosDAO {
 			r.setPrivilegio(rs.getString("privilegio"));
 			r.setIdempresa(rs.getInt("id_empleados"));
 			r.setNombreusuario(rs.getString("usuario"));
-<<<<<<< HEAD
-		
-
-=======
 			r.setEstado(rs.getBoolean("estado"));
->>>>>>> registro
 			System.out.println("Se hizo la consulta ");
 			
 			

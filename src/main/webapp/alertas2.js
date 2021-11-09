@@ -1,50 +1,43 @@
-function editar (e,id,con){
+function cambiarestado (e,id,es,con){
 	e.preventDefault();
 	console.log(id);
 	console.log(con);
-	
+	console.log(es);
 	Swal.fire({
-<<<<<<< HEAD
-  title: 'Esta seguro que quiere cambiar los datos del usuario??',
-  text: "Recuerde que los cambios son reversibles",
-=======
-  title: 'Esta seguro que quiere elimnar este usuario??',
-  text: "No podra volver atras!!",
->>>>>>> registro
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-<<<<<<< HEAD
-  confirmButtonText: 'Si, quiero actualizar los datos!'
-}).then((result) => {
-  if (result.isConfirmed) {
-	ruta=con+"?accion=edit"
-	window.setTimeout(function(){window.location.href=ruta},2000);
-    Swal.fire(
-      'Usuario actualizado!',
-=======
-  confirmButtonText: 'Si, quiero eliminarlo!'
-}).then((result) => {
-  if (result.isConfirmed) {
-	ruta=con+"?accion=edit&id="+id
-	window.setTimeout(function(){window.location.href=ruta},3000);
-    Swal.fire(
-      'Usuario eliminado!',
->>>>>>> registro
-      'Base de datos actualizada.'
-      
-    )
-  }
-else {
-	 Swal.fire(
-      
-      'Tarea  cancelada.'
-)
-	
-}
-
+	  title: 'Seguro deseas cambiar el estado?',
+	  icon: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: '#3085d6',
+	  cancelButtonColor: '#d33',
+	  confirmButtonText: 'OK, Cambia su estado!',
+	  confirmCancelText:'Cancelar'
+	  }).then((result) => {
+	  if (result.isConfirmed) {
+		
+		if(es==true)
+		{
+		ruta=con+"?accion=cambiarestado&id="+id+"&es=false";
+		window.setTimeout(function(){window.location.href=ruta},2000);
+		}
+		else{
+		ruta=con+"?accion=cambiarestado&id="+id+"&es=true";
+		window.setTimeout(function(){window.location.href=ruta},2000);
+		}
+	    Swal.fire({
+		  position: 'top-end',
+		  icon: 'success',
+		  title: 'El registro ha sido cambiado',
+		  showConfirmButton: false,
+		  timer: 1500
+		})
+ 	 
+	}
+	else{
+		Swal.fire(
+	      'Cancelado!',
+	      'No se cambiará el estado del registro.',
+	      'error'
+	    );
+	}
 })
-
-	
 }
