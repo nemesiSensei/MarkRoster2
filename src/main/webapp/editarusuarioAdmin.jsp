@@ -30,12 +30,10 @@
             <input type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()   }"   >
                <input type="text" id="usuario" class="fadeIn second" name="usuario" value="${usuarios. getNombreusuario() }">
     
-<<<<<<< HEAD
+
       <input type="submit"  onclick="editar(event,${r.getIdempresa() },'Controlador')"class="fadeIn fourth" value="Actualizar">
-=======
-      <input type="submit" class="fadeIn fourth" onclick="editar(event,${r.getIdempresa() },'Controlador')" role="button" value="Actualizar">
->>>>>>> registro
-    </form>
+
+      
 
     <!-- Remind Passowrd -->
    

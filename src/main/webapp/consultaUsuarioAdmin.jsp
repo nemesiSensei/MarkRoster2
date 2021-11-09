@@ -99,9 +99,9 @@
 	<td>${r.getCorreo()}</td>
 	
 	<td>${r.getPrivilegio()}</td>
-<<<<<<< HEAD
+
 	
-=======
+
 	<td><c:if test="${r.isEstado()==false}">
 	<button type="button" class="badge bg-danger">Inactivo</button>
 		<a class="btn btn-success btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Activar</a>
@@ -110,7 +110,7 @@
 	<button type="button" class="badge bg-success">Activo</button>
 	<a class="btn btn-danger btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Inactivar</a>
 	</c:if></td>
->>>>>>> registro
+
 	<td> <a class="btn btn-danger"  onclick="borrar(event,${r.getIdempresa() },'Controlador')"role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
 	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
 	</tr>
