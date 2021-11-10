@@ -17,7 +17,7 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
         crossorigin="anonymous">
         </script>  
-<<<<<<< HEAD
+
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -26,9 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
       
-=======
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
->>>>>>> ee567a5
+
         <link rel="stylesheet" href="iniciar.css">
         <script>
         function limpiarCorreo()
@@ -80,7 +78,7 @@ function comprobarClave()
     <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
-    <h2 class="active"> Sign In </h2>
+ 
     <h2 class="inactive underlineHover">Sign Up </h2>
 
     <!-- Icon -->
@@ -90,27 +88,12 @@ function comprobarClave()
     </div>
 
     <!-- Login Form -->
-<<<<<<< HEAD
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-      
-    </form>
 
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-      
-    </div>
-
-  </div>
-</div>
     <!-- Icon -->
   
     
  </body>
-=======
+
     <form   action="registrar" method="post" name="formulario" id="formulario">
       <input type="text" name="usuario" id="usuario" class="fadeIn second" placeholder="Ingresa usuario" required pattern="[A-Za-z0-9]{2,30}" title="Letras. Tamaño mínimo: 2. Tamaño máximo: 30"
                          minlength="2" maxlength="30"  aria-describedby="usuariohelp" required
