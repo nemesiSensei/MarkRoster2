@@ -96,26 +96,30 @@ function comprobarClave()
                 </select>
                         <i></i>
                     </div> 
-                  <input class="checkbox" name="aceptar" type="checkbox"
-                         required><strong>  ACEPTO</strong> los <a class="span" href="terminosYcondiciones.jsp">
-                         términos y condiciones</a> de la aplicación
+                 
                   <br>
                   <br>                  
-      <input type="submit" class="fadeIn fourth" name="registrar" id="registrar" value="Registrar usuario">
-       <input type="reset" class="fadeIn fourth" value="Cancelar">
+    
        
-       <p>Ya tienes una cuenta? ... <a class="span" href="iniciarSesion.jsp" >Inicia Sesión</a></p> 
-        <div id="formFooter">
-      <p>Vuelve a la  <a class="underlineHover" href="consultaUsuarioAdmin.jsp">Página principal</a></p>
-    </div>
+     
+      
       
        
        
   
-    </form>
-      <a class="span"> <button type="button" class="enlace" data-toggle="modal" data-target="#exampleModal" role="link">
-                        Ver terminos y condiciones 
-                      </button></a>
+    
+      <input class="checkbox" name="aceptar" type="checkbox"
+                         required><strong>  ACEPTO</strong> los 
+                         <button type="button" class="enlace" data-toggle="modal" data-target="#exampleModal" role="link">
+                         terminos y condiciones 
+                      </button>
+                        <p>Ya tienes una cuenta? ... <a class="span" href="iniciarSesion.jsp" >Inicia Sesión</a></p> 
+                        <div id="formFooter">
+      <p>Vuelve a la  <a class="underlineHover" href="index.jsp">Página principal</a></p>
+         <input type="submit" class="fadeIn fourth" name="registrar" id="registrar" value="Registrar usuario">
+       <input type="reset" class="fadeIn fourth" value="Cancelar">
+    
+    </div>
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -128,7 +132,9 @@ function comprobarClave()
                               </button>
                             </div>
                             <div class="modal-body">
-                            <p>Segun ley bajo la cual nos basamos, usted podra </p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Ipsum quae ex nesciunt voluptatibus quo atque architecto beatae,
+           eaque iure sapiente amet officia fugiat quibusdam minima ducimus repellat in, quasi ipsa.
                               ...
                             </div>
                             <div class="modal-footer">
@@ -139,12 +145,12 @@ function comprobarClave()
                         </div>
                       </div>
                             </div>
-                            
-    
+                           
     <!-- Remind Passowrd -->
   
   </div>
-</div>
+ 
+
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
