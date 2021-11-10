@@ -103,10 +103,12 @@ function comprobarClave()
                   <br>                  
       <input type="submit" class="fadeIn fourth" name="registrar" id="registrar" value="Registrar usuario">
        <input type="reset" class="fadeIn fourth" value="Cancelar">
+       
        <p>Ya tienes una cuenta? ... <a class="span" href="iniciarSesion.jsp" >Inicia Sesión</a></p> 
-          <button type="button" class="enlace" data-toggle="modal" data-target="#exampleModal" role="link">
+       
+         <a class="span"> <button type="button" class="enlace" data-toggle="modal" data-target="#exampleModal" role="link">
                         Ver terminos y condiciones 
-                      </button>
+                      </button></a>
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -123,8 +125,8 @@ function comprobarClave()
                               ...
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save changes</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                              
                             </div>
                           </div>
                         </div>
@@ -133,6 +135,7 @@ function comprobarClave()
                             
   
     </form>
+    
     <!-- Remind Passowrd -->
   
   </div>
