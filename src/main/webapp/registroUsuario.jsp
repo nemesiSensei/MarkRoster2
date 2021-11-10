@@ -82,7 +82,7 @@ function comprobarClave()
       <input type="password" id="Contraseña2" class="fadeIn third" name="Contraseña2" placeholder="Confirma tu contraseña" pattern="[A-Za-z0-9]{8,30}" onchange="comprobarClave()" required/>
       <div style="margin: 35px">
                         <select class="form-control" name="idempresa" required title="elije tu empresa" style="padding: 15px 32px">
-                <option value="0" selected >Selecciona tu empresa...</option>                                                 
+                <option value="0"  selected >Selecciona tu empresa...</option>                                                 
                 <option value="1">Unloft S.A.S</option>
                 <option value="2">Argotty</option>
                 <option value="3">Impakto Producciones</option></select>
@@ -124,6 +124,7 @@ function comprobarClave()
                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
+                          
                               
                             <div class="modal-header">
                               <h5 class="modal-title" id="exampleModalLabel">Terminos y condiciones </h5>
@@ -132,6 +133,9 @@ function comprobarClave()
                               </button>
                             </div>
                             <div class="modal-body">
+                              <figure class="modal_picture">
+                                <img src="modal.svg" class="modal_picture">
+                              </figure>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
           Ipsum quae ex nesciunt voluptatibus quo atque architecto beatae,
            eaque iure sapiente amet officia fugiat quibusdam minima ducimus repellat in, quasi ipsa.

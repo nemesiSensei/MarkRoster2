@@ -11,6 +11,9 @@ import controlador.getters;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -26,6 +29,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class inicioSesion extends HttpServlet
 {
+	
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -51,6 +55,7 @@ public class inicioSesion extends HttpServlet
         consultas co=new consultas();
         if(co.autenticacion(usuario, pass))
         {
+        	
        	 List empleados =empleadosDAO.Listarusuarios();
 		 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda
 	
