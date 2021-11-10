@@ -105,8 +105,15 @@ function comprobarClave()
        <input type="reset" class="fadeIn fourth" value="Cancelar">
        
        <p>Ya tienes una cuenta? ... <a class="span" href="iniciarSesion.jsp" >Inicia Sesión</a></p> 
+        <div id="formFooter">
+      <p>Vuelve a la  <a class="underlineHover" href="consultaUsuarioAdmin.jsp">Página principal</a></p>
+    </div>
+      
        
-         <a class="span"> <button type="button" class="enlace" data-toggle="modal" data-target="#exampleModal" role="link">
+       
+  
+    </form>
+      <a class="span"> <button type="button" class="enlace" data-toggle="modal" data-target="#exampleModal" role="link">
                         Ver terminos y condiciones 
                       </button></a>
                       <!-- Modal -->
@@ -133,8 +140,6 @@ function comprobarClave()
                       </div>
                             </div>
                             
-  
-    </form>
     
     <!-- Remind Passowrd -->
   
