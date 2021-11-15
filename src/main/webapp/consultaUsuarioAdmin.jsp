@@ -56,7 +56,14 @@
                             </span>                                                                                                                                                                                                                                                                                                                                                                              
                     </a>                   
                 </li>    
-                
+                <li class="has-subnav">
+                    <a href=#>
+                       <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                            <strong><strong>Registrar Horario</strong></strong>
+                            </span>                                                                                                                                                                                                                                                                                                                                                                              
+                    </a>                   
+                </li>    
             </ul>
             <ul class="logout">
                 <li>

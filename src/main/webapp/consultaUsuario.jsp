@@ -5,8 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <script src="alertas.js"></script>
-   
+    <script src="alertas.js"></script>   
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,7 @@
 				<p class="footer-links">
 					<a href="#" class="link-1">Inicio</a>					
 					<a href="#">Nosotros</a>				
-					<a href="#">Precios</a>				
+					<a href="#">Portafolio</a>				
 					<a href="#">Sobre</a>					
 					<a href="#">Terminos y condiciones</a>					
 					<a href="#">Contacto</a>
@@ -116,12 +115,9 @@
 				</div>
 				<div>
 					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">jdjimenez9378@misena.edu.co</a></p><br>
-				
+					<p><a href="mailto:support@company.com">jdjimenez9378@misena.edu.co</a></p><br>				
 				</div>
 				</div>
-				
-			
 			<div class="footer-right">
 				<p class="footer-company-about">
 					<span>Sobre la compañía</span>
