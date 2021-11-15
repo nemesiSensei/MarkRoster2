@@ -23,6 +23,31 @@ public class empleadosDAO {
 	conexion c= new conexion();
 	int register;
 	int id;
+	
+	public  getters validar(String usuario, String pass) throws SQLException
+	{
+		getters r=new getters();
+		sql="select id_empleados, Usuario, correo,privilegio,estado from empleados where Usuario=? and contraseña=?";
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 
+			ps.setString(1,usuario); 
+			ps.setString(2,pass);
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				r.setIdempresa(rs.getInt(1));
+				r.setNombreusuario(rs.getString(2));
+				r.setCorreo(rs.getString(3));				
+				r.setPrivilegio(rs.getString(4));
+				r.setEstado(rs.getBoolean(5));
+			}
+			ps.close();
+			System.out.println("se secontró el usuario");
+		} catch (Exception e) {
+			System.out.println("no se encontró el usuario"+e.getMessage());
+		}		
+		return r;
+	}
 	public List Listarusuarios() throws SQLException {
 		System.out.println("Ingreso al metodo listar usuarios");
 		List<getters> empleados= new ArrayList<>();
@@ -47,30 +72,43 @@ public class empleadosDAO {
 			r.setIdempresa(rs.getInt("id_empleados"));
 			r.setNombreusuario(rs.getString("usuario"));
 			r.setEstado(rs.getBoolean("estado"));
-			System.out.println("Se hizo la consulta ");
-			
-			
-			
+			System.out.println("Se hizo la consulta ");			
 			empleados.add(r);
-			
-		
-			
-			
 		}
-
-			
-			
+		} catch (Exception e) {
+			System.out.println("Consulta no exitosa "+e.getMessage());
+			ps.close();			
+		}
+		finally {			
+		}		
+		return empleados;			
+		}
+	public List ListarUnico() throws SQLException {
+		System.out.println("Ingreso al metodo listar usuario unico");
+		List<getters> empleados= new ArrayList<>();
+		sql="SELECT * FROM  empleados";
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 			
+			ps.executeQuery(sql); // en sentencias select siempre va el executeQuery
+			rs=ps.executeQuery();
+			// y el execute update va a ser utilizado en sentencias  de insert,update y delete.			
+		while (rs.next()) {
+			getters r = new getters();
+			 // se puede usar la posicion de la columna  o el nombre de la columna  que quremos obtener		
+			r.setCorreo(rs.getString("correo"));
+			r.setIdempresa(rs.getInt("id_empleados"));
+			r.setNombreusuario(rs.getString("usuario"));			
+			System.out.println("Se hizo la consulta ");
+			empleados.add(r);
+		}
 		} catch (Exception e) {
 			System.out.println("Consulta no exitosa "+e.getMessage());
 			ps.close();
-			
 		}
 		finally {
-			
-		}
-		
-		return empleados;
-			
+		}		
+		return empleados;			
 		}
 	public int eliminar(int id) throws SQLException {
 		System.out.println("Entro a la sentencia preparada  ");

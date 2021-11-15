@@ -13,7 +13,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">              
         <link rel="icon" href="media/imagenes/MarkRosterlogo.ico"/> 
         <title>MarkRoster - Iniciar Sesión</title>
-      
          <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
         rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
@@ -34,7 +33,7 @@
     <!-- Icon -->
   
     <!-- Login Form -->
-    <form   action="iniciar" method="post">
+    <form   action="Controlador?accion=login" method="post">
       <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Ingresar usuario">
       <input type="password" id="pass" class="fadeIn third" name="pass" placeholder="Ingresar contraseña">
       <input type="submit" class="fadeIn fourth" value="Iniciar sesión">
@@ -43,6 +42,14 @@
     <!-- Remind Passowrd -->
     <div id="formFooter">
       <p>Olvidaste tu contraseña...? Recupérala <a class="underlineHover" href="index.jsp">Aquí</a></p>
+      <p>
+      <%
+      if(request.getParameter("msn")!=null)
+      {
+    	  out.println(request.getParameter("msn"));
+      }
+      %>
+      </p>
     </div>
 
   </div>

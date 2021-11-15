@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Controlador
@@ -33,18 +34,50 @@ public class Controlador extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String accion =request.getParameter("accion");
+		HttpSession sesion=request.getSession();
 	System.out.print("Entro al controlador esta vez  ");
-		
 		try {
 			if (accion!=null) {
 				System.out.println("Entro al switch");
 				switch (accion) {
+				
+				case "abrir login":
+					abrirLogin(request,response);
+				break;
+				case "login":
+					r.setUsuario(request.getParameter("usuario"));
+					r.setPass(request.getParameter("pass"));
+					try {
+						r=empleadosDAO.validar(r.getUsuario(), r.getPass());
+						if(r.isEstado()==true)
+						{
+						System.out.println("se encontró usuario activo");	
+						sesion.setAttribute("us", r);
+						response.sendRedirect("consultaUsuarioAdmin.jsp");
+						}
+						else if (r.isEstado()==false)
+						{
+							System.out.println("se encontró usuario inactivo");
+							request.getRequestDispatcher("Controlador?accion=abrirLogin&msn=Usuario inactivo, consulte al administrados del sistema");
+							
+						}
+						else
+						{
+							System.out.println("usuario no registrado");
+							request.getRequestDispatcher("Controlador?accion=abrirLogin&msn=Datos de acceso erróneos");
+						}
+					} catch (Exception e) {
+						System.out.println("error"+e);
+					}
+					break;
+					
 				case "Listarusuarios":
 					System.out.println("Entro al  caso Listarusuarios");
-					
-					
-					Listarusuarios(request,response);
-					
+					Listarusuarios(request,response);					
+					break;
+				case "ListarUnico":
+					System.out.println("Entro al  caso Listarusuario unico");
+					ListarUnico(request,response);					
 					break;
 				case "eliminar":
 					System.out.println("Se entro al metodo eliminar");
@@ -63,12 +96,12 @@ public class Controlador extends HttpServlet {
 				
 			
 				default:
-					response.sendRedirect("login.jsp");
+					response.sendRedirect("iniciarSesion.jsp");
 					break;
 				}
 			}
 			else {
-				response.sendRedirect("login.jsp");
+				response.sendRedirect("iniciarSesion.jsp");
 			}
 			
 		} catch (Exception e) {
@@ -80,25 +113,48 @@ public class Controlador extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-private  void Listarusuarios(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+	private  void abrirLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+
 		try {
-			System.out.print("Entro al metodo listarusuarios o empleados ");
-			
-			
-		
-			 List empleados =empleadosDAO.Listarusuarios();
-			 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda
-		
-			 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+			 request.getRequestDispatcher("iniciarSesion.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 			.forward(request, response);
+			 System.out.println("Login abierto");
 			
 		} catch (Exception e) {
-			
+			System.out.println("error al abrir login");
 		}
 		finally {
 			}
 		}
+	
+private  void Listarusuarios(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		try {
+			System.out.print("Entro al metodo listarusuarios o empleados ");
+			 List empleados =empleadosDAO.Listarusuarios();
+			 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
+			 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+			.forward(request, response);			
+		} catch (Exception e) {
+			System.out.println("error"+e);
+		}
+		finally {
+			}
+		}
+private  void ListarUnico(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+	try {
+		System.out.print("Entro al metodo listarusuario unico ");
+		 List empleados =empleadosDAO.ListarUnico();
+		 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
+		 request.getRequestDispatcher("consultaUsuario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		.forward(request, response);			
+	} catch (Exception e) {
+		System.out.println("error"+e);
+	}
+	finally {
+		}
+	}
 
 private  void eliminar (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	if (request.getParameter("id") !=null) {
