@@ -47,14 +47,13 @@
                     </a>
                 </li> 
                 <li class="has-subnav">
-                    <a href="consultaUsuario.jsp">
-                       <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <a href="horaUsuario.jsp">
+                       <i class="fa fa-clock fa-x2"></i>
                         <span class="nav-text">
-                            <strong>Consultar registro</strong>
+                            <strong><strong>Registrar Horario</strong></strong>
                             </span>                                                                                                                                                                                                                                                                                                                                                                              
                     </a>                   
                 </li>    
-                
             </ul>
             <ul class="logout">
                 <li>

@@ -49,16 +49,8 @@
                     </a>
                 </li> 
                 <li class="has-subnav">
-                    <a href="consultaUsuario.jsp">
-                       <i class="fa fa-bar-chart-o fa-2x"></i>
-                        <span class="nav-text">
-                            <strong>Consultar registros</strong>
-                            </span>                                                                                                                                                                                                                                                                                                                                                                              
-                    </a>                   
-                </li>    
-                <li class="has-subnav">
-                    <a href=#>
-                       <i class="fa fa-bar-chart-o fa-2x"></i>
+                    <a href="horaAdmin.jsp">
+                       <i class="fa fa-clock fa-x2"></i>
                         <span class="nav-text">
                             <strong><strong>Registrar Horario</strong></strong>
                             </span>                                                                                                                                                                                                                                                                                                                                                                              
