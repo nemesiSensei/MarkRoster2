@@ -1,15 +1,27 @@
 package controlador;
 
+import java.sql.Timestamp;
+
 public class getters {
 
-	
+	java.util.Date dt = new java.util.Date();
+
+	java.text.SimpleDateFormat sdf = 
+	     new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+	String currentTime = sdf.format(dt);
+
+	private String currentime;
 	
 
 
 	
 	
-	 public getters(int idempresa, String nombreusuario, String usuario, String pass, String correo, String privilegio,
-			boolean estado) {
+
+
+
+	public getters(int idempresa, String nombreusuario, String usuario, String pass, String correo, String privilegio,
+			boolean estado, String currentime) {
 
 		super();
 		this.idempresa = idempresa;
@@ -19,6 +31,7 @@ public class getters {
 		this.correo = correo;
 		this.privilegio = privilegio;
 		this.estado = estado;
+		this.currentime = currentime;
 	}
 
 

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import controlador.conexion;
 import controlador.getters;
 
+
 public class empleadosDAO {
 	Connection con;
 	ResultSet rs;
@@ -72,6 +73,7 @@ public class empleadosDAO {
 		return empleados;
 			
 		}
+	
 	public int eliminar(int id) throws SQLException {
 		System.out.println("Entro a la sentencia preparada  ");
 		sql="delete from empleados WHERE  id_empleados="+id;
@@ -220,8 +222,22 @@ public class empleadosDAO {
 		}
 		return id;
 			// TODO: handle exception
-		}	
+		}
 	
-	}
+		
+		                        
+		
+	                        
+	
+	
+
+
+	
+	
+		
+	
+}
+
+	
 
 	

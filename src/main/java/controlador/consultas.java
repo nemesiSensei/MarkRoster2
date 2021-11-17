@@ -9,6 +9,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.servlet.http.HttpSession;
+
 import com.mysql.cj.result.Row;
 
 
@@ -16,6 +19,7 @@ public class consultas extends conexion
 {
     public boolean autenticacion(String Usuario, String Contraseña)
     {
+    	
         PreparedStatement pst=null;
         ResultSet rs=null;
         try 
