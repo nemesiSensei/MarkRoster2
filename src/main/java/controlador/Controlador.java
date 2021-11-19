@@ -59,12 +59,13 @@ public class Controlador extends HttpServlet {
 						{
 							System.out.println("se encontró usuario inactivo");
 							request.getRequestDispatcher("Controlador?accion=abrirLogin&msn=Usuario inactivo, consulte al administrados del sistema");
-							
+							response.sendRedirect("Controlador?accion=abrirLogin&msn=Usuario inactivo, consulte al administrados del sistema");
 						}
 						else
 						{
 							System.out.println("usuario no registrado");
 							request.getRequestDispatcher("Controlador?accion=abrirLogin&msn=Datos de acceso erróneos");
+							response.sendRedirect("Controlador?accion=abrirLogin&msn=Datos de acceso erróneos");
 						}
 					} catch (Exception e) {
 						System.out.println("error"+e);
