@@ -47,7 +47,6 @@
                         <i class="fa fa-fingerprint"></i>
                         <span class="nav-text">
                             <strong>MarkRoster</strong>
-                            
                         </span>
                     </a>                    
                 </li>

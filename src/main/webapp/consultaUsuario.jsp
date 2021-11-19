@@ -31,6 +31,15 @@
                     </a>                  
                 </li>
                 <li>
+                    <a href="">
+                        <i class="fa fa-user"></i>
+                        <span class="nav-text">
+                            <strong>Bienvenido, ${us.nombreusuario}</strong><br>
+                            <strong>Rol ${us.privilegio}</strong><br>
+                        </span>
+                    </a>                  
+                </li>
+                <li>
                     <a href="index.jsp">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
@@ -43,6 +52,14 @@
                        <i class="fa fa-user"></i>
                         <span class="nav-text">
                             <strong>Opciones de usuario</strong>
+                        </span>
+                    </a>
+                </li> 
+                <li>
+                   <a href="Controlador?accion=openPass">
+                       <i class="fa fa-key"></i>
+                        <span class="nav-text">
+                            <strong>Cambiar contraseña</strong>
                         </span>
                     </a>
                 </li> 

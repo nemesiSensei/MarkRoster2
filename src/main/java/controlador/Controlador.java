@@ -49,22 +49,21 @@ public class Controlador extends HttpServlet {
 					r.setPass(request.getParameter("pass"));
 					try {
 						r=empleadosDAO.validar(r.getUsuario(), r.getPass());
-						if(r.isEstado()==true)
+						if(r.isEstado()==true && r.getNombreusuario()!=null)
 						{
+							
 						System.out.println("se encontró usuario activo");	
 						sesion.setAttribute("us", r);
 						response.sendRedirect("consultaUsuarioAdmin.jsp");
 						}
-						else if (r.isEstado()==false)
+						else if (r.isEstado()==false && r.getNombreusuario()!=null)
 						{
-							System.out.println("se encontró usuario inactivo");
-							request.getRequestDispatcher("Controlador?accion=abrirLogin&msn=Usuario inactivo, consulte al administrados del sistema");
+							System.out.println("se encontró usuario inactivo");							
 							response.sendRedirect("Controlador?accion=abrirLogin&msn=Usuario inactivo, consulte al administrados del sistema");
 						}
 						else
 						{
-							System.out.println("usuario no registrado");
-							request.getRequestDispatcher("Controlador?accion=abrirLogin&msn=Datos de acceso erróneos");
+							System.out.println("usuario no registrado");							
 							response.sendRedirect("Controlador?accion=abrirLogin&msn=Datos de acceso erróneos");
 						}
 					} catch (Exception e) {
@@ -97,9 +96,14 @@ public class Controlador extends HttpServlet {
 				case "logout":
 					sesion.removeAttribute("us");
 					sesion.invalidate();
-					response.sendRedirect("Controlador?accion=abrirLogin&msn=Ha cerrado su sesión con éxito");
+					response.sendRedirect("Controlador?accion=abrirLogin");
 					break;
-			
+				case "openPass":
+						abrirCpass(request, response);				
+					break;
+				case "changePass":
+					changePass(request,response);
+					break;
 				default:
 					response.sendRedirect("iniciarSesion.jsp");
 					break;
@@ -123,8 +127,7 @@ public class Controlador extends HttpServlet {
 		
 
 		try {
-			 request.getRequestDispatcher("iniciarSesion.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
-			.forward(request, response);
+			response.sendRedirect("iniciarSesion.jsp");
 			 System.out.println("Login abierto");
 			
 		} catch (Exception e) {
@@ -266,6 +269,37 @@ private  void cambiarestado (HttpServletRequest request, HttpServletResponse res
 		
 	 }
 }
+private  void abrirCpass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+
+	try {
+		 request.getRequestDispatcher("cambiarPass.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		.forward(request, response);
+		 System.out.println("cambio de pass abierto");
+		
+	} catch (Exception e) {
+		System.out.println("error al abrir cambio de pass");
+	}
+	finally {
+		}
+	}
+private  void changePass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+{
+		if(request.getParameter("id")!=null && request.getParameter("passNew")!=null)
+		{
+			r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+			r.setPass(request.getParameter("passNew"));
+		}
+		try {
+			empleadosDAO.cambiarPass(r);
+			request.getRequestDispatcher("Controlador?accion=logout").forward(request, response);
+		
+	} catch (Exception e) {
+		System.out.println("error al abrir cambio de pass");
+	}
+	finally {
+		}
+	}
 }
 
 
