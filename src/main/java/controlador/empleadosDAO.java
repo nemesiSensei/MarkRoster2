@@ -214,7 +214,7 @@ public class empleadosDAO {
 			System.out.println("Error al cambiar la contraseña" +e.getMessage());
 		}
 		finally {	
-			con.close();
+			
 		}
 		return id;//Retorna cantidad de filas afectadas
 		}
