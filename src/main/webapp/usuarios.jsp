@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -12,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="media/imagenes/MarkRosterlogo.ico"/>
         <link rel="icon" href="media/imagenes/MarkRosterlogo.png"> 
-        <title>Gestión de Usuarios-Administrador</title>
+        <title>Lista de usuarios con empresas</title>
         <link rel="stylesheet" href="index.css"> 
         <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
@@ -81,58 +80,36 @@
 </div>
 <table  class="table table-dark table-striped" id="usuarios">
 <tr>
-<th>ID</th>
+<th>ID_empleados</th>
 <th>Usuario</th>
 
 <th> Corrreo</th>
+<th> Nombre</th>
+
 
 <th> privilegio </th>
 <th> Estado </th>
+<th> Empresa</th>
 <th> eliminar </th>
 <th> editar </th>
 </tr>
-<c:forEach items="${usuarios}" var="r">
+<c:forEach items="${usuario}" var="u">
 	<tr>
-	<td>${r.getIdempresa() }</td>
-	<td>${r.getNombreusuario() }</td>
-	
-	<td>${r.getCorreo()}</td>
-	
-	<td>${r.getPrivilegio()}</td>
-
-	
-
-	<td><c:if test="${r.isEstado()==false}">
-	<button type="button" class="badge bg-danger">Inactivo</button>
-		<a class="btn btn-success btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Activar</a>
+	<td>${u.gettersempresa.idempresa }</td>
+	<td>${u.gettersempresa.nombreusuario }</td>
+	<td>${u.gettersempresa.usuario}</td>
+	<td>${u.gettersempresa.correo}</td>
+	<td>${u.getId_empresa() }</td>
 		
-	</c:if> <c:if test="${r.isEstado()==true}">
-	<button type="button" class="badge bg-success">Activo</button>
-	<a class="btn btn-danger btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Inactivar</a>
-	</c:if></td>
 
-	<td> <a class="btn btn-danger"  onclick="borrar(event,${r.getIdempresa() },'Controlador')"role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
-	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
 
 	
-	</tr>
+
 </c:forEach>
 	
 </table>
 <td> <a class="btn btn-succesful" href="UsuarioController?accion=listar" role="button"> Empresas <i class="fas fa-user-cog fa-2x"></i></a></td>
-<script>
-var myTable = document.querySelector("#usuarios");
-var dataTable = new DataTable("#usuarios", {
-	perPage:5,
-	labels: { 
-	    placeholder: "Buscar usuario...",
-	    perPage: "{select} Registros en pagina ",
-	    noRows: "No se encuentra el usuario",
-	    info: "Mostrando {start}  al  {end} de   {rows} filas",
-	}
-});
 
-</script>
 		<script src="cambiarestado.js"></script>
 
 </body>
