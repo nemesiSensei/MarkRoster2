@@ -94,7 +94,11 @@ public class Controlador extends HttpServlet {
 				case "cambiarestado":
 					System.out.print("Entro al meto cambiar estado");
 					cambiarestado(request,response);
-				
+				case "logout":
+					sesion.removeAttribute("us");
+					sesion.invalidate();
+					response.sendRedirect("Controlador?accion=abrirLogin&msn=Ha cerrado su sesión con éxito");
+					break;
 			
 				default:
 					response.sendRedirect("iniciarSesion.jsp");

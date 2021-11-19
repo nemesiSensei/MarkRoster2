@@ -1,12 +1,19 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<%@page session="true" %>
+<%
+response.setHeader("Pragma", "No-cache");
+response.setHeader("Cache-control", "no-cache,no-store,must-revalidate");
+response.setDateHeader("Expires",600000);
+if(session.getAttribute("us")!=null)
+{
+%>
 <!DOCTYPE html>
 <html>
     <head>
-    <script src="alertas.js"></script>
-   
+    <script src="alertas.js"></script>   
         <meta charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +30,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
     </head>
     <header>
+   
     <a href="index.jsp"><img src="media/imagenes/btnAtras.png" alt="" width="50" height="auto"/></a>
         <div class="area"></div><nav class="main-menu">       
             <ul>
@@ -33,6 +41,15 @@
                     </a>                  
                 </li>
                 <li>
+                    <a href="">
+                        <i class="fa fa-user fa-2x"></i>
+                        <span class="nav-text">
+                            <strong>Bienvenido, ${r.Nombreusuario}</strong><br>
+                            <strong>Rol, ${r.Privilegio}</strong><br>
+                        </span>
+                    </a>                  
+                </li>
+                <li>
                     <a href="index.jsp">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
@@ -40,7 +57,8 @@
                         </span>
                     </a>                  
                 </li>
-                 <li>
+                <!--importante para restringir vistas y funciones y botones -->
+                 <li<c:if test="${r.Privilegio!='Administrador'}">hidden</c:if>>
                    <a href="Controlador?accion=Listarusuarios">
                        <i class="fa fa-user"></i>
                         <span class="nav-text">
@@ -50,7 +68,7 @@
                 </li> 
                 <li class="has-subnav">
                     <a href="horaAdmin.jsp">
-                       <i class="fa fa-clock fa-x2"></i>
+                       <i class="fa fa-clock fa-2x"></i>
                         <span class="nav-text">
                             <strong><strong>Registrar Horario</strong></strong>
                             </span>                                                                                                                                                                                                                                                                                                                                                                              
@@ -59,7 +77,7 @@
             </ul>
             <ul class="logout">
                 <li>
-                   <a href="#">
+                   <a href="Controlador?accion=logout">
                          <i class="fa fa-power-off fa-2x"></i>
                         <span class="nav-text">
                           <strong>Cerrar Sesión</strong>
@@ -67,9 +85,15 @@
                     </a>
                 </li>  
             </ul>
-        </nav>
-        
+        </nav>        
     </header> 
+     <%
+		}
+		else
+		{
+			request.getRequestDispatcher("iniciarSesion.jsp").forward(request,response);
+		}
+    %>
    <body class="container text-center">     
    <h1 class="text-center">Gestión de usuarios</h1>
    <br>
