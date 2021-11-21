@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="header.jsp" %>
-   <body class="container text-center">     
+   <body>     
    <h1 class="text-center">Gestión de usuarios</h1>
    <br>
   <div class="container text-center"> 
@@ -9,6 +9,7 @@
   <br>
   <br> 
 </div>
+<div class="container text-center">
 <table  class="table table-dark table-striped" id="usuarios">
 <tr>
 <th>ID</th>
@@ -49,7 +50,7 @@
 </c:forEach>
 	
 </table>
-
+</div>
 <script>
 var myTable = document.querySelector("#usuarios");
 var dataTable = new DataTable("#usuarios", {

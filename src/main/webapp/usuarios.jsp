@@ -3,14 +3,14 @@
 <%@include file="header.jsp"%>
 <!DOCTYPE html>
 <html>
-   <body class="container text-center">     
+   <body>     
    <h1 class="text-center">Información adicional de empleados</h1>
    <br>
   <div class="container text-center"> 
   <br>
   <br> 
 </div>
-
+<div class="container text-center">
 <table  class="table table-dark table-striped" id="usuarios">
 <tr>
 <th>ID_empleados</th>
@@ -40,9 +40,10 @@
 </c:forEach>
 	
 </table>
-
+</div>
 		<script src="cambiarestado.js"></script>
 
 </body>
- 
+ <%@include file="footer.jsp"%>
 </html>
+

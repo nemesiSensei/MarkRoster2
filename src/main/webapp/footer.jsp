@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <footer>
-<section class="footer-distributed">			
+<section class="footer-distributed" style="margin:0px 0px 0px 56px; position:absolute">			
 			<div class="footer-left">
 				<img src="media/imagenes/MarkRosterBlack.png"  width="128" height="auto"></img>
 				<p class="footer-links">

@@ -71,13 +71,13 @@
         </nav>
         
     </header> 
-   <body class="container container-fluid text-center">     
+   <body>     
    <h1 class="text-center">Registra aquí tus horarios</h1>
    <br>
   <div class="container text-center"> 
   <h3 class="text-center">Elige que horario registrar:</h3>
   <br>
-  <br>
+  <br>  
 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
   <option selected>Selecciona el momento del día</option>
   <option value="entrada">Inicio de jornada laboral</option>
@@ -97,6 +97,7 @@
 <h1 class="text-center">Consulta aquí los registros de horario tuyos o del personal que elijas</h1>
 <br>
 <br>
+<div class="container text-center">
 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
   <option selected>Selecciona la empresa</option>
   <option value="entrada">Unloft S.A.S.</option>
@@ -129,6 +130,7 @@
 <a class="btn btn-primary" href=# role="button"><i class="fas fa-check fa-4x" title="Consultar"></i></a>
 <br>
 <br>
+</div>
 </body>
  <%@include file="footer.jsp" %>
 </html>

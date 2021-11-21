@@ -5,9 +5,10 @@
 <!DOCTYPE html>
 <html>
  
-   <body class="container text-center">     
+   <body>     
    <h1 class="text-center">Gestión Personal</h1>
-   <br>  
+   <br> 
+   <div class="container text-center"> 
 <table  class="table table-dark table-striped" id="usuarios">
 <tr>
 <th>ID</th>
@@ -24,6 +25,7 @@
 	</tr>
 </c:forEach>
 </table>
+</div>
 </body>
   <%@include file="footer.jsp" %>
 </html>

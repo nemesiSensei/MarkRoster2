@@ -7,11 +7,10 @@ response.setDateHeader("Expires",6000000);
 if(session.getAttribute("us")!=null)
 {
 %>
-
 <html>
     <head>
     <script src="alertas.js"></script>   
-        <meta charset=UTF-8">
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="media/imagenes/MarkRosterlogo.ico"/>
@@ -21,13 +20,11 @@ if(session.getAttribute("us")!=null)
         <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
         rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
-        crossorigin="anonymous">        
-        <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>          
+        crossorigin="anonymous">
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
     </head>
-    <header>
-    <a href="index.jsp"><img src="media/imagenes/btnAtras.png" alt="" width="50" height="auto"/></a>
+    <header>    
         <div class="area"></div><nav class="main-menu">       
             <ul>
             	<li>
@@ -117,3 +114,4 @@ if(session.getAttribute("us")!=null)
 			request.getRequestDispatcher("iniciarSesion.jsp").forward(request,response);
 		}
     %>
+    </html>

@@ -103,8 +103,7 @@
             </ul>
         </nav>
   </header>
-  <body>               
-  
+  <body> 
         <section style="margin:0px 0px 0px 56px">
         <img src="media/imagenes/header foto.png" class="img-fluid" alt="Responsive image" width="1920" height="auto"/>
         <br>
@@ -235,7 +234,8 @@
     <br>
     <br>
     <br>
-    <br>        
+    <br>  
+    </section>      
         </body> 
      <%@include file="footer.jsp"%>
     </html>

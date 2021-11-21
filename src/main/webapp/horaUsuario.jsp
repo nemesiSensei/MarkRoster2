@@ -68,13 +68,13 @@
         </nav>
         
     </header> 
-   <body class="container text-center">     
+   <body>     
    <h1 class="text-center">Registra aquí tus horarios</h1>
    <br>
   <div class="container text-center"> 
   <h3 class="text-center">Elige que horario registrar:</h3>
   <br>
-  <br>
+  <br>  
 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
   <option selected>Selecciona el momento del día</option>
   <option value="entrada">Inicio de jornada laboral</option>
