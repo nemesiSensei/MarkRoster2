@@ -31,15 +31,6 @@
                     </a>                  
                 </li>
                 <li>
-                    <a href="">
-                        <i class="fa fa-user"></i>
-                        <span class="nav-text">
-                            <strong>Bienvenido, ${us.nombreusuario}</strong><br>
-                            <strong>Rol ${us.privilegio}</strong><br>
-                        </span>
-                    </a>                  
-                </li>
-                <li>
                     <a href="index.jsp">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
@@ -55,21 +46,13 @@
                         </span>
                     </a>
                 </li> 
-                <li>
-                   <a href="Controlador?accion=openPass">
-                       <i class="fa fa-key"></i>
-                        <span class="nav-text">
-                            <strong>Cambiar contraseña</strong>
-                        </span>
-                    </a>
-                </li> 
                 <li class="has-subnav">
                     <a href="horaUsuario.jsp">
                        <i class="fa fa-clock fa-x2"></i>
                         <span class="nav-text">
                             <strong><strong>Registrar Horario</strong></strong>
                             </span>                                                                                                                                                                                                                                                                                                                                                                              
-                    </a>                   
+                    	</a>                   
                 </li>    
             </ul>
             <ul class="logout">
@@ -86,24 +69,47 @@
         
     </header> 
    <body class="container text-center">     
-   <h1 class="text-center">Gestión Personal</h1>
-   <br>  
-<table  class="table table-dark table-striped" id="usuarios">
-<tr>
-<th>ID</th>
-<th>Usuario</th>
-<th> Corrreo</th>
-<th> editar </th>
-</tr>
-<c:forEach items="${usuarios}" var="r">
-	<tr>
-	<td>${r.getIdempresa() }</td>
-	<td>${r.getNombreusuario() }</td>
-	<td>${r.getCorreo()}</td>	
-	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
-	</tr>
-</c:forEach>
-</table>
+   <h1 class="text-center">Registra aquí tus horarios</h1>
+   <br>
+  <div class="container text-center"> 
+  <h3 class="text-center">Elige que horario registrar:</h3>
+  <br>
+  <br>
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option selected>Selecciona el momento del día</option>
+  <option value="entrada">Inicio de jornada laboral</option>
+  <option value="salidaAlmuerzo">Salida para almorzar</option>
+  <option value="entradaAlmuerzo">Entrada de almorzar</option>
+  <option value="salida">Final de jornada laboral</option>
+  <option value="inicioExtras">Inicio de horas extra</option>
+  <option value="salidaExtras">Final de horas extra</option>
+</select>
+<h3 class="text-center">Finalmente, registra tu horario</h3>
+<br>
+<br>
+<a class="btn btn-success" href=# role="button"><i class="fas fa-check fa-4x" title="Confirmar"></i></a>
+</div>
+<br>
+<br>
+<h1 class="text-center">Consulta aquí tus registros de horario</h1>
+<br>
+<br>
+<h3 class="text-center">Elige el intervalo de tiempo que deseas consultar</h3>
+<br>
+<br>
+<h5 class="text-center">Desde</h5>
+<br>
+<input class="date-picker" type="datetime-local">
+<br>
+<br>
+<h5 class="text-center">Hasta</h5>
+<br>
+<input class="date-picker" type="datetime-local">
+<br>
+<br>
+<a class="btn btn-primary" href=# role="button"><i class="fas fa-check fa-4x" title="Consultar"></i></a>
+<br>
+<br>
 </body>
  <footer class="footer-distributed" style="align:bottom">			
 			<div class="footer-left">

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Controlador
@@ -33,18 +34,50 @@ public class Controlador extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String accion =request.getParameter("accion");
+		HttpSession sesion=request.getSession();
 	System.out.print("Entro al controlador esta vez  ");
-		
 		try {
 			if (accion!=null) {
 				System.out.println("Entro al switch");
 				switch (accion) {
+				
+				case "abrir login":
+					abrirLogin(request,response);
+				break;
+				case "login":
+					r.setUsuario(request.getParameter("usuario"));
+					r.setPass(request.getParameter("pass"));
+					try {
+						r=empleadosDAO.validar(r.getUsuario(), r.getPass());
+						if(r.isEstado()==true && r.getNombreusuario()!=null)
+						{
+							
+						System.out.println("se encontró usuario activo");	
+						sesion.setAttribute("us", r);
+						response.sendRedirect("consultaUsuarioAdmin.jsp");
+						}
+						else if (r.isEstado()==false && r.getNombreusuario()!=null)
+						{
+							System.out.println("se encontró usuario inactivo");							
+							response.sendRedirect("Controlador?accion=abrirLogin&msn=Usuario inactivo, consulte al administrados del sistema");
+						}
+						else
+						{
+							System.out.println("usuario no registrado");							
+							response.sendRedirect("Controlador?accion=abrirLogin&msn=Datos de acceso erróneos");
+						}
+					} catch (Exception e) {
+						System.out.println("error"+e);
+					}
+					break;
+					
 				case "Listarusuarios":
 					System.out.println("Entro al  caso Listarusuarios");
-					
-					
-					Listarusuarios(request,response);
-					
+					Listarusuarios(request,response);					
+					break;
+				case "ListarUnico":
+					System.out.println("Entro al  caso Listarusuario unico");
+					ListarUnico(request,response);					
 					break;
 				case "eliminar":
 					System.out.println("Se entro al metodo eliminar");
@@ -60,15 +93,24 @@ public class Controlador extends HttpServlet {
 				case "cambiarestado":
 					System.out.print("Entro al meto cambiar estado");
 					cambiarestado(request,response);
-				
-			
+				case "logout":
+					sesion.removeAttribute("us");
+					sesion.invalidate();
+					response.sendRedirect("Controlador?accion=abrirLogin");
+					break;
+				case "openPass":
+						abrirCpass(request, response);				
+					break;
+				case "changePass":
+					changePass(request,response);
+					break;
 				default:
-					response.sendRedirect("login.jsp");
+					response.sendRedirect("iniciarSesion.jsp");
 					break;
 				}
 			}
 			else {
-				response.sendRedirect("login.jsp");
+				response.sendRedirect("iniciarSesion.jsp");
 			}
 			
 		} catch (Exception e) {
@@ -80,25 +122,47 @@ public class Controlador extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-private  void Listarusuarios(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+	private  void abrirLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+
 		try {
-			System.out.print("Entro al metodo listarusuarios o empleados ");
-			
-			
-		
-			 List empleados =empleadosDAO.Listarusuarios();
-			 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda
-		
-			 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
-			.forward(request, response);
+			response.sendRedirect("iniciarSesion.jsp");
+			 System.out.println("Login abierto");
 			
 		} catch (Exception e) {
-			
+			System.out.println("error al abrir login");
 		}
 		finally {
 			}
 		}
+	
+private  void Listarusuarios(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		try {
+			System.out.print("Entro al metodo listarusuarios o empleados ");
+			 List empleados =empleadosDAO.Listarusuarios();
+			 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
+			 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+			.forward(request, response);			
+		} catch (Exception e) {
+			System.out.println("error"+e);
+		}
+		finally {
+			}
+		}
+private  void ListarUnico(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+	try {
+		System.out.print("Entro al metodo listarusuario unico ");
+		 List empleados =empleadosDAO.ListarUnico();
+		 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
+		 request.getRequestDispatcher("consultaUsuario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		.forward(request, response);			
+	} catch (Exception e) {
+		System.out.println("error"+e);
+	}
+	finally {
+		}
+	}
 
 private  void eliminar (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	if (request.getParameter("id") !=null) {
@@ -205,6 +269,37 @@ private  void cambiarestado (HttpServletRequest request, HttpServletResponse res
 		
 	 }
 }
+private  void abrirCpass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+
+	try {
+		 request.getRequestDispatcher("cambiarPass.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		.forward(request, response);
+		 System.out.println("cambio de pass abierto");
+		
+	} catch (Exception e) {
+		System.out.println("error al abrir cambio de pass");
+	}
+	finally {
+		}
+	}
+private  void changePass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+{
+		if(request.getParameter("id")!=null && request.getParameter("passNew")!=null)
+		{
+			r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+			r.setPass(request.getParameter("passNew"));
+		}
+		try {
+			empleadosDAO.cambiarPass(r);
+			request.getRequestDispatcher("Controlador?accion=logout").forward(request, response);
+		
+	} catch (Exception e) {
+		System.out.println("error al abrir cambio de pass");
+	}
+	finally {
+		}
+	}
 }
 
 

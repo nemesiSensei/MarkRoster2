@@ -17,7 +17,7 @@
         <link rel="icon" href="media/imagenes/MarkRosterlogo.png">
         <title>MarkRoster - Inicio</title>
   </head>  
-  <body>               
+  <header>
   <div class="area"></div><nav class="main-menu">       
             <ul>
             	<li>
@@ -35,7 +35,7 @@
                     </a>                  
                 </li>
                  <li>
-                   <a href="iniciarSesion.jsp">
+                   <a href="Controlador?accion=abrirLogin">
                        <i class="fa fa-user"></i>
                         <span class="nav-text">
                             <strong>Login de clientes</strong>
@@ -47,7 +47,6 @@
                         <i class="fa fa-fingerprint"></i>
                         <span class="nav-text">
                             <strong>MarkRoster</strong>
-                            
                         </span>
                     </a>                    
                 </li>
@@ -103,6 +102,9 @@
                 </li>  
             </ul>
         </nav>
+  </header>
+  <body>               
+  
         <section style="margin:0px 0px 0px 56px">
         <img src="media/imagenes/header foto.png" class="img-fluid" alt="Responsive image" width="1920" height="auto"/>
         <br>
@@ -234,8 +236,8 @@
     <br>
     <br>
     <br>        
-        </section>
-        <section class="footer-distributed" style="margin:0px 0px 0px 56px">			
+        </body> 
+        <footer class="footer-distributed" style="margin:0px 0px 0px 56px">			
 			<div class="footer-left">
 				<img src="media/imagenes/MarkRosterBlack.png"  width="128" height="auto"></img>
 				<p class="footer-links">
@@ -265,8 +267,6 @@
 				
 				</div>
 				</div>
-				
-			</div>
 			<div class="footer-right">
 				<p class="footer-company-about">
 					<span>Sobre la compañía</span>
@@ -280,6 +280,5 @@
 				</div>
 			</div>
 			
-		</section>
-  </body> 
+		</footer>
     </html>
