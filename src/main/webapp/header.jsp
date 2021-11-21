@@ -16,7 +16,7 @@ if(session.getAttribute("us")!=null)
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="media/imagenes/MarkRosterlogo.ico"/>
         <link rel="icon" href="media/imagenes/MarkRosterlogo.png"> 
-        <title>Gestión de Usuarios-Administrador</title>
+        <title>MarkRoster</title>
         <link rel="stylesheet" href="index.css"> 
         <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
@@ -56,13 +56,31 @@ if(session.getAttribute("us")!=null)
                 <!--importante para restringir vistas y funciones y botones -->                
                  <li><c:if test="${us.privilegio=='Administrador'}">
                    <a href="Controlador?accion=Listarusuarios">
-                       <i class="fa fa-user"></i>
+                       <i class="fa fa-tools"></i>
                         <span class="nav-text">
                             <strong>Opciones administrativas</strong>
                         </span>
                     </a>
-                </li> 
+                </li>                 
                 </c:if>
+                 <li><c:if test="${us.privilegio=='Administrador'}">
+                   <a href="UsuarioController?accion=listar">
+                       <i class="fa fa-user-cog"></i>
+                        <span class="nav-text">
+                            <strong>Información Adicional</strong>
+                        </span>
+                    </a>
+                </li>                 
+                </c:if>
+                <li> <c:if test="${us.privilegio=='Usuario'}">
+                   <a href="Controlador?accion=ListarUnico">
+                       <i class="fa fa-tools"></i>
+                        <span class="nav-text">
+                            <strong>Opciones de usuario</strong>
+                        </span>
+                    </a>              
+                </li> 
+                   </c:if>             
                 <li class="has-subnav">
                     <a href="horaAdmin.jsp">
                        <i class="fa fa-clock"></i>
@@ -74,15 +92,12 @@ if(session.getAttribute("us")!=null)
             </ul>
               <li>
                    <a href="cambiarPass.jsp">
-              		<i class="fas fa-key"></i>
-                       
+              		<i class="fa fa-key"></i>
                         <span class="nav-text">
                           <strong>Cambiar contraseña</strong>
                         </span>
                     </a>
-                </li>  
-               
-            
+                </li> 
             <ul class="logout">
                 <li>
                    <a href="Controlador?accion=logout">
