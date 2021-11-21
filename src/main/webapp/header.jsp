@@ -54,7 +54,7 @@ if(session.getAttribute("us")!=null)
                     </a>                  
                 </li>
                 <!--importante para restringir vistas y funciones y botones -->                
-                 <li<c:if test="${us.privilegio='Administrador'}">hidden</c:if>>
+                 <li><c:if test="${us.privilegio=='Administrador'}">
                    <a href="Controlador?accion=Listarusuarios">
                        <i class="fa fa-user"></i>
                         <span class="nav-text">
@@ -62,6 +62,7 @@ if(session.getAttribute("us")!=null)
                         </span>
                     </a>
                 </li> 
+                </c:if>
                 <li class="has-subnav">
                     <a href="horaAdmin.jsp">
                        <i class="fa fa-clock"></i>
