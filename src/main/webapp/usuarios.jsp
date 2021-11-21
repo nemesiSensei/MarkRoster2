@@ -98,6 +98,7 @@
 	<td>${u.getId_empleados() }</td>
 	<td>${u.getUsuario() }</td>
 	<td>${u.getNombre_empresa() }</td>
+	<td>${u.getNombre() }</td>
 	
 
 

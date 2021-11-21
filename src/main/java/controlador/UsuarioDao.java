@@ -37,6 +37,8 @@ public class UsuarioDao {
 			u.setId_empleados(rs.getString(1));
 			u.setNombre_empresa(rs.getString(2));
 			u.setUsuario(rs.getString(3));
+			u.setCorreo(rs.getString(4));
+			u.setNombre(rs.getString(5));
 			
 			 // se puede usar la posicion de la columna  o el nombre de la columna  que quremos obtener
 			usuarios.add(u);
