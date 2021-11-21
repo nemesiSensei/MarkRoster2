@@ -31,24 +31,12 @@ public class UsuarioDao {
 		while (rs.next()) {
 		
 			UsuarioVo u = new UsuarioVo();
-			u.setGettersempresa(new getters());
+			
 			
 			// aca lo que se esta haciendo es que,  accedemos al objeto getter, lo cual nos llleva a sus atributos (get y setters de la tabla empleados)
-			u.getGettersempresa().setIdempresa(rs.getInt(1));
-			u.setId_empresa(rs.getString(2));
-					
-			u.getGettersempresa().setUsuario(rs.getString(3));
-			u.getGettersempresa().setCorreo(rs.getString(4));
-			u.getGettersempresa().setNombreusuario(rs.getString(5));
-			u.getGettersempresa().setPrivilegio(rs.getString(6));
-			u.getGettersempresa().setEstado(rs.getBoolean(7));
-			
-			
-			
-		
-		
-			
-			u.setGettersempresa(new getters());
+			u.setId_empleados(rs.getString(1));
+			u.setNombre_empresa(rs.getString(2));
+			u.setUsuario(rs.getString(3));
 			
 			 // se puede usar la posicion de la columna  o el nombre de la columna  que quremos obtener
 			usuarios.add(u);

@@ -83,7 +83,7 @@
 <th>ID_empleados</th>
 <th>Usuario</th>
 
-<th> Corrreo</th>
+<th> Empresa</th>
 <th> Nombre</th>
 
 
@@ -95,12 +95,10 @@
 </tr>
 <c:forEach items="${usuario}" var="u">
 	<tr>
-	<td>${u.gettersempresa.idempresa }</td>
-	<td>${u.gettersempresa.nombreusuario }</td>
-	<td>${u.gettersempresa.usuario}</td>
-	<td>${u.gettersempresa.correo}</td>
-	<td>${u.getId_empresa() }</td>
-		
+	<td>${u.getId_empleados() }</td>
+	<td>${u.getUsuario() }</td>
+	<td>${u.getNombre_empresa() }</td>
+	
 
 
 	

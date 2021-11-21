@@ -1,40 +1,41 @@
 package controlador;
 
 public class UsuarioVo {
-	 private int matricula_mercantil;
-	 private String nombre,tipo,direccion,razon_social,representante_legal,invima,entidades_del_gobierno,convenios,id_empresa;
-	private getters gettersempresa;
-	public UsuarioVo() {
-		
-	
-}
-	public UsuarioVo(String id_empresa, int matricula_mercantil, String nombre, String tipo, String direccion,
-			String razon_social, String representante_legal, String invima, String entidades_del_gobierno,
-			String convenios, getters gettersempresa) {
+	String   id_empleados, nombre_empresa, usuario,correo,nombre,privilegio,estado;
+	public UsuarioVo(String id_empleados, String nombre_empresa, String usuario, String correo, String nombre,
+			String privilegio, String estado) {
 		super();
-		this.id_empresa = id_empresa;
-		this.matricula_mercantil = matricula_mercantil;
+		this.id_empleados = id_empleados;
+		this.nombre_empresa = nombre_empresa;
+		this.usuario = usuario;
+		this.correo = correo;
 		this.nombre = nombre;
-		this.tipo = tipo;
-		this.direccion = direccion;
-		this.razon_social = razon_social;
-		this.representante_legal = representante_legal;
-		this.invima = invima;
-		this.entidades_del_gobierno = entidades_del_gobierno;
-		this.convenios = convenios;
-		this.gettersempresa = gettersempresa;
+		this.privilegio = privilegio;
+		this.estado = estado;
 	}
-	public String getId_empresa() {
-		return id_empresa;
+	public String getId_empleados() {
+		return id_empleados;
 	}
-	public void setId_empresa(String id_empresa) {
-		this.id_empresa = id_empresa;
+	public void setId_empleados(String id_empleados) {
+		this.id_empleados = id_empleados;
 	}
-	public int getMatricula_mercantil() {
-		return matricula_mercantil;
+	public String getNombre_empresa() {
+		return nombre_empresa;
 	}
-	public void setMatricula_mercantil(int matricula_mercantil) {
-		this.matricula_mercantil = matricula_mercantil;
+	public void setNombre_empresa(String nombre_empresa) {
+		this.nombre_empresa = nombre_empresa;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	public String getCorreo() {
+		return correo;
+	}
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 	public String getNombre() {
 		return nombre;
@@ -42,54 +43,21 @@ public class UsuarioVo {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getTipo() {
-		return tipo;
+	public String getPrivilegio() {
+		return privilegio;
 	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setPrivilegio(String privilegio) {
+		this.privilegio = privilegio;
 	}
-	public String getDireccion() {
-		return direccion;
+	public String getEstado() {
+		return estado;
 	}
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
-	public String getRazon_social() {
-		return razon_social;
-	}
-	public void setRazon_social(String razon_social) {
-		this.razon_social = razon_social;
-	}
-	public String getRepresentante_legal() {
-		return representante_legal;
-	}
-	public void setRepresentante_legal(String representante_legal) {
-		this.representante_legal = representante_legal;
-	}
-	public String getInvima() {
-		return invima;
-	}
-	public void setInvima(String invima) {
-		this.invima = invima;
-	}
-	public String getEntidades_del_gobierno() {
-		return entidades_del_gobierno;
-	}
-	public void setEntidades_del_gobierno(String entidades_del_gobierno) {
-		this.entidades_del_gobierno = entidades_del_gobierno;
-	}
-	public String getConvenios() {
-		return convenios;
-	}
-	public void setConvenios(String convenios) {
-		this.convenios = convenios;
-	}
-	public getters getGettersempresa() {
-		return gettersempresa;
-	}
-	public void setGettersempresa(getters gettersempresa) {
-		this.gettersempresa = gettersempresa;
-	}
+	public UsuarioVo(){
 	
+	}
 	
 }
+
