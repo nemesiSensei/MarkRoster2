@@ -212,6 +212,7 @@ public class empleadosDAO {
 			System.out.println("Se cambió la contraseña");			
 		}catch(Exception e) {
 			System.out.println("Error al cambiar la contraseña" +e.getMessage());
+			System.out.println("" +e.getMessage());
 		}
 		finally {	
 			
