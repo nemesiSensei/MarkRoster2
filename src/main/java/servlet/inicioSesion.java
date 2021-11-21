@@ -53,15 +53,12 @@ public class inicioSesion extends HttpServlet
         String usuario=request.getParameter("usuario");
         String pass=request.getParameter("pass");
         consultas co=new consultas();
-        if(co.autenticacion(usuario, pass))
+ if(co.autenticacion(usuario, pass))
+        	
         {
         	
-       	 List empleados =empleadosDAO.Listarusuarios();
-		 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda
-	
-		 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
-		.forward(request, response);
-		
+       	 
+		response.sendRedirect("index.jsp");
         }
         else
         {
