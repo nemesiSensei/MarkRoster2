@@ -54,7 +54,7 @@ if(session.getAttribute("us")!=null)
                     </a>                  
                 </li>
                 <!--importante para restringir vistas y funciones y botones -->                
-                 <li<c:if test="${r.Privilegio!='Administrador'}">hidden</c:if>>
+                 <li<c:if test="${us.privilegio='Administrador'}">hidden</c:if>>
                    <a href="Controlador?accion=Listarusuarios">
                        <i class="fa fa-user"></i>
                         <span class="nav-text">
@@ -71,6 +71,17 @@ if(session.getAttribute("us")!=null)
                     </a>                   
                 </li>    
             </ul>
+              <li>
+                   <a href="cambiarPass.jsp">
+              		<i class="fas fa-key"></i>
+                       
+                        <span class="nav-text">
+                          <strong>Cambiar contraseña</strong>
+                        </span>
+                    </a>
+                </li>  
+               
+            
             <ul class="logout">
                 <li>
                    <a href="Controlador?accion=logout">

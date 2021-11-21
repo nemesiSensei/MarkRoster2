@@ -273,8 +273,8 @@ private  void abrirCpass(HttpServletRequest request, HttpServletResponse respons
 	
 
 	try {
-		 request.getRequestDispatcher("cambiarPass.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
-		.forward(request, response);
+		 response.sendRedirect("cambiarPass.jsp");// esto es para especificar adonde quiero enviar los datos de una vista 
+		
 		 System.out.println("cambio de pass abierto");
 		
 	} catch (Exception e) {
