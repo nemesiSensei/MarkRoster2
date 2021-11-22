@@ -153,7 +153,7 @@ private  void Listarusuarios(HttpServletRequest request, HttpServletResponse res
 private  void ListarUnico(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 	try {
 		System.out.print("Entro al metodo listarusuario unico ");
-		 List empleados =empleadosDAO.ListarUnico();
+		 List empleados =empleadosDAO.ListarUnico(r);
 		 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
 		 request.getRequestDispatcher("consultaUsuario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 		.forward(request, response);			

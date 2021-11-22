@@ -78,10 +78,10 @@ public class empleadosDAO {
 		}		
 		return empleados;			
 		}
-	public List ListarUnico() throws SQLException {
+	public List ListarUnico(getters r) throws SQLException {
 		System.out.println("Ingreso al metodo listar usuario unico");
 		List<getters> empleados= new ArrayList<>();
-		sql="SELECT * FROM  empleados";
+		sql="SELECT * FROM  empleados WHERE id_empleados="+r.getIdempresa() ;
 		try {
 			con=c.getConnection(); // opening the connection to database 
 			ps=con.prepareStatement(sql); // prepare that sentence 			
@@ -89,7 +89,6 @@ public class empleadosDAO {
 			rs=ps.executeQuery();
 			// y el execute update va a ser utilizado en sentencias  de insert,update y delete.			
 		while (rs.next()) {
-			getters r = new getters();
 			 // se puede usar la posicion de la columna  o el nombre de la columna  que quremos obtener		
 			r.setCorreo(rs.getString("correo"));
 			r.setIdempresa(rs.getInt("id_empleados"));
@@ -178,6 +177,28 @@ public class empleadosDAO {
 		}
 		return id;//Retorna cantidad de filas afectadas
 	}
+
+
+public int editunico(getters r) throws SQLException {
+	sql="UPDATE empleados SET correo=?,  usuario=? WHERE id_empleados="+r.getIdempresa();
+	
+	try {
+		con=c.getConnection(); //Abriendo la conexión a la BD
+		ps=con.prepareStatement(sql); //preparar sentencia
+		ps.setString(1, r.getCorreo());
+		
+		ps.setString(2, r.getNombreusuario());
+		System.out.println(ps);
+		ps.executeUpdate();//Ejeución de la sentencia	
+		ps.close();
+		System.out.println("Se cambió el rol");			
+	}catch(Exception e) {
+		System.out.println("Error al cambiar el usuario" +e.getMessage());
+	}
+	finally {			
+	}
+	return id;//Retorna cantidad de filas afectadas
+}
 	public int cambiarestado(getters r) throws SQLException {
 		System.out.println("Entro a la sentencia preparada  ");
 		sql="UPDATE empleados SET estado="+r.isEstado() +" WHERE id_empleados="+r.getIdempresa();

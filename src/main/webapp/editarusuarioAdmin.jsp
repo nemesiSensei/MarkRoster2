@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html> 
 <html>
 <head>
@@ -25,8 +26,8 @@
   
     <!-- Login Form -->
     <form   action="Controlador?accion=edit" method="post">
-      <input type="hidden" id="id" class="fadeIn second" name="id"  value="${usuarios. getIdempresa()  }"  >
-         <input type="text" id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()   }"  >
+      <input  type="hidden" id="id" class="fadeIn second" name="id"  value="${usuarios. getIdempresa()  }"  >
+         <input   type="text"  id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()   }"   >  
             <input type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()   }"   >
                <input type="text" id="usuario" class="fadeIn second" name="usuario" value="${usuarios. getNombreusuario() }">
     

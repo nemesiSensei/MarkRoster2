@@ -94,14 +94,13 @@ if(session.getAttribute("us")!=null)
                           <strong>Cambiar contraseña</strong>
                         </span>
                     </a>
-<<<<<<< Updated upstream
+
                 </li> 
-=======
+
                 </li>  
                 
                
             
->>>>>>> Stashed changes
             <ul class="logout">
                 <li>
                    <a href="Controlador?accion=logout">
