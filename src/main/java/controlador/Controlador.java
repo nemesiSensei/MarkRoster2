@@ -145,6 +145,12 @@ private  void Listarusuarios(HttpServletRequest request, HttpServletResponse res
 		try {
 			System.out.print("Entro al metodo listarusuarios o empleados ");
 			 List empleados =empleadosDAO.Listarusuarios();
+			 
+				 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
+				 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+				.forward(request, response);
+				 
+			 
 			 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
 			 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 			.forward(request, response);			
@@ -160,7 +166,8 @@ private  void ListarUnico(HttpServletRequest request, HttpServletResponse respon
 		 List empleados =empleadosDAO.ListarUnico(r);
 		 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
 		 request.getRequestDispatcher("consultaUsuario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
-		.forward(request, response);			
+		.forward(request, response);	
+					
 	} catch (Exception e) {
 		System.out.println("error"+e);
 	}
@@ -237,11 +244,14 @@ try {
 	empleadosDAO.edit(r);
 	String privilegio=request.getParameter("privilegio");
 	if (privilegio.equals("Usuario")) {
-		response.sendRedirect("index.jsp");
+		 List empleados =empleadosDAO.ListarUnico(r);
+		 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
+		 request.getRequestDispatcher("consultaUsuario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		.forward(request, response);			
 		
 	}
 
-	response.sendRedirect("Controlador?accion=Listarusuarios");
+	
 	System.out.print("Se  actualizo el usuario");
 	
 } catch (Exception e) {
