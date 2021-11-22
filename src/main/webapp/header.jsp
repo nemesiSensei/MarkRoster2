@@ -85,16 +85,23 @@ if(session.getAttribute("us")!=null)
                             <strong><strong>Registrar Horario</strong></strong>
                             </span>                                                                                                                                                                                                                                                                                                                                                                              
                     </a>                   
-                </li>    
+                </li>  
+                
             </ul>
-              <li>
                    <a href="cambiarPass.jsp">
               		<i class="fa fa-key"></i>
                         <span class="nav-text">
                           <strong>Cambiar contraseña</strong>
                         </span>
                     </a>
+<<<<<<< Updated upstream
                 </li> 
+=======
+                </li>  
+                
+               
+            
+>>>>>>> Stashed changes
             <ul class="logout">
                 <li>
                    <a href="Controlador?accion=logout">
