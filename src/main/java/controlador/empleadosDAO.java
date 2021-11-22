@@ -157,6 +157,7 @@ public class empleadosDAO {
 		}		
 		return r;			
 		}
+	
 	public int edit(getters r) throws SQLException {
 		sql="UPDATE empleados SET correo=?,  privilegio=?, usuario=? WHERE id_empleados="+r.getIdempresa();
 		
