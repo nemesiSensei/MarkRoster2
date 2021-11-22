@@ -15,6 +15,7 @@ import controlador.conexion;
 import controlador.getters;
 
 
+
 public class empleadosDAO {
 	Connection con;
 	ResultSet rs;

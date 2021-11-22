@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet("/Controlador")
 public class Controlador extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 	getters r = new getters();
 	empleadosDAO empleadosDAO = new empleadosDAO();
@@ -31,6 +32,7 @@ public class Controlador extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String accion =request.getParameter("accion");
@@ -90,6 +92,8 @@ public class Controlador extends HttpServlet {
 					System.out.print("Entro al metodo editar");
 					edit(request,response);
 					break;
+				
+					
 				case "cambiarestado":
 					System.out.print("Entro al meto cambiar estado");
 					cambiarestado(request,response);
@@ -225,16 +229,24 @@ if(request.getParameter("id")!=null && request.getParameter("privilegio") !=null
 	if (request.getParameter("correo") !=null)  {
 		r.setCorreo(request.getParameter("correo"));
 	
+	
 		
 	}
 	
 try {
 	empleadosDAO.edit(r);
+	String privilegio=request.getParameter("privilegio");
+	if (privilegio.equals("Usuario")) {
+		response.sendRedirect("index.jsp");
+		
+	}
+
 	response.sendRedirect("Controlador?accion=Listarusuarios");
 	System.out.print("Se  actualizo el usuario");
 	
 } catch (Exception e) {
 	System.out.println("No se actualizo el usuario ");
+}
 }
 
 
@@ -242,7 +254,9 @@ try {
 
 
 
-	}
+
+
+	
 private  void cambiarestado (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		r.setIdempresa(Integer.parseInt(request.getParameter("id")));
