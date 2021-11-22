@@ -38,6 +38,8 @@ public class Controlador extends HttpServlet {
 		String accion =request.getParameter("accion");
 		HttpSession sesion=request.getSession();
 	System.out.print("Entro al controlador esta vez  ");
+	System.out.print("Entro al controlador esta vez  ");
+	
 		try {
 			if (accion!=null) {
 				System.out.println("Entro al switch");
@@ -52,6 +54,7 @@ public class Controlador extends HttpServlet {
 					try {
 						r=empleadosDAO.validar(r.getUsuario(), r.getPass());
 						if(r.isEstado()==true && r.getNombreusuario()!=null)
+							
 						{
 							
 						System.out.println("se encontró usuario activo");	
