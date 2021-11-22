@@ -89,7 +89,7 @@ if(session.getAttribute("us")!=null)
                 
             </ul>
                    <a href="cambiarPass.jsp">
-              		<i class="fa fa-key"></i>
+              		<i class="fas fa-key "></i>
                         <span class="nav-text">
                           <strong>Cambiar contraseña</strong>
                         </span>
