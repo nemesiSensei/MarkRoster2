@@ -25,7 +25,7 @@
     <!-- Icon -->
   
     <!-- Login Form -->
-    <form   action="Controlador?accion=edit" method="post">
+    <form   <c:if test="${us.privilegio=='Usuario'}"> <form action= "Controlador?accion=editunico" </c:if>action= "Controlador?accion=edit" method="post">
       <input  type="hidden" id="id" class="fadeIn second" name="id"  value="${usuarios. getIdempresa()  }"  >
           <c:if test="${us.privilegio=='Administrador'}">  <input  type="text"  id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()   }"   >  </c:if> 
            
