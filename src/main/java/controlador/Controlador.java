@@ -247,7 +247,6 @@ if(request.getParameter("id")!=null && request.getParameter("privilegio") !=null
 	
 try {
 	empleadosDAO.edit(r);
-	String privilegio=request.getParameter("privilegio");
 	
 		 List empleados1 =empleadosDAO.Listarusuarios();
 		 request.setAttribute("usuarios", empleados1);// esto es para enviar los resultados de la busqueda		
