@@ -97,11 +97,13 @@ public class Controlador extends HttpServlet {
 					break;
 				case "editunico":
 					edituunico(request,response);
+					break;
 				
 					
 				case "cambiarestado":
 					System.out.print("Entro al meto cambiar estado");
 					cambiarestado(request,response);
+					break;
 				case "logout":
 					sesion.removeAttribute("us");
 					sesion.invalidate();
