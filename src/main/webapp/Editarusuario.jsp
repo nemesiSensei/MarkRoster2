@@ -5,13 +5,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="iniciar.css">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
 <form   action= "UsuarioController?accion=editunico" method="post">
      
-          <input  type="text"  id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()   }" >
+          <input  type="hidden"  id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()   }" >
            
             <input     type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()   }"   >
                <input type="text" id="usuario" class="fadeIn second" name="usuario" value="${usuarios. getNombreusuario() }">
