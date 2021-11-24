@@ -69,5 +69,26 @@ public class UsuarioDao {
 		return usuarios;
 			
 		}
-	
+
+	public int editunico(getters r) throws SQLException {
+		sql="UPDATE empleados SET correo=?,  privilegio=?, usuario=? WHERE id_empleados="+r.getIdempresa();
+		
+		try {
+			con=c.getConnection(); //Abriendo la conexión a la BD
+			ps=con.prepareStatement(sql); //preparar sentencia
+			ps.setString(1, r.getCorreo());
+			ps.setString(2, r.getPrivilegio());
+			ps.setString(3, r.getNombreusuario());
+			System.out.println(ps);
+			ps.executeUpdate();//Ejeución de la sentencia	
+			ps.close();
+			System.out.println("Se cambió el rol");			
+		}catch(Exception e) {
+			System.out.println("Error al cambiar el usuario" +e.getMessage());
+		}
+		finally {			
+		}
+		return id;//Retorna cantidad de filas afectadas
+	}
+
 }

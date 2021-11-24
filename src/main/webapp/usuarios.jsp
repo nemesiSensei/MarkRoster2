@@ -26,7 +26,7 @@
 <th> eliminar </th>
 <th> editar </th>
 </tr>
-<c:forEach items="${usuario}" var="u">
+<c:forEach items="${usuarios}" var="u">
 	<tr>
 	<td>${u.getId_empleados() }</td>
 	<td>${u.getUsuario() }</td>

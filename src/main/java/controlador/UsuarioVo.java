@@ -58,6 +58,10 @@ public class UsuarioVo {
 	public UsuarioVo(){
 	
 	}
+	public void setId_empleados(int parseInt) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
 

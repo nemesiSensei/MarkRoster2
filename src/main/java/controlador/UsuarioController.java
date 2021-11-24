@@ -17,6 +17,8 @@ public class UsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	UsuarioVo usuario = new UsuarioVo();
 	UsuarioDao usuarioDao = new UsuarioDao();
+	getters r = new getters();
+	empleadosDAO empleados = new empleadosDAO();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -46,6 +48,13 @@ public class UsuarioController extends HttpServlet {
 						listar(request,response);
 						
 						break;
+					case "editunico":
+						System.out.println("");
+						editunico(request,response);
+						break;
+					case "verunico":
+						verunico(request,response);
+						break;
 						/*case "eliminar":
 						System.out.println("Se entro al metodo eliminar");
 						eliminar(request,response);
@@ -74,6 +83,69 @@ public class UsuarioController extends HttpServlet {
 			} catch (Exception e) {
 				
 			}
+	}
+
+	private void verunico(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			if (request.getParameter("id")!=null) {
+				
+				System.out.print("Se recibio el id");
+			}
+			System.out.print("Entro al metodo consultar");
+			
+			r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+		r=empleados.consulta(r.getIdempresa());
+			 request.setAttribute("usuarios", r);// esto es para enviar los resultados de la busqueda
+			
+			 request.getRequestDispatcher("Editarusuario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+			.forward(request, response);
+			
+		} catch (Exception e) {
+			
+		}
+		finally {
+			}
+		}
+		// TODO Auto-generated method stub
+		
+	
+
+	private void editunico(HttpServletRequest request, HttpServletResponse response) {
+		if(request.getParameter("id")!=null && request.getParameter("privilegio") !=null) {
+			
+			
+			r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+			r.setPrivilegio(request.getParameter("privilegio"));
+			r.setNombreusuario(request.getParameter("usuario"));
+			System.out.print("Llego el id y el privilegio");
+			
+		}
+		
+		if (request.getParameter("correo") !=null)  {
+			r.setCorreo(request.getParameter("correo"));
+		
+		
+			
+		}
+		
+	try {
+		usuarioDao.editunico(r);
+		
+			 List empleados1 =usuarioDao.Listar();
+			 request.setAttribute("usuarios", empleados1);// esto es para enviar los resultados de la busqueda		
+			 request.getRequestDispatcher("Controlador?accion=ListarUnico") // esto es para especificar adonde quiero enviar los datos de una vista 
+			.forward(request, response);			
+			
+		
+		
+
+		
+				System.out.print("Se  actualizo el usuario");
+		
+	} catch (Exception e) {
+		System.out.println("No se actualizo el usuario "+e.getMessage());
+	}
+		
 	}
 
 	/**
