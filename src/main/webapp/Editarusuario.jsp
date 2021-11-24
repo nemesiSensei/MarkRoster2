@@ -10,7 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!--Este es el formulario para el editar usuarios unico -->
 <form   action= "UsuarioController?accion=editunico" method="post">
+
      
           <input  type="hidden"  id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()   }" >
            
@@ -20,7 +22,7 @@
 
       <input type="submit"  onclick="editar(event,${r.getIdempresa() },'UsuarioController')"class="fadeIn fourth" value="Actualizar">
 
-
+<!--  Ojo con tocar esta parte mal, o sino el editar para el usuario se jode -->
 
 
 </body>

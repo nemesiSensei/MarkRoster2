@@ -33,7 +33,8 @@ public class Controlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub}
+		// para las acciones del usuario,  vamos a utilizar el controlador UsuarioController y UsuarioDAO
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String accion =request.getParameter("accion");
 		HttpSession sesion=request.getSession();
