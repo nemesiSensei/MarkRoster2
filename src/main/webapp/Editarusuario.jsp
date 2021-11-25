@@ -21,9 +21,9 @@
           <input type="text" id="usuario" class="fadeIn first" name="usuario" value="${usuario.getNombreusuario()}" placeholder="Nombre de Usuario">          
              <input type="text" id="correo" class="fadeIn second" name="correo" value="${usuario.getCorreo()}"placeholder="Correo electrónico">
              <input type="text" id="nombre" class="fadeIn third" name="nombre" value="${usuario.getNombre()}" placeholder="Nombre Completo">
-           <input type="text" id="cedula" class="fadeIn fourth" name="cedula" value="${usuario.getCedula()}" placeholder="Documento de identidad">
-            <input type="text" id="cargo" class="fadeIn fourth" name="cargo" value="${usuario.getCargo()}" placeholder="Cargo">
-            <input type="text" id="EPS" class="fadeIn fourthh" name="EPS" value="${usuario.getEPS()}" placeholder="EPS">
+           <input type="text" id="cedula" class="fadeIn fourth" name="cedula" value="${u.getCedula()}" placeholder="Documento de identidad">
+            <input type="text" id="cargo" class="fadeIn fourth" name="cargo" value="${u.getCargo()}" placeholder="Cargo">
+            <input type="text" id="EPS" class="fadeIn fourthh" name="EPS" value="${u.getEPS()}" placeholder="EPS">
             <input type="text" id="telefono" class="fadeIn fourth" name="telefono" value="${usuario.getTelefono()}" placeholder="Número de teléfono">
             
       <input type="submit"  onclick="editar(event,${r.getIdempresa() },'UsuarioController')"class="fadeIn fourth" value="Actualizar">
