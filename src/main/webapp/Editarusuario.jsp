@@ -18,8 +18,8 @@
     <h2 class="active"> Actualizar perfil </h2>
     <div class="container text-center">                   
 <form   action= "UsuarioController?accion=editunico" method="post">     
-          <input  type="hidden"  id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()}" >           
-            <input     type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()   }"   >
+          <input  type="hidden"  id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()}">           
+            <input     type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()}">
                <input type="text" id="usuario" class="fadeIn second" name="usuario" value="${usuarios. getNombreusuario() }">
       <input type="submit"  onclick="editar(event,${r.getIdempresa() },'UsuarioController')"class="fadeIn fourth" value="Actualizar">
       </form>

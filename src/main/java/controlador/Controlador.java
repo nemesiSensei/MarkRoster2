@@ -56,7 +56,8 @@ public class Controlador extends HttpServlet {
 						r=empleadosDAO.validar(r.getUsuario(), r.getPass());
 						if(r.isEstado()==true && r.getNombreusuario()!=null)
 							
-						{							
+						{
+							
 						System.out.println("se encontró usuario activo");	
 						sesion.setAttribute("us", r);
 						response.sendRedirect("consultaUsuarioAdmin.jsp");
@@ -69,7 +70,7 @@ public class Controlador extends HttpServlet {
 						else
 						{
 							System.out.println("usuario no registrado");							
-							response.sendRedirect("Controlador?accion=abrirLogin&msn=Datos de acceso erróneos");
+							response.sendRedirect("Controlador?accion=abrirLogin&msn='Datos de acceso erróneos'");
 						}
 					} catch (Exception e) {
 						System.out.println("error"+e);

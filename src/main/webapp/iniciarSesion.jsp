@@ -34,8 +34,12 @@
     <form action="Controlador?accion=login" method="post">
       <input type="text" id="usuario" class="fadeIn first" name="usuario" placeholder="Ingresar usuario" style="margin: 0px"><br><br>
       <input type="password" id="pass" class="fadeIn second" name="pass" placeholder="Ingresar contraseña" style="margin: 0px"><br><br>
-      <input type="submit" class="fadeIn third" value="Iniciar sesión">
-        <p>
+      <input type="submit" class="fadeIn third" value="Iniciar sesión">    
+     </form>     
+      <p>Olvidaste tu contraseña...? Recupérala <a class="underlineHover" href="index.jsp">Aquí</a></p>
+      <br>
+      <div id="formFooter">
+      <p>
       <%
       if(request.getParameter("msn")!=null)
       {
@@ -43,17 +47,8 @@
       }
       %>
        </p>
-    </form>
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      
-    
-     
-      <p>Olvidaste tu contraseña...? Recupérala <a class="underlineHover" href="index.jsp">Aquí</a></p>
-      <br>
+       </div>
     </div>
   </div>
-</div>
  </body>
 </html>

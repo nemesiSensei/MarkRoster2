@@ -12,8 +12,7 @@ if(session.getAttribute("us")!=null)
     <script src="alertas.js"></script>   
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="media/imagenes/MarkRosterlogo.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
         <link rel="icon" href="media/imagenes/MarkRosterlogo.png"> 
         <title>MarkRoster</title>
         <link rel="stylesheet" href="index.css"> 
