@@ -14,9 +14,7 @@
 <tr>
 <th>ID</th>
 <th>Usuario</th>
-
 <th> Corrreo</th>
-
 <th> privilegio </th>
 <th> Estado </th>
 <th> eliminar </th>
@@ -25,18 +23,12 @@
 <c:forEach items="${usuarios}" var="r">
 	<tr>
 	<td>${r.getIdempresa()}</td>
-	<td>${r.getNombreusuario() }</td>
-	
-	<td>${r.getCorreo()}</td>
-	
+	<td>${r.getNombreusuario() }</td>	
+	<td>${r.getCorreo()}</td>	
 	<td>${r.getPrivilegio()}</td>
-
-	
-
 	<td><c:if test="${r.isEstado()==false}">
 	<button type="button" class="badge bg-danger">Inactivo</button>
-		<a class="btn btn-success btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Activar</a>
-		
+		<a class="btn btn-success btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Activar</a>		
 	</c:if> <c:if test="${r.isEstado()==true}">
 	<button type="button" class="badge bg-success">Activo</button>
 	<a class="btn btn-danger btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button">Inactivar</a>

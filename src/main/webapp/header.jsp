@@ -42,6 +42,7 @@ if(session.getAttribute("us")!=null)
                         </span>
                     </a>                  
                 </li>
+                <br>
                 <li>
                     <a href="index.jsp">
                         <i class="fa fa-home"></i>
@@ -88,19 +89,14 @@ if(session.getAttribute("us")!=null)
                 </li>  
                 
             </ul>
+            <li class="has-subnav">
                    <a href="cambiarPass.jsp">
-              		<i class="fas fa-key "></i>
+              		<i class="fa fa-key"></i>
                         <span class="nav-text">
                           <strong>Cambiar contraseña</strong>
                         </span>
                     </a>
-
                 </li> 
-
-                </li>  
-                
-               
-            
             <ul class="logout">
                 <li>
                    <a href="Controlador?accion=logout">
