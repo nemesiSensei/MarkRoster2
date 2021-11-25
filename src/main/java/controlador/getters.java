@@ -25,7 +25,7 @@ public class getters {
 
 		super();
 		this.idempresa = idempresa;
-		Nombreusuario = nombreusuario;
+		this.Nombreusuario = nombreusuario;
 		this.usuario = usuario;
 		this.pass = pass;
 		this.correo = correo;

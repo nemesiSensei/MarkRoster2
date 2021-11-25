@@ -50,14 +50,6 @@ public class UsuarioDao {
 			
 		
 			System.out.println("Se hizo la consulta ");
-			
-			
-			
-		
-			
-		
-			
-			
 		}
 
 			

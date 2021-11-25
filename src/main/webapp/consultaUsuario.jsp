@@ -1,6 +1,5 @@
 <%@include file="header.jsp"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <%@include file="header.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -17,8 +16,7 @@
 <th> editar </th>
 </tr>
 <c:forEach items="${usuarios}" var="r">
-	<tr>
-	
+	<tr>	
 	<td>${r.getNombreusuario() }</td>
 	<td>${r.getCorreo()}</td>	
 	<td> <a class="btn btn-warning" href="UsuarioController?accion=verunico&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
