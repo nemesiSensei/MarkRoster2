@@ -52,28 +52,14 @@ public class Controlador extends HttpServlet {
 				case "login":
 					r.setUsuario(request.getParameter("usuario"));
 					r.setPass(request.getParameter("pass"));
-					r.setPrivilegio(request.getParameter("privilegio"));
 					try {
 						r=empleadosDAO.validar(r.getUsuario(), r.getPass());
-						if(r.isEstado()==true && r.getNombreusuario()!=null)							
-						{
-							if(r.getPrivilegio()=="Administrador")
-							{
-								System.out.println("se encontró usuario activo");	
-								sesion.setAttribute("us", r);
-								response.sendRedirect("Controlador?accion=Listarusuarios");
-							}
-							else if (r.getPrivilegio()=="Usuario")
-							{
-								System.out.println("se encontró usuario activo");	
-								sesion.setAttribute("us", r);
-								response.sendRedirect("Controlador?accion=ListarUnico");
-							}
-							else
-							{
-								System.out.println("usuario no registrado");							
-								response.sendRedirect("Controlador?accion=abrirLogin&msn=Datos de acceso erróneos");
-							}
+						if(r.isEstado()==true && r.getNombreusuario()!=null)
+							
+						{							
+						System.out.println("se encontró usuario activo");	
+						sesion.setAttribute("us", r);
+						response.sendRedirect("consultaUsuarioAdmin.jsp");
 						}
 						else if (r.isEstado()==false && r.getNombreusuario()!=null)
 						{
