@@ -27,8 +27,12 @@
     <!-- Login Form -->
     <form   action= "Controlador?accion=edit" method="post">
       <input  type="hidden" id="id" class="fadeIn second" name="id"  value="${usuarios. getIdempresa()  }"  >
-          <input  type="text"  id="privilegio" class="fadeIn second" name="privilegio"  value="${usuarios. getPrivilegio()   }" >
-           
+         
+                 <select name="privilegio" class="form-control" required title="Establece el privilegio" style="padding: 15px 32px">
+                <option  >${usuarios. getPrivilegio()   }</option>                                                 
+                <option value="Usuario">Usuario </option>
+                <option value="Administrador">Administrador</option>
+                </select>
             <input     type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()   }"   >
                <input type="text" id="usuario" class="fadeIn second" name="usuario" value="${usuarios. getNombreusuario() }">
     
