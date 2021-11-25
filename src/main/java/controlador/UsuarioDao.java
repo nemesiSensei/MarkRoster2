@@ -18,7 +18,7 @@ public class UsuarioDao {
 	public List Listar() throws SQLException {
 		System.out.println("Ingreso al metodo listar usuarios");
 		List<UsuarioVo> usuarios= new ArrayList<>();
-		sql="SELECT  id_empleados, nombre_empresa, usuario,correo,nombre,privilegio,estado FROM empleados inner JOIN empresa on empleados.id_empresa=empresa.id_empresa ";
+		sql="SELECT  id_empleados, nombre_empresa, usuario,correo,ID_cargo,EPS,nombre,cedula,privilegio,telefono,estado FROM empleados inner JOIN empresa on empleados.id_empresa=empresa.id_empresa ";
 		try {
 			con=c.getConnection(); // opening the connection to database 
 			ps=con.prepareStatement(sql); // prepare that sentence 
@@ -38,8 +38,13 @@ public class UsuarioDao {
 			u.setNombre_empresa(rs.getString(2));
 			u.setUsuario(rs.getString(3));
 			u.setCorreo(rs.getString(4));
-			u.setNombre(rs.getString(5));
-			
+			u.setCargo(rs.getString(5));
+			u.setEPS(rs.getString(6));
+			u.setNombre(rs.getString(7));
+			u.setCedula(rs.getString(8));
+			u.setPrivilegio(rs.getString(9));
+			u.setTelefono(rs.getString(10));
+			u.setEstado(rs.getString(11));
 			 // se puede usar la posicion de la columna  o el nombre de la columna  que quremos obtener
 			usuarios.add(u);
 			

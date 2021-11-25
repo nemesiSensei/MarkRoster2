@@ -1,17 +1,45 @@
 package controlador;
 
 public class UsuarioVo {
-	String   id_empleados, nombre_empresa, usuario,correo,nombre,privilegio,estado;
-	public UsuarioVo(String id_empleados, String nombre_empresa, String usuario, String correo, String nombre,
+	String   id_empleados, nombre_empresa, usuario,correo,cedula,cargo,EPS,telefono,nombre,privilegio,estado;
+	public UsuarioVo(String id_empleados, String nombre_empresa, String usuario, String correo, String cedula, String cargo, String EPS, String telefono, String nombre,
 			String privilegio, String estado) {
 		super();
 		this.id_empleados = id_empleados;
 		this.nombre_empresa = nombre_empresa;
 		this.usuario = usuario;
 		this.correo = correo;
+		this.cedula = cedula;
+		this.cargo = cargo;
+		this.EPS = EPS;
+		this.telefono = telefono;
 		this.nombre = nombre;
 		this.privilegio = privilegio;
 		this.estado = estado;
+	}
+	public String getCedula() {
+		return cedula;
+	}
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
+	}
+	public String getCargo() {
+		return cargo;
+	}
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+	public String getEPS() {
+		return EPS;
+	}
+	public void setEPS(String ePS) {
+		EPS = ePS;
+	}
+	public String getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 	public String getId_empleados() {
 		return id_empleados;
