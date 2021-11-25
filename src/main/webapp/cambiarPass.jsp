@@ -5,6 +5,7 @@
 --%>
 
 <%@page  contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +24,9 @@
         </script>  
         <link rel="stylesheet" href="iniciar.css">
     </head>
+    
     <body>
+    
    <div class="wrapper fadeInDown">
   <div id="formContent">
     <br><br>
