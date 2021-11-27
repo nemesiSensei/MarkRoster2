@@ -18,6 +18,7 @@
         </script>  
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="iniciar.css">
+       
         <script>
         function limpiarCorreo()
         {
@@ -86,7 +87,7 @@ function comprobarClave()
                          minlength="10" maxlength="50"
                          ><span class="text-danger"></span>
       <input type="password" id="pass" class="fadeIn third" name="pass" placeholder="Ingresa tu contraseña" pattern="[A-Za-z0-9]{8,30}" required/>
-      <input type="password" id="Contraseña2" class="fadeIn third" name="Contraseña2" placeholder="Confirma tu contraseña" pattern="[A-Za-z0-9]{8,30}" onchange="comprobarClave()" required/>
+      <input type="password" id="Contraseña2" class="fadeIn third" name="Contraseña2" placeholder="Confirma tu contraseña" pattern="[A-Za-z0-9]{8,30}" value="" onchange="comprobarClave()" required/>
       <div style="margin: 35px">
                         <select class="form-control" name="idempresa" required title="elije tu empresa" style="padding: 15px 32px">
                 <option value="0"  selected >Selecciona tu empresa...</option>                                                 
