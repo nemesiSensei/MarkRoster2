@@ -13,6 +13,7 @@ public class UsuarioDao {
 	PreparedStatement ps;
 	String sql;
 	conexion c= new conexion();
+	getters r= new getters();
 	int register;
 	int id;
 	public List Listar() throws SQLException {
@@ -87,5 +88,32 @@ public class UsuarioDao {
 		}
 		return id;//Retorna cantidad de filas afectadas
 	}
-
+	public int  validarcorreo( String correo) throws SQLException
+	{
+		getters r=new getters();
+		sql="select count(*) AS existentes from empleados where correo=?"; // este es el metodo para evitar la duplicidad en el correo
+		// nota: de alias le puse existentes, asi que total va a almacenar los registros de existentes
+		int total=0;
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 
+			ps.setString(1,correo); 
+		
+			rs=ps.executeQuery();
+			while(rs.next()) {
+			
+		       total=(rs.getInt("existentes"));	// aca le estamos asignando a la variable total el valor de existentes			
+				
+			
+			System.out.println("El total de registros son"+total);
+		}
+		}catch (Exception e) {
+			System.out.println("no se encontró el usuario"+e.getMessage());
+			ps.close();
+		}		
+		return r;
+	}
 }
+
+
+
