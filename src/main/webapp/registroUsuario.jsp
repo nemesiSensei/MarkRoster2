@@ -69,9 +69,13 @@ function comprobarClave()
   
     <!-- Login Form -->
     <form   action="registrar" method="post" name="formulario" id="formulario">
-      <input type="text" name="usuario" id="usuario" class="fadeIn second" placeholder="Ingresa usuario" required pattern="[A-Za-z0-9]{2,30}" title="Letras. Tamaño mínimo: 2. Tamaño máximo: 30"
+      <input type="text" name="usuario" id="usuario" class="fadeIn second" placeholder="Ingresa usuario" required pattern="[A-Za-z0-9]{2,30}" onchange="verificarusuario()" title="Letras. Tamaño mínimo: 2. Tamaño máximo: 30"
+      
                          minlength="2" maxlength="30"  aria-describedby="usuariohelp" required
                          ><span class="text-danger"></span>
+                          <div id="verificarusuario" class="text-danger">
+                         
+                         </div>
       <input type="text" name="correo" id="correo" class="fadeIn second" placeholder="Ingresa tu correo" required pattern="\@[a-z0-9]{10,50}"  onchange="verificar()"title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
                          minlength="10" maxlength="50"
                          ><span class="text-danger"></span>
@@ -117,6 +121,20 @@ function comprobarClave()
                 	})
                     
                 }
+                function verificarusuario(){
+                	const usuario = document.getElementById("usuario").value;
+                	$.ajax({
+                		url:"UsuarioController?accion=validarusuario",
+                		data:{
+                				usuario:usuario
+                		},
+                		success: function (result){
+                			$("#verificarusuario").html(result);
+                		}
+                	})
+                    
+                }
+               
                 </script>      
                        
     
