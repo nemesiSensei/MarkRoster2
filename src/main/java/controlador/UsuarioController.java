@@ -1,6 +1,7 @@
 package controlador;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -88,20 +89,24 @@ public class UsuarioController extends HttpServlet {
 			}
 	}
 
-	private void validarcorreo(HttpServletRequest request, HttpServletResponse response) {
-		response.setContentType("text/html; charset=iso-8859");
+	private void validarcorreo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("text/html; charset=iso-8859-1");
+		PrintWriter out=response.getWriter();
 		try {
-			
-			System.out.print("Entro al metodo  validarcorreo");
+			int cantidad=usuarioDao.validarcorreo(request.getParameter("correo")); // Se guarda en una variable porque es mas facil de procesar
+			System.out.print("correos encontrados "+cantidad); // esto es para saber cuantos correos ya hay existentes
+			if (cantidad!=0) {
+				System.out.print("El correo ya se encuentra registrado "+cantidad); 
+				out.println("El correo ya lo esta usando otra persona ");
+				
+			}
+			else {
+				out.println("El correo esta disponible.");
+				
+			}
 			
 			
 		
-			 List usuarios =usuarioDao.Listar();
-			 request.setAttribute("usuario", usuarios);// esto es para enviar los resultados de la busqueda
-		
-			 request.getRequestDispatcher("usuarios.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
-			.forward(request, response);
-			
 		} catch (Exception e) {
 			
 		}
@@ -110,7 +115,7 @@ public class UsuarioController extends HttpServlet {
 		}
 		// TODO Auto-generated method stub
 		
-	}
+
 
 	private void verunico(HttpServletRequest request, HttpServletResponse response) {
 		try {
