@@ -100,7 +100,7 @@ public class UsuarioController extends HttpServlet {
 			System.out.print("correos encontrados "+cantidad); // esto es para saber cuantos correos ya hay existentes
 			if (cantidad!=0) {
 				System.out.print("El usuario ya se encuentra registrado "+cantidad); 
-				out.println("El usuario ya lo esta usando otra persona ");
+				out.println("El usuario no esta disponible ");
 				
 			}
 			else {
@@ -130,7 +130,7 @@ public class UsuarioController extends HttpServlet {
 			System.out.print("correos encontrados "+cantidad); // esto es para saber cuantos correos ya hay existentes
 			if (cantidad!=0) {
 				System.out.print("El correo ya se encuentra registrado "+cantidad); 
-				out.println("El correo ya lo esta usando otra persona ");
+				out.println("El correo no esta disponible");
 				
 			}
 			else {
