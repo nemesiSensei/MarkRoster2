@@ -113,6 +113,31 @@ public class UsuarioDao {
 		}		
 		return total;
 	}
+	public int  validarusuario( String usuario) throws SQLException
+	{
+		getters r=new getters();
+		sql="select count(*) AS existentes from empleados where Usuario=?"; // este es el metodo para evitar la duplicidad en el correo
+		// nota: de alias le puse existentes, asi que total va a almacenar los registros de existentes
+		int total=0;
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 
+			ps.setString(1,usuario); 
+		
+			rs=ps.executeQuery();
+			while(rs.next()) {
+			
+		       total=(rs.getInt("existentes"));	// aca le estamos asignando a la variable total el valor de existentes			
+				
+			
+			System.out.println("El total de registros son"+total);
+		}
+		}catch (Exception e) {
+			System.out.println("Algo sucedio mal con la validacion de usuarios"+e.getMessage());
+			ps.close();
+		}		
+		return total;
+	}
 }
 
 

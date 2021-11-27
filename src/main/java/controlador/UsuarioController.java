@@ -59,6 +59,9 @@ public class UsuarioController extends HttpServlet {
 					case "validarcorreo":
 					validarcorreo(request,response);
 					break;
+					case "validarusuario":
+						validarusuario(request,response);
+						break;
 						/*case "eliminar":
 						System.out.println("Se entro al metodo eliminar");
 						eliminar(request,response);
@@ -88,6 +91,36 @@ public class UsuarioController extends HttpServlet {
 				
 			}
 	}
+
+	private void validarusuario(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("text/html; charset=iso-8859-1");
+		PrintWriter out=response.getWriter();
+		try {
+			int cantidad=usuarioDao.validarusuario(request.getParameter("usuario")); // Se guarda en una variable porque es mas facil de procesar
+			System.out.print("correos encontrados "+cantidad); // esto es para saber cuantos correos ya hay existentes
+			if (cantidad!=0) {
+				System.out.print("El usuario ya se encuentra registrado "+cantidad); 
+				out.println("El usuario ya lo esta usando otra persona ");
+				
+			}
+			else {
+				out.println("El usuario esta disponible.");
+				
+			}
+			
+			
+		
+		} catch (Exception e) {
+			
+		}
+		finally {
+			}
+		}
+		// TODO Auto-genera
+		
+		
+		
+
 
 	private void validarcorreo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html; charset=iso-8859-1");
