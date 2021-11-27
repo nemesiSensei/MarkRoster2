@@ -111,7 +111,7 @@ public class UsuarioDao {
 			System.out.println("no se encontró el usuario"+e.getMessage());
 			ps.close();
 		}		
-		return r;
+		return total;
 	}
 }
 
