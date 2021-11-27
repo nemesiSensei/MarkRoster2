@@ -50,6 +50,9 @@ public class registroUsuarios extends HttpServlet
                {      
                   response.sendRedirect("Controlador?accion=Listarusuarios"); 
                }
+        	   else {
+        		   response.sendRedirect("registroUsuario.jsp");
+        	   }
 			
         	   
 		} catch (Exception e) {
