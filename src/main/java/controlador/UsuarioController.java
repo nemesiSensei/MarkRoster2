@@ -55,6 +55,9 @@ public class UsuarioController extends HttpServlet {
 					case "verunico":
 						verunico(request,response);
 						break;
+					case "validarcorreo":
+					validarcorreo(request,response);
+					break;
 						/*case "eliminar":
 						System.out.println("Se entro al metodo eliminar");
 						eliminar(request,response);
@@ -83,6 +86,30 @@ public class UsuarioController extends HttpServlet {
 			} catch (Exception e) {
 				
 			}
+	}
+
+	private void validarcorreo(HttpServletRequest request, HttpServletResponse response) {
+		response.setContentType("text/html; charset=iso-8859");
+		try {
+			
+			System.out.print("Entro al metodo  validarcorreo");
+			
+			
+		
+			 List usuarios =usuarioDao.Listar();
+			 request.setAttribute("usuario", usuarios);// esto es para enviar los resultados de la busqueda
+		
+			 request.getRequestDispatcher("usuarios.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+			.forward(request, response);
+			
+		} catch (Exception e) {
+			
+		}
+		finally {
+			}
+		}
+		// TODO Auto-generated method stub
+		
 	}
 
 	private void verunico(HttpServletRequest request, HttpServletResponse response) {
