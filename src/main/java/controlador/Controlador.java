@@ -96,10 +96,7 @@ public class Controlador extends HttpServlet {
 				case "edit":
 					System.out.print("Entro al metodo editar");
 					edit(request,response);
-					break;
-				
-				
-					
+					break;				
 				case "cambiarestado":
 					System.out.print("Entro al meto cambiar estado");
 					cambiarestado(request,response);

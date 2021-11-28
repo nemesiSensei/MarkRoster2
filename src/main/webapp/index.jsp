@@ -93,7 +93,7 @@
             </ul>
             <ul class="logout">
                 <li>
-                   <a href="#">
+                   <a href="Controlador?accion=logout">
                          <i class="fa fa-power-off fa-2x"></i>
                         <span class="nav-text">
                           <strong>Cerrar Sesión</strong>
