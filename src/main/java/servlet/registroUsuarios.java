@@ -6,6 +6,8 @@
 package servlet;
 
 import controlador.consultas;
+import controlador.getters;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -23,7 +25,7 @@ import com.google.protobuf.Extension.MessageType;
  */
 public class registroUsuarios extends HttpServlet 
 {
-
+Contrasena contrasena = new Contrasena();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,11 +38,12 @@ public class registroUsuarios extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
+    	getters r = new getters();
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String idempresa = request.getParameter("idempresa");
         String usuario=request.getParameter("usuario");
-        String pass=request.getParameter("pass");
+        String pass=Contrasena.getPassword();
         String correo=request.getParameter("correo");
         String privilegio=request.getParameter("privilegio");
        
