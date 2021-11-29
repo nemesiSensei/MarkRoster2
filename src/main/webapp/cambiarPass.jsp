@@ -1,8 +1,4 @@
-<%-- 
-    Document   : iniciarSesion
-    Created on : 12/09/2021, 10:11:01 AM
-    Author     : NEMESIS
---%>
+
 
 <%@page  contentType="text/html" pageEncoding="UTF-8"%>
 
