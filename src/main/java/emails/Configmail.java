@@ -26,10 +26,11 @@ public class Configmail {
 		// esto es un objeto de la libreria util y nos sirve para crear un objeto y crear propiedades, lo que vamos a hacer es asignarle  
 		// propiedades a nuestro proyecto 
 		Properties propiedades = new Properties();
+		propiedades.put("mail.debug", "true");
 		propiedades.put("mail.smtp.host", host);
 		propiedades.put("mail.smtp.host", puerto);
 		propiedades.put("mail.smtp.auth", "true");
-		propiedades.put("mail.smtp.starttls.enable", "true"); // esto es para enviar correos sin certificados
+		propiedades.put("mail.smtp.ssl.enable", "true"); // esto es para enviar correos sin certificados
 		Authenticator  autenticacion = new Authenticator() {
 
 		public PasswordAuthentication getPasswordauthentication() {
