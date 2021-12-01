@@ -79,8 +79,9 @@ Contrasena contrasena = new Contrasena();
         String destinatario = request.getParameter("correo");
         String asunto = "Bienvenido (a) a markroster";
         String contenido = "texto de prueba";
+       
         try {
-        	Configmail.Enviarcorreo(host, puerto, remitente,password, destinatario, asunto, contenido);
+        	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario, asunto,contenido);
         	 System.out.print("El  mensaje se envio correctamente");
 		} catch (Exception e) {
 			 System.out.print("El  mensaje no se envio correctamente"+e.getMessage());
