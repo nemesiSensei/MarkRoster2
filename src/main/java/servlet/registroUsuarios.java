@@ -79,11 +79,20 @@ Contrasena contrasena = new Contrasena();
         String destinatario = request.getParameter("correo");
         String asunto = "Bienvenido (a) a markroster";
         String contenido = "texto de prueba";
+        try {
+        	Configmail.Enviarcorreo(host, puerto, remitente,password, destinatario, asunto, contenido);
+        	 System.out.print("El  mensaje se envio correctamente");
+		} catch (Exception e) {
+			 System.out.print("El  mensaje no se envio correctamente"+e.getMessage());
+			 
+			
+		}
       
            try {
         	   
+        	   
         	   if(co.registrar(idempresa, usuario, pass, correo, privilegio))
-               {       Configmail.Enviarcorreo(host, puerto, remitente,password, destinatario, asunto, contenido);
+               {      
                   response.sendRedirect("Controlador?accion=Listarusuarios"); 
                  
                   System.out.print("El registro  se hizo satisfactoriamente");
