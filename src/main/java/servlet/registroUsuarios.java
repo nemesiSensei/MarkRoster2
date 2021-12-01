@@ -25,6 +25,11 @@ import com.google.protobuf.Extension.MessageType;
  */
 public class registroUsuarios extends HttpServlet 
 {
+	 private String host;
+	private  String puerto;
+ 	 private String  remitente;
+ 	 private String password;
+ 	 // vamos a hacer las variables de contexto
 Contrasena contrasena = new Contrasena();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,10 +39,13 @@ Contrasena contrasena = new Contrasena();
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * 
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
+    	
+    	
     	getters r = new getters();
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -46,6 +54,8 @@ Contrasena contrasena = new Contrasena();
         String pass=Contrasena.getPassword();
         String correo=request.getParameter("correo");
         String privilegio=request.getParameter("privilegio");
+        
+        
        
         consultas co=new consultas();
            try {
