@@ -72,13 +72,15 @@ Contrasena contrasena = new Contrasena();
         String pass=Contrasena.getPassword();
         String correo=request.getParameter("correo");
         String privilegio=request.getParameter("privilegio");
+       
         
         
        
         consultas co=new consultas();
         String destinatario = request.getParameter("correo");
         String asunto = "Bienvenido (a) a markroster";
-        String contenido = "texto de prueba";
+        String contenido = "Su contraseña generada es: " +pass+""+" Y su usuario es: "+usuario;
+        String contrasena =pass;
        
         try {
         	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario,asunto,contenido);
