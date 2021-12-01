@@ -7,11 +7,15 @@ package servlet;
 
 import controlador.consultas;
 import controlador.getters;
+import emails.Configmail;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,8 +33,20 @@ public class registroUsuarios extends HttpServlet
 	private  String puerto;
  	 private String  remitente;
  	 private String password;
+ 	public void init () {
+ 		ServletContext xml =getServletContext(); // para acceder a las variables de contexto de web.xml
+ 		host=xml.getInitParameter("host");
+ 		puerto=xml.getInitParameter("puerto");
+ 		remitente=xml.getInitParameter("remitente");
+ 		password=xml.getInitParameter("password");
+ 		
+ 		
+ 		 
+ 	 }
+ 	
  	 // vamos a hacer las variables de contexto
 Contrasena contrasena = new Contrasena();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,10 +55,12 @@ Contrasena contrasena = new Contrasena();
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws MessagingException 
+     * @throws AddressException 
      * 
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException 
+            throws ServletException, IOException, AddressException, MessagingException 
     {
     	
     	
@@ -58,17 +76,26 @@ Contrasena contrasena = new Contrasena();
         
        
         consultas co=new consultas();
+        String destinatario = request.getParameter("correo");
+        String asunto = "Bienvenido (a) a markroster";
+        String contenido = "texto de prueba";
+      
            try {
+        	   
         	   if(co.registrar(idempresa, usuario, pass, correo, privilegio))
-               {      
+               {       Configmail.Enviarcorreo(host, puerto, remitente,password, destinatario, asunto, contenido);
                   response.sendRedirect("Controlador?accion=Listarusuarios"); 
+                 
+                  System.out.print("El registro  se hizo satisfactoriamente");
                }
         	   else {
         		   response.sendRedirect("registroUsuario.jsp");
+        		   System.out.print("El mensaje no envio satisfactoriamente");
         	   }
 			
         	   
 		} catch (Exception e) {
+			  System.out.print("El mensaje encontro un error"+e.getMessage());
 
         	
         	response.sendRedirect("registroUsuario.jsp"); 
@@ -78,6 +105,7 @@ Contrasena contrasena = new Contrasena();
            
              
 		}
+          
      
         	
              
@@ -102,7 +130,21 @@ Contrasena contrasena = new Contrasena();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+			processRequest(request, response);
+		} catch (AddressException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     /**
@@ -116,7 +158,21 @@ Contrasena contrasena = new Contrasena();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+			processRequest(request, response);
+		} catch (AddressException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     /**

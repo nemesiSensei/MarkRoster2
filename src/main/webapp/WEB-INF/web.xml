@@ -41,7 +41,22 @@
     </session-config>
      <context-param>
      <param-name>password</param-name>
-	<param-value>12345</param-value>
+	<param-value>MARKROSTER12345</param-value>
 </context-param>
+<context-param>
+<param-name>host</param-name>
+<param-value>smtp.gmail.com</param-value>
+</context-param>
+<context-param>
+<param-name>puerto</param-name>
+<param-value>587</param-value>
+</context-param>
+ 
+ 
+ <context-param>
+     <param-name>remitente</param-name>
+	<param-value>markrosterrr@gmail.com</param-value>
+</context-param>
+
     
 </web-app>
