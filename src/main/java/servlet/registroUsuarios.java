@@ -8,6 +8,7 @@ package servlet;
 import controlador.consultas;
 import controlador.getters;
 import emails.Configmail;
+import horarios.horario;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -47,6 +48,7 @@ public class registroUsuarios extends HttpServlet
  	 // vamos a hacer las variables de contexto
 Contrasena contrasena = new Contrasena();
 
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -72,6 +74,7 @@ Contrasena contrasena = new Contrasena();
         String pass=Contrasena.getPassword();
         String correo=request.getParameter("correo");
         String privilegio=request.getParameter("privilegio");
+        
        
         
         
