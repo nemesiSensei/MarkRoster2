@@ -20,6 +20,7 @@ public class UsuarioController extends HttpServlet {
 	UsuarioDao usuarioDao = new UsuarioDao();
 	getters r = new getters();
 	empleadosDAO empleados = new empleadosDAO();
+	horariosDAO horarios = new horariosDAO();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -62,6 +63,8 @@ public class UsuarioController extends HttpServlet {
 					case "validarusuario":
 						validarusuario(request,response);
 						break;
+					case "Registrarhorario":
+						Registrarhorario(request,response);
 						/*case "eliminar":
 						System.out.println("Se entro al metodo eliminar");
 						eliminar(request,response);
@@ -90,6 +93,35 @@ public class UsuarioController extends HttpServlet {
 			} catch (Exception e) {
 				
 			}
+	}
+
+	private void Registrarhorario(HttpServletRequest request, HttpServletResponse response) {
+		if (r.getIdempresa() !=0) {
+			
+			System.out.println("LLego el  id ");
+			
+			
+		}
+	
+		
+		
+		
+		try {
+			 System.out.print(" Entro al metodo Registrar horarios. el id del empleado es:  "+r.getIdempresa());
+			 horarios.registrar(r);
+			 response.sendRedirect("index.jsp");
+			 
+		
+		
+		 
+	     
+	}
+		 catch (Exception e) {
+			
+			 System.out.print(" no Entro al metodo Registrar ");
+			
+	}
+		
 	}
 
 	private void validarusuario(HttpServletRequest request, HttpServletResponse response) throws IOException {
