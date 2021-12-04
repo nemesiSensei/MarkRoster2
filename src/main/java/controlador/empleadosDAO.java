@@ -42,10 +42,11 @@ public class empleadosDAO {
 				r.setPass(rs.getString(5));
 				r.setEstado(rs.getBoolean(6));
 			}
-			ps.close();
+			
 			System.out.println("se secontró el usuario");
 		} catch (Exception e) {
 			System.out.println("no se encontró el usuario"+e.getMessage());
+			ps.close();
 		}		
 		return r;
 	}

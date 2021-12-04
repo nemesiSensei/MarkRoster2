@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import horarios.horario;
+
 /**
  * Servlet implementation class UsuarioController
  */
@@ -21,6 +23,7 @@ public class UsuarioController extends HttpServlet {
 	getters r = new getters();
 	empleadosDAO empleados = new empleadosDAO();
 	horariosDAO horarios = new horariosDAO();
+	horarioVo hv = new horarioVo();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -96,22 +99,37 @@ public class UsuarioController extends HttpServlet {
 	}
 
 	private void Registrarhorario(HttpServletRequest request, HttpServletResponse response) {
-		if (r.getIdempresa() !=0) {
-			
-			System.out.println("LLego el  id ");
-			
-			
-		}
-	
+		
 		
 		
 		
 		try {
-			 System.out.print(" Entro al metodo Registrar horarios. el id del empleado es:  "+r.getIdempresa());
-			 horarios.registrar(r);
-			 response.sendRedirect("index.jsp");
-			 
-		
+			if (request.getParameter("id")!=null) {
+				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+				hv.setIdempleados(r);
+				r.setFechaentrada(horario.horaactual());
+				r.setFechafin(horario.horaactual());
+				r.setFechasalida(horario.horaactual());
+				r.setFechainicio(horario.horaactual());
+				
+				
+				
+			
+				
+				System.out.print("Se recibio el id "+r.getIdempresa()+"la fecha de entrada es; "+r.getFechaentrada()+"la fecha fin es: "+r.getFechafin()+"la fecha de salida es: "+r.getFechasalida()+"y la fehca inicio es: "+r.getFechainicio());
+				System.out.print("Entro al metodo consultar");
+				
+				
+			
+				
+				
+				 horarios.registrar(r.getIdempresa());
+				 System.out.print("Entro al metodo registrar horario");
+				 
+				 response.sendRedirect("index.jsp");
+				
+			}
+				
 		
 		 
 	     
@@ -122,7 +140,9 @@ public class UsuarioController extends HttpServlet {
 			
 	}
 		
+		
 	}
+	
 
 	private void validarusuario(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html; charset=iso-8859-1");

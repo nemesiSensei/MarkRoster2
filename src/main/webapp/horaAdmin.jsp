@@ -90,7 +90,8 @@
 <h3 class="text-center">Finalmente, registra tu horario</h3>
 <br>
 <br>
-<a class="btn btn-success" href="UsuarioController?accion=Registrarhorario" role="button"><i class="fas fa-check fa-4x" title="Confirmar"></i></a>
+<a class="btn btn-success" href="UsuarioController?accion=Registrarhorario&id=${us.idempresa}" role="submit"><i class="fas fa-check fa-4x" title="Confirmar"></i></a>
+
 </div>
 <br>
 <br>

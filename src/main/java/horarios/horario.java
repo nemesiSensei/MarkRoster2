@@ -1,6 +1,7 @@
 package horarios;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.time.format.DateTimeFormatter;
 import java.sql.Date;
 import java.text.DateFormat;
@@ -10,17 +11,13 @@ import java.time.LocalDateTime;
 public class horario {
 
     public static String horaactual() {
-        Calendar calendario = Calendar.getInstance(); // este metodo es para capturar la hora  actual del sistema
-        int hora, minutos, segundos;
-        hora = calendario.get(Calendar.HOUR_OF_DAY);
-        minutos = calendario.get(Calendar.MINUTE);
-        segundos = calendario.get(Calendar.SECOND);
+    	Calendar c = new GregorianCalendar();
+    	String dia = Integer.toString(c.get(Calendar.DATE));
+    	String mes = Integer.toString(c.get(Calendar.MONTH)+1);
+    	String anio = Integer.toString(c.get(Calendar.YEAR));
+    	String fecha = anio + "-" + mes + "-" + dia;
 
-
-         String fechaactual =hora + ":" + minutos + ":" + segundos;
-         System.out.println("la fecha actual es: "+fechaactual);
-         return fechaactual;
-         
+    	return fecha;
 
 
 	    
