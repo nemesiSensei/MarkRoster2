@@ -105,25 +105,24 @@ public class UsuarioController extends HttpServlet {
 		
 		try {
 			if (request.getParameter("id")!=null) {
+				hv.setFechaentrada(horario.horaactual());
+				hv.setFechafin(horario.horaactual());
+				hv.setFechainicio(horario.horaactual());
+				hv.setFechasalida(horario.horaactual());
 				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
 				hv.setIdempleados(r);
-				r.setFechaentrada(horario.horaactual());
-				r.setFechafin(horario.horaactual());
-				r.setFechasalida(horario.horaactual());
-				r.setFechainicio(horario.horaactual());
 				
 				
+				System.out.print("");
 				
-			
 				
-				System.out.print("Se recibio el id "+r.getIdempresa()+"la fecha de entrada es; "+r.getFechaentrada()+"la fecha fin es: "+r.getFechafin()+"la fecha de salida es: "+r.getFechasalida()+"y la fehca inicio es: "+r.getFechainicio());
 				System.out.print("Entro al metodo consultar");
 				
 				
 			
 				
 				
-				 horarios.registrar(r.getIdempresa());
+				 horarios.registrar(hv);
 				 System.out.print("Entro al metodo registrar horario");
 				 
 				 response.sendRedirect("index.jsp");
