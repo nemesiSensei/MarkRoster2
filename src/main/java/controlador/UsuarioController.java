@@ -68,6 +68,7 @@ public class UsuarioController extends HttpServlet {
 						break;
 					case "Registrarhorario":
 						Registrarhorario(request,response);
+					
 						/*case "eliminar":
 						System.out.println("Se entro al metodo eliminar");
 						eliminar(request,response);
@@ -104,7 +105,10 @@ public class UsuarioController extends HttpServlet {
 		
 		
 		try {
+			hv.setOpciones(request.getParameter("opciones_horarios"));
+			
 			if (request.getParameter("id")!=null) {
+				
 				hv.setFechaentrada(horario.horaactual());
 				hv.setFechafin(horario.horaactual());
 				hv.setFechainicio(horario.horaactual());
@@ -113,7 +117,7 @@ public class UsuarioController extends HttpServlet {
 				hv.setIdempleados(r);
 				
 				
-				System.out.print("");
+				System.out.print("la opcion seleccionada fue: "+hv.getOpciones());
 				
 				
 				System.out.print("Entro al metodo consultar");

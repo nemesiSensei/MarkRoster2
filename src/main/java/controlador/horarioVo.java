@@ -2,7 +2,7 @@ package controlador;
 
 public class horarioVo {
 	private getters idempleados;
-	private String fechainicio,fechafin,fechaentrada,fechasalida;
+	private String fechainicio,fechafin,fechaentrada,fechasalida,opciones;
 	
 	
 
@@ -89,14 +89,31 @@ public class horarioVo {
 
 
 	public horarioVo(getters idempleados, String fechainicio, String fechafin, String fechaentrada,
-			String fechasalida) {
+			String fechasalida, String opciones) {
 		super();
 		this.idempleados = idempleados;
 		this.fechainicio = fechainicio;
 		this.fechafin = fechafin;
 		this.fechaentrada = fechaentrada;
 		this.fechasalida = fechasalida;
+		this.opciones =opciones;
 		
+	}
+
+
+
+
+
+	public String getOpciones() {
+		return opciones;
+	}
+
+
+
+
+
+	public void setOpciones(String opciones) {
+		this.opciones = opciones;
 	}
 
 
@@ -106,6 +123,12 @@ public class horarioVo {
 	public horarioVo() {
 		
 	}
+
+
+
+
+
+
 	
 
 }

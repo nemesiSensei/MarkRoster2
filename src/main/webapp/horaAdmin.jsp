@@ -78,20 +78,24 @@
   <h3 class="text-center">Elige que horario registrar:</h3>
   <br>
   <br>  
-<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-  <option selected>Selecciona el momento del día</option>
-  <option value="entrada">Inicio de jornada laboral</option>
+  <form method="post" action="UsuarioController?accion=Registrarhorario&id=${us.idempresa}">
+  
+<select class="form-select "  name="opciones_horarios">
+  <option selected >Selecciona el momento del día</option>
+  <option value="horaentrada_laboral" >Inicio de jornada laboral</option>
   <option value="salidaAlmuerzo">Salida para almorzar</option>
   <option value="entradaAlmuerzo">Entrada de almorzar</option>
-  <option value="salida">Final de jornada laboral</option>
+  <option value="salida_laboral">Final de jornada laboral</option>
   <option value="inicioExtras">Inicio de horas extra</option>
   <option value="salidaExtras">Final de horas extra</option>
+  
 </select>
+	
 <h3 class="text-center">Finalmente, registra tu horario</h3>
 <br>
 <br>
-<a class="btn btn-success" href="UsuarioController?accion=Registrarhorario&id=${us.idempresa}" role="submit"><i class="fas fa-check fa-4x" title="Confirmar"></i></a>
-
+<button type="submit" class="btn btn-success"><i class="fas fa-check fa-4x" title="Confirmar"></i></button>
+</form>
 </div>
 <br>
 <br>
@@ -99,7 +103,7 @@
 <br>
 <br>
 <div class="container text-center">
-<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" >
   <option selected>Selecciona la empresa</option>
   <option value="entrada">Unloft S.A.S.</option>
   <option value="salidaAlmuerzo">Argoti</option>

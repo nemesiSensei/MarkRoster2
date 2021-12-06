@@ -15,7 +15,10 @@ public class horario {
     	String dia = Integer.toString(c.get(Calendar.DATE));
     	String mes = Integer.toString(c.get(Calendar.MONTH)+1);
     	String anio = Integer.toString(c.get(Calendar.YEAR));
-    	String fecha = anio + "-" + mes + "-" + dia;
+    	String minutos = Integer.toString(c.get(Calendar.MINUTE));
+    	String secundos = Integer.toString(c.get(Calendar.SECOND));
+    	String horas = Integer.toString(c.get(Calendar.HOUR));
+    	String fecha = anio + "-" + mes + "-" + dia+"-"+horas+"-"+minutos+"-"+secundos;
 
     	return fecha;
 
