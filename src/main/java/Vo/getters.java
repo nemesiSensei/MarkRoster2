@@ -1,4 +1,4 @@
-package controlador;
+package Vo;
 
 import java.sql.Timestamp;
 

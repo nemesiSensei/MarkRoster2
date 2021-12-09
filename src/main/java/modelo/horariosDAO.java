@@ -1,4 +1,4 @@
-package controlador;
+package modelo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,6 +7,10 @@ import java.sql.SQLException;
 
 import horarios.horario;
 import java.util.Calendar;
+
+import Vo.getters;
+import Vo.horarioVo;
+import controlador.conexion;
 
 public class horariosDAO {
 	
@@ -37,6 +41,31 @@ public class horariosDAO {
 			ps.setString(3,hv.getFechainicio());
 			ps.setString(4, hv.getFechafin());
 			ps.setInt(5,hv.getIdempleados().getIdempresa());
+			System.out.println("Se logro registrar el horario, uwuuuuuuuuuuuuu");
+			ps.executeUpdate();
+		
+			
+			System.out.println("La fecha actual es: "+horario.horaactual());
+			
+			
+		
+		}catch (Exception e) { 
+			System.out.println("Algo sucedio mal  al registrar la fecha actual"+e.getMessage());
+			ps.close();
+		}		
+		return register;
+	}
+	public int  registrar_hora_inicio(horarioVo hv) throws SQLException { //  este va a ser el metodo para hacer el registro de horario.
+		System.out.println("Entro a la sentencia preparada  ");
+		
+		sql="INSERT INTO horario (Hora_de_entrada, id_empleado) VALUES (?,?)";
+		
+		
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 
+			ps.setString(1,hv.getFechaentrada());
+			ps.setInt(2,hv.getIdempleados().getIdempresa());
 			System.out.println("Se logro registrar el horario, uwuuuuuuuuuuuuu");
 			ps.executeUpdate();
 		

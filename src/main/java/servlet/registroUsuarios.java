@@ -6,7 +6,7 @@
 package servlet;
 
 import controlador.consultas;
-import controlador.getters;
+
 import emails.Configmail;
 import horarios.horario;
 
@@ -24,10 +24,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.protobuf.Extension.MessageType;
 
-/**
- *
- * @author NEMESIS
- */
+import Vo.getters;
+import org.apache.commons.codec.digest.DigestUtils;
+
+
 public class registroUsuarios extends HttpServlet 
 {
 	 private String host;
@@ -49,21 +49,11 @@ public class registroUsuarios extends HttpServlet
 Contrasena contrasena = new Contrasena();
 
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     * @throws MessagingException 
-     * @throws AddressException 
-     * 
-     */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, AddressException, MessagingException 
     {
+    	
     	
     	
     	getters r = new getters();
@@ -72,6 +62,7 @@ Contrasena contrasena = new Contrasena();
         String idempresa = request.getParameter("idempresa");
         String usuario=request.getParameter("usuario");
         String pass=Contrasena.getPassword();
+       
         String correo=request.getParameter("correo");
         String privilegio=request.getParameter("privilegio");
         
@@ -133,15 +124,7 @@ Contrasena contrasena = new Contrasena();
         
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -162,15 +145,7 @@ Contrasena contrasena = new Contrasena();
 		}
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
+  
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -190,15 +165,10 @@ Contrasena contrasena = new Contrasena();
 		}
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
+   
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }// 
 
 }
 

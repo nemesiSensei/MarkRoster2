@@ -1,4 +1,4 @@
-package controlador;
+package Vo;
 
 public class horarioVo {
 	private getters idempleados;

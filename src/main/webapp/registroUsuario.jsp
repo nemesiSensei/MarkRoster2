@@ -80,9 +80,9 @@ function comprobarClave()
       <input type="text" name="correo" id="correo" class="fadeIn second" placeholder="Ingresa tu correo" required pattern="\@[a-z0-9]{10,50}"  onchange="verificar()"title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
                          minlength="10" maxlength="50"
                          ><span class="text-danger"></span>
-                         <div id="verificar" class="text-danger">
+                         <div id="verificar" class="text-danger"> </div>
                          
-                         </div>
+                        
       <input type="text" name="ccorreo" id="ccorreo" class="fadeIn second" placeholder="Confirma tu correo" onchange="comprobarCorreo()" pattern="\@[a-z0-9]{10,50}" title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
                          minlength="10" maxlength="50"
                          ><span class="text-danger"></span>

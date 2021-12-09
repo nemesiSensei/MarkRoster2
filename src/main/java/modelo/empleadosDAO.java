@@ -1,4 +1,4 @@
-package controlador;
+package modelo;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,8 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Vo.getters;
 import controlador.conexion;
-import controlador.getters;
 
 
 

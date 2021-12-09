@@ -1,4 +1,4 @@
-package controlador;
+package Vo;
 
 public class UsuarioVo {
 	String   id_empleados, nombre_empresa, usuario,correo,cedula,cargo,EPS,telefono,nombre,privilegio,estado;

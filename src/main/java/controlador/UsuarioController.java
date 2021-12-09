@@ -2,15 +2,33 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jasper.tagplugins.jstl.core.If;
+
+import Vo.UsuarioVo;
+import Vo.getters;
+import Vo.horarioVo;
 import horarios.horario;
+import modelo.UsuarioDao;
+import modelo.empleadosDAO;
+import modelo.horariosDAO;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
 
 /**
  * Servlet implementation class UsuarioController
@@ -38,7 +56,7 @@ public class UsuarioController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	//	response.getWriter().append("Served at: ").append(request.getContextPath());
 		String accion =request.getParameter("accion");
 		System.out.print("Entro al controlador esta vez  ");
 			
@@ -68,6 +86,12 @@ public class UsuarioController extends HttpServlet {
 						break;
 					case "Registrarhorario":
 						Registrarhorario(request,response);
+						break;
+						
+					case "Reportes":
+						Reportes(request,response);
+						System.out.print("Entro  al  caso de metodo de reportes");
+						break;
 					
 						/*case "eliminar":
 						System.out.println("Se entro al metodo eliminar");
@@ -99,15 +123,82 @@ public class UsuarioController extends HttpServlet {
 			}
 	}
 
+
+	
+	
+
+	
+	private void Reportes(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		System.out.print("Entro al metodo de reportes");
+		ServletOutputStream out = response.getOutputStream();
+		
+		try {
+			System.out.print(" Entro al try");
+		    java.io.InputStream logo = this.getServletConfig() // asi se llama el objeto 
+                    .getServletContext()
+                    .getResourceAsStream("media/imagenes/MarkRosterlogo.jpg"); // esta es la ruta del recurso que quiero vincular
+			java.io.InputStream reporteUsuario = this.getServletConfig()
+                    .getServletContext()
+                    .getResourceAsStream("Usuarios.jasper"); // aca le esto diciendo la ruta donde esta el reporte 
+			
+	//Validar que no vengan vacios
+			  if (logo != null && reporteUsuario != null) {
+				  System.out.print("LLego la imagen y el repoprte");
+	                //Crear lista de la clase Vo para guardar resultado de la consulta
+	                List<getters> reporteUsuario1 = new ArrayList<>();
+	                reporteUsuario1=empleados.Listarusuarios(); // aca estamos guardando los resultados del metodo listarusuarios en la clase dao
+	                JasperReport report = (JasperReport) JRLoader.loadObject(reporteUsuario); // n esye archivo se va a cargar la informacion
+	                JRBeanArrayDataSource dc = new JRBeanArrayDataSource(reporteUsuario1.toArray()); // este es el dataset
+	                @SuppressWarnings("rawtypes")
+					Map<String, Object> parameters = new HashMap();
+	                parameters.put("dc", dc);
+	                parameters.put("imagen", logo);
+	                //Formateamos la salida del reporte
+	                response.setContentType("application/pdf");
+	                //Para abrir el reporte en otra pestaña
+	                response.addHeader("Content-disposition", "inline; filename=ReporteUsuarios.pdf");
+	                //Imprimimos el reporte
+	                JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, dc);
+	                JasperExportManager.exportReportToPdfStream(jasperPrint, out);
+	                out.flush();
+	                out.close();
+	                
+			  }
+			  else {
+	                response.setContentType("text/plain");
+	                out.println("no se pudo generar el reporte");
+	                out.println("esto puede deberse a que la lista de datos no fue recibida o el "
+	                		+ "archivo plantilla del reporte no se ha encontrado");
+	                out.println("contacte a soporte");
+	            }
+			
+		} catch (Exception e) {
+			response.setContentType("text/plain");
+            out.print("ocurrió un error al intentar generar el reporte:" + e.getMessage());
+            e.printStackTrace();
+		}
+		
+	}
+
 	private void Registrarhorario(HttpServletRequest request, HttpServletResponse response) {
 		
 		
 		
 		
 		try {
-			hv.setOpciones(request.getParameter("opciones_horarios"));
 			
-			if (request.getParameter("id")!=null) {
+			
+			
+			hv.setOpciones(request.getParameter("opciones_horarios"));
+			String opcion=hv.getOpciones();
+			System.out.print("Entro al metodo consultar"+opcion);
+			
+			
+			if (request.getParameter("id")!=null  && opcion.equals("horaentrada_laboral"))  { 
+				
+				
+		
+				
 				
 				hv.setFechaentrada(horario.horaactual());
 				hv.setFechafin(horario.horaactual());
@@ -117,7 +208,7 @@ public class UsuarioController extends HttpServlet {
 				hv.setIdempleados(r);
 				
 				
-				System.out.print("la opcion seleccionada fue: "+hv.getOpciones());
+				System.out.print("la opcion seleccionada fue: "+opcion);
 				
 				
 				System.out.print("Entro al metodo consultar");
@@ -127,11 +218,37 @@ public class UsuarioController extends HttpServlet {
 				
 				
 				 horarios.registrar(hv);
-				 System.out.print("Entro al metodo registrar horario");
+				 System.out.print("Entro al metodo registrar horario en el bloquee if");
+				 
+				 response.sendRedirect("index.jsp");
+				}
+			else {
+				 System.out.print("Entro al else");
+				
+				hv.setFechaentrada(horario.horaactual());
+				hv.setFechafin(horario.horaactual());
+				hv.setFechainicio(horario.horaactual());
+				hv.setFechasalida(horario.horaactual());
+				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+				hv.setIdempleados(r);
+				
+				
+				System.out.print("la opcion seleccionada fue: "+opcion);
+				
+				
+				System.out.print("Entro al metodo consultar");
+				
+				
+			
+				
+				
+				 horarios.registrar(hv);
+				 System.out.print("Entro al metodo registrar horario en el else");
 				 
 				 response.sendRedirect("index.jsp");
 				
 			}
+			
 				
 		
 		 
