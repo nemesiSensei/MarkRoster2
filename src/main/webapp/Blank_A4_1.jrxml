@@ -83,7 +83,7 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="110" height="30" uuid="66c011f5-6630-44c7-b3ed-174f2941bc23"/>
-								<text><![CDATA[Nombre usuario]]></text>
+								<text><![CDATA[usuario]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
@@ -99,7 +99,7 @@
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="110" height="30" uuid="64934e5e-9e98-4cff-b7b1-1952ca7a516e"/>
-								<text><![CDATA[Usuario]]></text>
+								<text><![CDATA[ Nombre Usuario]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
