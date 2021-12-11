@@ -6,6 +6,7 @@
    <br>
   <div class="container text-center"> 
   <a class="btn btn-success" href="registroUsuario.jsp" role="button"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
+   <a class="btn btn-primary" href="UsuarioController?accion=Reportes" role="button"><i class="fas fa-user-plus fa-2x" title="Ver reporte"></i></a>
   <br>
   <br> 
 </div>

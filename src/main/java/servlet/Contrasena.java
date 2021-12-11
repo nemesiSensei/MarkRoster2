@@ -1,6 +1,6 @@
 package servlet;
 
-import controlador.getters;
+import Vo.getters;
 
 public class Contrasena {
 	

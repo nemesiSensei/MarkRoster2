@@ -1,4 +1,4 @@
-package controlador;
+package Vo;
 
 import java.sql.Timestamp;
 
@@ -12,6 +12,14 @@ public class getters {
 	String currentTime = sdf.format(dt);
 
 	private String currentime;
+
+	private String fechainicio;
+
+	private String fechafin;
+
+	private String fechaentrada;
+
+	private String fechasalida;
 	
 
 
@@ -21,7 +29,7 @@ public class getters {
 
 
 	public getters(int idempresa, String nombreusuario, String usuario, String pass, String correo, String privilegio,
-			boolean estado, String currentime) {
+			boolean estado, String currentime,String fechainicio,String fechafin, String fechaentrada,String fechasalida) {
 
 		super();
 		this.idempresa = idempresa;
@@ -32,6 +40,58 @@ public class getters {
 		this.privilegio = privilegio;
 		this.estado = estado;
 		this.currentime = currentime;
+		this.fechainicio = fechainicio;
+		this.fechafin = fechafin;
+		this.fechaentrada = fechaentrada;
+		this.fechasalida = fechasalida;
+	}
+
+
+
+	public String getFechainicio() {
+		return fechainicio;
+	}
+
+
+
+	public void setFechainicio(String fechainicio) {
+		this.fechainicio = fechainicio;
+	}
+
+
+
+	public String getFechafin() {
+		return fechafin;
+	}
+
+
+
+	public void setFechafin(String fechafin) {
+		this.fechafin = fechafin;
+	}
+
+
+
+	public String getFechaentrada() {
+		return fechaentrada;
+	}
+
+
+
+	public void setFechaentrada(String fechaentrada) {
+		this.fechaentrada = fechaentrada;
+	}
+
+
+
+	public String getFechasalida() {
+		return fechasalida;
+	}
+
+
+
+	public void setFechasalida(String fechasalida) {
+		this.fechasalida = fechasalida;
 	}
 
 

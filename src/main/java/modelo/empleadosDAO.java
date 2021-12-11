@@ -1,4 +1,4 @@
-package controlador;
+package modelo;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,8 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Vo.getters;
 import controlador.conexion;
-import controlador.getters;
 
 
 
@@ -42,10 +42,11 @@ public class empleadosDAO {
 				r.setPass(rs.getString(5));
 				r.setEstado(rs.getBoolean(6));
 			}
-			ps.close();
+			
 			System.out.println("se secontró el usuario");
 		} catch (Exception e) {
 			System.out.println("no se encontró el usuario"+e.getMessage());
+			ps.close();
 		}		
 		return r;
 	}
@@ -67,6 +68,7 @@ public class empleadosDAO {
 			r.setPrivilegio(rs.getString("privilegio"));
 			r.setIdempresa(rs.getInt("id_empleados"));
 			r.setNombreusuario(rs.getString("usuario"));
+			r.setUsuario(rs.getString("Nombre"));
 			r.setEstado(rs.getBoolean("estado"));
 			System.out.println("Se hizo la consulta ");			
 			empleados.add(r);
