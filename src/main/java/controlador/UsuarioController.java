@@ -194,9 +194,15 @@ public class UsuarioController extends HttpServlet {
 			hv.setOpciones(request.getParameter("opciones_horarios"));
 			String opcion=hv.getOpciones();
 			System.out.print("Entro al metodo consultar"+opcion);
+			if (request.getParameter("id")!=null  && opcion.equals("salidaAlmuerzo"))  { 
+				String horario1 =opcion;
+				System.out.print("Entro al metodo  salida almuerzo xD"+horario1);
+			}
 			
 			
 			if (request.getParameter("id")!=null  && opcion.equals("horaentrada_laboral"))  { 
+				String horario1 =opcion;
+				System.out.print("la opcion escojida es; "+horario1);
 				
 				
 		
@@ -219,7 +225,7 @@ public class UsuarioController extends HttpServlet {
 			
 				
 				
-				 horarios.registrar(hv);
+				 horarios.registrar_hora_inicio(hv);
 				 System.out.print("Entro al metodo registrar horario en el bloquee if");
 				 
 				 response.sendRedirect("index.jsp");
