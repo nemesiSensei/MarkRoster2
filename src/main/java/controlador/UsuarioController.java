@@ -128,6 +128,7 @@ public class UsuarioController extends HttpServlet {
 	
 
 	
+	
 	private void Reportes(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		System.out.print("Entro al metodo de reportes");
 		ServletOutputStream out = response.getOutputStream();
@@ -139,7 +140,7 @@ public class UsuarioController extends HttpServlet {
                     .getResourceAsStream("media/imagenes/MarkRosterlogo.jpg"); // esta es la ruta del recurso que quiero vincular
 			java.io.InputStream reporteUsuario = this.getServletConfig()
                     .getServletContext()
-                    .getResourceAsStream("Usuarios.jasper"); // aca le esto diciendo la ruta donde esta el reporte 
+                    .getResourceAsStream("Blank_A4_1.jasper"); // aca le esto diciendo la ruta donde esta el reporte 
 			
 	//Validar que no vengan vacios
 			  if (logo != null && reporteUsuario != null) {
@@ -149,9 +150,10 @@ public class UsuarioController extends HttpServlet {
 	                reporteUsuario1=empleados.Listarusuarios(); // aca estamos guardando los resultados del metodo listarusuarios en la clase dao
 	                JasperReport report = (JasperReport) JRLoader.loadObject(reporteUsuario); // n esye archivo se va a cargar la informacion
 	                JRBeanArrayDataSource dc = new JRBeanArrayDataSource(reporteUsuario1.toArray()); // este es el dataset
-	                @SuppressWarnings("rawtypes")
+	               
+	               
 					Map<String, Object> parameters = new HashMap();
-	                parameters.put("dc", dc);
+	                parameters.put("ds", dc);
 	                parameters.put("imagen", logo);
 	                //Formateamos la salida del reporte
 	                response.setContentType("application/pdf");
