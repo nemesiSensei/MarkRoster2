@@ -197,7 +197,126 @@ public class UsuarioController extends HttpServlet {
 			if (request.getParameter("id")!=null  && opcion.equals("salidaAlmuerzo"))  { 
 				String horario1 =opcion;
 				System.out.print("Entro al metodo  salida almuerzo xD"+horario1);
+				hv.setFechaentrada(horario.horaactual());
+				hv.setFechafin(horario.horaactual());
+				hv.setFechainicio(horario.horaactual());
+				hv.setFechasalida(horario.horaactual());
+				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+				hv.setIdempleados(r);
+				
+				
+				System.out.print("la opcion seleccionada fue: "+opcion);
+				
+				
+				System.out.print("Entro al metodo  salida almuerzo");
+				
+				
+			
+				
+				
+				
+				horarios.registrar_hora_salidaAlmuerzo(hv);
+				 
+				 response.sendRedirect("index.jsp");
 			}
+			if (request.getParameter("id")!=null  && opcion.equals("entradaAlmuerzo"))  { 
+				String horario1 =opcion;
+				System.out.print("la opcion escojida es; "+horario1);
+				
+				
+		
+				
+				
+				hv.setFechaentrada(horario.horaactual());
+				hv.setFechafin(horario.horaactual());
+				hv.setFechainicio(horario.horaactual());
+				hv.setFechasalida(horario.horaactual());
+				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+				hv.setIdempleados(r);
+				
+				
+				System.out.print("la opcion seleccionada fue: "+opcion);
+				
+				
+				System.out.print("Entro al metodo  entrada almuerzo ");
+				horarios.registrarinicio_almuerzo(hv);
+				
+				
+			
+				
+				
+				
+				 System.out.print("Entro al metodo registrar horario en el bloquee if");
+				 
+				 response.sendRedirect("index.jsp");
+				}
+			if (request.getParameter("id")!=null  && opcion.equals(""))  { 
+				String horario1 =opcion;
+				System.out.print("la opcion escojida es; "+horario1);
+				
+				
+		
+				
+				
+				hv.setFechaentrada(horario.horaactual());
+				hv.setFechafin(horario.horaactual());
+				hv.setFechainicio(horario.horaactual());
+				hv.setFechasalida(horario.horaactual());
+				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+				hv.setIdempleados(r);
+				
+				
+				System.out.print("la opcion seleccionada fue: "+opcion);
+				
+				
+				System.out.print("Entro al metodo  entrada almuerzo ");
+				horarios.registrarinicio_almuerzo(hv);
+				
+				
+			
+				
+				
+				
+				 System.out.print("Entro al metodo registrar horario en el bloquee if");
+				 
+				 response.sendRedirect("index.jsp");
+				}
+			if (request.getParameter("id")!=null  && opcion.equals("salida_laboral"))  { 
+				String horario1 =opcion;
+				System.out.print("la opcion escojida es; "+horario1);
+				
+				
+		
+				
+				
+				hv.setFechaentrada(horario.horaactual());
+				hv.setFechafin(horario.horaactual());
+				hv.setFechainicio(horario.horaactual());
+				hv.setFechasalida(horario.horaactual());
+				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+				hv.setIdempleados(r);
+				
+				
+				System.out.print("la opcion seleccionada fue: "+opcion);
+				
+				
+				System.out.print("Entro al metodo  entrada almuerzo ");
+				horarios.registrarsalida_laboral(hv);
+				
+				
+			
+				
+				
+				
+				 System.out.print("Entro al metodo registrar horario en el bloquee if");
+				 
+				 response.sendRedirect("index.jsp");
+				}
+		
+		
+			
+		
+			
 			
 			
 			if (request.getParameter("id")!=null  && opcion.equals("horaentrada_laboral"))  { 
@@ -230,32 +349,7 @@ public class UsuarioController extends HttpServlet {
 				 
 				 response.sendRedirect("index.jsp");
 				}
-			else {
-				 System.out.print("Entro al else");
-				
-				hv.setFechaentrada(horario.horaactual());
-				hv.setFechafin(horario.horaactual());
-				hv.setFechainicio(horario.horaactual());
-				hv.setFechasalida(horario.horaactual());
-				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
-				hv.setIdempleados(r);
-				
-				
-				System.out.print("la opcion seleccionada fue: "+opcion);
-				
-				
-				System.out.print("Entro al metodo consultar");
-				
-				
-			
-				
-				
-				 horarios.registrar(hv);
-				 System.out.print("Entro al metodo registrar horario en el else");
-				 
-				 response.sendRedirect("index.jsp");
-				
-			}
+		
 			
 				
 		
