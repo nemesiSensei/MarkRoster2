@@ -5,7 +5,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+       <div class="modo" id="modo">
+        <i class="fas fa-toggle-on"></i>
+    </div>
     <script src="alertas.js"></script>
+    <link rel="stylesheet" href="dark.css">
    
         <meta charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -137,5 +141,7 @@
 <br>
 </div>
 </body>
+  <script src="main.js"></script>
  <%@include file="footer.jsp" %>
+ 
 </html>

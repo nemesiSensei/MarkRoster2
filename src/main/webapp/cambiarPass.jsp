@@ -19,9 +19,13 @@
         crossorigin="anonymous">
         </script>  
         <link rel="stylesheet" href="iniciar.css">
+         <link rel="stylesheet" href="dark.css">
     </head>
     
     <body>
+     <div class="modo" id="modo">
+        <i class="fas fa-toggle-on"></i>
+    </div>
     
    <div class="wrapper fadeInDown">
   <div id="formContent">
@@ -72,4 +76,5 @@ function verifyPass()
 	}
 </script>
  </body>
+  <script src="main.js"></script>
 </html>

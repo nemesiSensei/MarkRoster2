@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
 <footer>
 <section class="footer-distributed" style="margin:0px 0px 0px 56px; position:absolute">			

@@ -3,11 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="dark.css">
 <link rel="stylesheet" href="iniciar.css">
 <meta charset="ISO-8859-1">
 <title>Actualizar perfil</title>
 </head>
 <body>
+   <div class="modo" id="modo">
+        <i class="fas fa-toggle-on"></i>
+    </div>
 <!--Este es el formulario para el editar usuarios unico --> 
 <div class="wrapper fadeInDown">
   <div id="formContent">
@@ -32,4 +36,5 @@
 
 </body>
 <%@include file="footer.jsp" %>
+  <script src="main.js"></script>
 </html>

@@ -3,7 +3,11 @@
 <%@include file="header.jsp"%>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="dark.css">
    <body>     
+      <div class="modo" id="modo">
+        <i class="fas fa-toggle-on"></i>
+    </div>
    <h1 class="text-center">Información adicional de empleados</h1>
    <br>
   <div class="container text-center"> 
@@ -56,5 +60,6 @@ var dataTable = new DataTable("#usuario", {
 
 </body>
  <%@include file="footer.jsp"%>
+  <script src="main.js"></script>
 </html>
 

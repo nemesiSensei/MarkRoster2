@@ -2,9 +2,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <%@include file="header.jsp"%>
 <!DOCTYPE html>
+
 <html>
- 
-   <body>     
+ <link rel="stylesheet" href="dark.css">
+   <body>  
+      <div class="modo" id="modo">
+        <i class="fas fa-toggle-on"></i>
+    </div>   
    <h1 class="text-center">Gestión Personal</h1>
    <br> 
    <div class="container text-center"> 
@@ -26,4 +30,5 @@
 </div>
 </body>
   <%@include file="footer.jsp" %>
+    <script src="main.js"></script>
 </html>

@@ -11,17 +11,26 @@
   <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
  <link rel="stylesheet" href="index.css"> 
+  
  <meta charset="UTF-8">     
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="media/imagenes/MarkRosterlogo.png">
         <title>MarkRoster - Inicio</title>
+        
+    <link rel="stylesheet" href="dark.css">
   </head>  
   <header>
-  <div class="area"></div><nav class="main-menu">       
+    <div class="modo" id="modo">
+        <i class="fas fa-toggle-on"></i>
+    </div>
+  <div class="area"></div><nav class="main-menu">  
+    
+  
             <ul>
             	<li>
                     <a href="index.jsp">
+                    
                         <img src="media/imagenes/MarkRosterlogo.png" width="56" height="auto"/>
 					<br><br><br> 
                     </a>                  
@@ -32,7 +41,7 @@
                         <span class="nav-text">
                             <strong>Inicio</strong>
                         </span>
-                    </a>                  
+                 
                 </li>
                  <li>
                    <a href="Controlador?accion=abrirLogin">
@@ -238,4 +247,5 @@
     </section>      
         </body> 
      <%@include file="footer.jsp"%>
+     <script src="main.js"></script>
     </html>
