@@ -59,4 +59,6 @@
       color: white;
       text-decoration: none;
   }
- 
+  .dark .form{
+    background: #000;
+}

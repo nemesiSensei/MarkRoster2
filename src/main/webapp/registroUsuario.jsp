@@ -19,7 +19,6 @@
         </script>  
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="iniciar.css">
-         <link rel="stylesheet" href="css/dark.css">
        
         <script>
         function limpiarCorreo()
@@ -62,9 +61,7 @@ function comprobarClave()
 </script>
 </head>
     <body oncopy="return false" onpaste="return false">
-      <div class="modo" id="modo">
-        <i class="fas fa-toggle-on"></i>
-    </div>
+   
    <div class="wrapper fadeInDown">
   <div id="formContent">
     <br><br>
@@ -74,36 +71,36 @@ function comprobarClave()
   
     <!-- Login Form -->
     <form   action="registrar" method="post" name="formulario" id="formulario">
-      <input type="text" name="usuario" class="input" id="usuario" class="fadeIn second" placeholder="Ingresa usuario"  required pattern="[A-Za-z0-9]{2,30}" onchange="verificarusuario()" title="Letras. Tamaño mínimo: 2. Tamaño máximo: 30"
+      <input type="text" name="usuario" id="usuario" class="fadeIn second" placeholder="Ingresa usuario" required pattern="[A-Za-z0-9]{2,30}" onchange="verificarusuario()" title="Letras. Tamaño mínimo: 2. Tamaño máximo: 30"
       
                          minlength="2" maxlength="30"  aria-describedby="usuariohelp" required
                          ><span class="text-danger"></span>
                           <div id="verificarusuario" class="text-danger">
                          
                          </div>
-      <input type="text" name="correo"  class="input" id="correo" class="fadeIn second"  placeholder="Ingresa tu correo" required pattern="\@[a-z0-9]{10,50}"  onchange="verificar()"title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
+      <input type="text" name="correo" id="correo" class="fadeIn second" placeholder="Ingresa tu correo" required pattern="\@[a-z0-9]{10,50}"  onchange="verificar()"title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
                          minlength="10" maxlength="50"
                          ><span class="text-danger"></span>
                          <div id="verificar" class="text-danger"> </div>
                          
                         
-      <input type="text" name="ccorreo"  class="input" id="ccorreo" class="fadeIn second" class="input" placeholder="Confirma tu correo" onchange="comprobarCorreo()" pattern="\@[a-z0-9]{10,50}" title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
+      <input type="text" name="ccorreo" id="ccorreo" class="fadeIn second" placeholder="Confirma tu correo" onchange="comprobarCorreo()" pattern="\@[a-z0-9]{10,50}" title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
                          minlength="10" maxlength="50"
                          ><span class="text-danger"></span>
       
       <div style="margin: 35px">
-                        <select class="form-control"  class="input" name="idempresa" class="input" required title="elije tu empresa" style="padding: 15px 32px">
+                        <select class="form-control" name="idempresa" required title="elije tu empresa" style="padding: 15px 32px">
                 <option value="0"  selected >Selecciona tu empresa...</option>                                                 
-                <option value="1" class="input">Unloft S.A.S</option>
-                <option value="2" class="input">Argotty</option>
-                <option value="3" class="input">Impakto Producciones</option></select>
+                <option value="1">Unloft S.A.S</option>
+                <option value="2">Argotty</option>
+                <option value="3">Impakto Producciones</option></select>
                         <i></i>
                     </div> 
       <div style="margin: 35px">
-                        <select name="privilegio" class="form-control" class="input" required title="Establece el privilegio" style="padding: 15px 32px">
-                <option value="0" selected  class="input">Selecciona tu nivel de privilegio...</option>                                                 
-                <option value="Usuario" class="input">Usuario standard</option>
-                <option value="Administrador" class="input">Administrador</option>
+                        <select name="privilegio" class="form-control" required title="Establece el privilegio" style="padding: 15px 32px">
+                <option value="0" selected >Selecciona tu nivel de privilegio...</option>                                                 
+                <option value="Usuario">Usuario standard</option>
+                <option value="Administrador">Administrador</option>
                 </select>
                         <i></i>
                     </div> 
