@@ -15,14 +15,21 @@
 </div>
 <div class="container text-center">
 
-<form action="">
-<select>
+<form action="UsuarioController?accion=Agendarhorarios" method="post">
+<select name="turno"><br>
 
-<option> Seleccione al empleado</option>
+<option> Seleccione al empleado</option><br>
 <c:forEach items="${usuarios}" var="r">
-<option value="${r.getNombreusuario() }"> ${r.getNombreusuario() } </option>
+<option value="${r.getIdempresa()}"> ${r.getNombreusuario() } </option>
 </c:forEach>
-</select>
+
+</select><br>
+<label for="Hora-entrada"> selecione la hora de entrada correspondiete</label><br>
+<input type="time" name="Hora-entrada"></input><br>
+<label for="Hora-salida"> selecione la hora de salida correspondiete</label><br>
+<input type="time" name="Hora-salida"></input><br>
+<input type="submit" value="Enviar">
+
 
 
 

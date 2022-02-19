@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import Vo.AgendahorarioVo;
 import Vo.UsuarioVo;
 import Vo.getters;
 import Vo.horarioVo;
@@ -41,6 +41,7 @@ public class UsuarioController extends HttpServlet {
 	empleadosDAO empleados = new empleadosDAO();
 	horariosDAO horarios = new horariosDAO();
 	horarioVo hv = new horarioVo();
+	AgendahorarioVo agenda = new AgendahorarioVo();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -95,6 +96,13 @@ public class UsuarioController extends HttpServlet {
 						Listarh(request,response);
 						System.out.print("Entro  al metodo listarh");
 						break;
+					case "Agendarhorarios":
+						System.out.println("Entro al  caso Listarusuarios");
+						
+						
+						Agendarhorarios(request,response);
+						
+						break;
 					
 						
 					
@@ -137,6 +145,37 @@ public class UsuarioController extends HttpServlet {
 	
 	
 
+
+	private void Agendarhorarios(HttpServletRequest request, HttpServletResponse response) {
+		if (request.getParameter("turno") !=null) {
+			agenda.setIdturno(Integer.parseInt(request.getParameter("turno")));
+			System.out.println("LLego el id");
+			
+			agenda.setHorario_entrada_turno(request.getParameter("Hora-entrada"));
+			agenda.setHora_salida_turno(request.getParameter("Hora-salida"));
+		}
+		
+		
+		try {
+			 System.out.print(" Entro al metodo Registrar "+request.getParameter("turno")+request.getParameter("Hora-entrada")     
+			 +request.getParameter("Hora-salida"));
+			 
+			 horarios.turno(agenda);
+			 response.sendRedirect("index.jsp");
+			 
+		
+		
+		 
+	     
+	}
+		 catch (Exception e) {
+			
+			 System.out.print(" no Entro al metodo Registrar ");
+			
+	}
+	}
+
+	
 
 	private void Listarh(HttpServletRequest request, HttpServletResponse response) {
 		try {

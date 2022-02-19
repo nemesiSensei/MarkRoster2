@@ -8,12 +8,13 @@ import java.sql.SQLException;
 import horarios.horario;
 import java.util.Calendar;
 
+import Vo.AgendahorarioVo;
 import Vo.getters;
 import Vo.horarioVo;
 import controlador.conexion;
 
 public class horariosDAO {
-	
+	AgendahorarioVo agendar= new AgendahorarioVo();
 	horario fecha = new horario();
 	Connection con;
 	ResultSet rs;
@@ -24,6 +25,7 @@ public class horariosDAO {
 	int register;
 	int id;
 	horarioVo hv= new horarioVo();
+	AgendahorarioVo agenda = new AgendahorarioVo();
 	getters r = new getters();
 	
 	
@@ -120,6 +122,34 @@ public class horariosDAO {
 		
 			
 			System.out.println("La fecha actual es: "+horario.horaactual());
+			
+			
+		
+		}catch (Exception e) { 
+			System.out.println("Algo sucedio mal  al registrar la fecha actual"+e.getMessage());
+			ps.close();
+		}		
+		return register;
+	}
+	public int  turno(AgendahorarioVo agenda) throws SQLException { //  este va a ser el metodo para hacer el registro de horario.
+		System.out.println("Entro a la sentencia preparada  ");
+		
+		sql="INSERT INTO turno (Horario_entrada_turno, Hora_salida_turno, idempleado) VALUES (?,?,?);";
+		
+		
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 
+			ps.setString(1, agenda.getHorario_entrada_turno());
+			ps.setString(2, agenda.getHora_salida_turno());
+			ps.setInt(3, agenda.getIdturno());
+		
+			System.out.println("Se logro  asignar el horario");
+			ps.executeUpdate();
+			System.out.print(ps);
+		
+			
+		
 			
 			
 		
