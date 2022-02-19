@@ -91,6 +91,14 @@ public class UsuarioController extends HttpServlet {
 						Reportes(request,response);
 						System.out.print("Entro  al  caso de metodo de reportes");
 						break;
+					case "Listarh":
+						Listarh(request,response);
+						System.out.print("Entro  al metodo listarh");
+						break;
+					
+						
+					
+						
 					
 						/*case "eliminar":
 						System.out.println("Se entro al metodo eliminar");
@@ -128,6 +136,33 @@ public class UsuarioController extends HttpServlet {
 
 	
 	
+
+
+	private void Listarh(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			System.out.print("Entro al metodo listarusuarios o empleados ");
+			 List empleados1 =empleados.Listarusuarios();
+			
+			 
+				 request.setAttribute("usuarios", empleados1);// esto es para enviar los resultados de la busqueda		
+				 request.getRequestDispatcher("Agendahorario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+				.forward(request, response);
+				 
+			 
+			
+		} catch (Exception e) {
+			System.out.println("error"+e);
+		}
+		finally {
+			}
+		}
+	
+		
+		
+		
+		
+	
+
 	private void Reportes(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		System.out.print("Entro al metodo de reportes");
 		ServletOutputStream out = response.getOutputStream();
@@ -435,7 +470,7 @@ public class UsuarioController extends HttpServlet {
 		r=empleados.consulta(r.getIdempresa());
 			 request.setAttribute("usuarios", r);// esto es para enviar los resultados de la busqueda
 			
-			 request.getRequestDispatcher("Editarusuario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+			 request.getRequestDispatcher("Agendahorario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 			.forward(request, response);
 			
 		} catch (Exception e) {
@@ -504,7 +539,9 @@ public class UsuarioController extends HttpServlet {
 			 request.setAttribute("usuario", usuarios);// esto es para enviar los resultados de la busqueda
 		
 			 request.getRequestDispatcher("usuarios.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
-			.forward(request, response);
+			 .forward(request, response);	
+			 
+			
 			
 		} catch (Exception e) {
 			
