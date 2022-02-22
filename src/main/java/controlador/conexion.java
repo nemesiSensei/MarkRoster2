@@ -5,7 +5,9 @@
  */
 package controlador;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -19,7 +21,10 @@ public class conexion
     private static final String DATABASE="proyecto";
     private static final String CLASSNAME="com.mysql.cj.jdbc.Driver";
     private static final String URL="jdbc:mysql://"+HOST+":"+PORT+"/"+DATABASE;
+    
     private Connection con;
+   
+
     public conexion()
     {
         try 
@@ -43,6 +48,7 @@ public class conexion
     public static void main(String[] args) 
     {
         conexion con = new conexion();
+        
         System.out.println("conexion exitosa");
     }
 }

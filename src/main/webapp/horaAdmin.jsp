@@ -90,8 +90,7 @@
   <option value="salidaAlmuerzo">Salida para almorzar</option>
   <option value="entradaAlmuerzo">Entrada de almorzar</option>
   <option value="salida_laboral">Final de jornada laboral</option>
-  <option value="inicioExtras">Inicio de horas extra</option>
-  <option value="salidaExtras">Final de horas extra</option>
+
   
 </select>
 	

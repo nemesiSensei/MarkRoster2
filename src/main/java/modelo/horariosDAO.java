@@ -1,5 +1,6 @@
 package modelo;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,25 +34,24 @@ public class horariosDAO {
 	public int  registrar_hora_inicio(horarioVo hv) throws SQLException { //  este va a ser el metodo para hacer el registro de horario.
 		System.out.println("Entro a la sentencia preparada  ");
 		
-		sql="INSERT INTO horario_entrada (Horario_entrada, id_empleados) VALUES (?,?)";
+		
 		
 		
 		try {
 			con=c.getConnection(); // opening the connection to database 
-			ps=con.prepareStatement(sql); // prepare that sentence 
-			ps.setString(1,hv.getFechaentrada());
-			ps.setInt(2,hv.getIdempleados().getIdempresa());
-			System.out.println("Se logro registrar el horario, uwuuuuuuuuuuuuu");
-			ps.executeUpdate();
+			
+			 CallableStatement cst = con.prepareCall("{call sp_horavalida (?)}");
+			 cst.setInt(1, hv.getIdempleados().getIdempresa());
+			 cst.execute();
 		
 			
-			System.out.println("La fecha actual es: "+horario.horaactual());
+			System.out.println("Se logro ejecutar el procedimiento!!!! ");
 			
 			
 		
 		}catch (Exception e) { 
 			System.out.println("Algo sucedio mal  al registrar la fecha actual"+e.getMessage());
-			ps.close();
+			
 		}		
 		return register;
 	}
@@ -108,18 +108,20 @@ public class horariosDAO {
 	public int  registrarsalida_laboral(horarioVo hv) throws SQLException { //  este va a ser el metodo para hacer el registro de horario.
 		System.out.println("Entro a la sentencia preparada  ");
 		
-		sql="INSERT INTO hora_salida ( id_empleado, Horario_salida) VALUES (?,?);";
+		
 		
 		
 		try {
 			con=c.getConnection(); // opening the connection to database 
-			ps=con.prepareStatement(sql); // prepare that sentence 
-			ps.setString(2,hv.getFechafin());
-			ps.setInt(1,hv.getIdempleados().getIdempresa());
-			System.out.println("Se logro registrar el horario, uwuuuuuuuuuuuuu");
-			ps.executeUpdate();
-			System.out.print(ps);
+			
+
+			 CallableStatement cst = con.prepareCall("{call sp_horasalida (?)}");
+			 cst.setInt(1, hv.getIdempleados().getIdempresa());
+			 cst.execute();
 		
+			
+			System.out.println("Se logro ejecutar el procedimiento!!!! ");
+			
 			
 			System.out.println("La fecha actual es: "+horario.horaactual());
 			
@@ -127,7 +129,7 @@ public class horariosDAO {
 		
 		}catch (Exception e) { 
 			System.out.println("Algo sucedio mal  al registrar la fecha actual"+e.getMessage());
-			ps.close();
+			
 		}		
 		return register;
 	}

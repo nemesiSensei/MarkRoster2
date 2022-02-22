@@ -431,7 +431,7 @@ public class UsuarioController extends HttpServlet {
 	}
 		 catch (Exception e) {
 			
-			 System.out.print(" no Entro al metodo Registrar ");
+			 System.out.print(" no Entro al metodo Registrar "+e.getMessage());
 			
 	}
 		

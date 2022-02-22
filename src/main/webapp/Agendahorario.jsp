@@ -6,7 +6,7 @@
       <div class="modo" id="modo">
         <i class="fas fa-toggle-on"></i>
     </div> 
-   <h1 class="text-center">Gestión de usuarios</h1>
+   <h1 class="text-center">Asignación de horarios</h1>
    <br>
   <div class="container text-center"> 
   <a class="btn btn-success" href="registroUsuario.jsp" role="button"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
