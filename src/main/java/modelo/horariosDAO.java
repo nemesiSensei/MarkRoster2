@@ -7,11 +7,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import horarios.horario;
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import Vo.AgendahorarioVo;
+import Vo.Hlist;
 import Vo.getters;
 import Vo.horarioVo;
+import controlador.UsuarioVo;
 import controlador.conexion;
 
 public class horariosDAO {
@@ -28,6 +33,7 @@ public class horariosDAO {
 	horarioVo hv= new horarioVo();
 	AgendahorarioVo agenda = new AgendahorarioVo();
 	getters r = new getters();
+	
 	
 	
 	
@@ -161,11 +167,61 @@ public class horariosDAO {
 		}		
 		return register;
 	}
+	public List Listarturno () throws SQLException {
+		System.out.println("Ingreso al metodo listar usuarios");
+		List<Hlist> hlist= new ArrayList<>();
+		sql="SELECT * from empleados INNER JOIN turno on empleados.id_empleados=turno.idempleado;";
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 
+			ps.executeQuery(sql); // en sentencias select siempre va el executeQuery
+			rs=ps.executeQuery();
+			
+			
+			// y el execute update va a ser utilizado en sentencias  de insert,update y delete.
+			
+		while (rs.next()) {
+			Hlist h = new Hlist();
+			h.setIdempleado(rs.getInt(1));
+			h.setUsuario(rs.getString(3));
+			
+		
+		
+			
+			
+			
+			// aca lo que se esta haciendo es que,  accedemos al objeto getter, lo cual nos llleva a sus atributos (get y setters de la tabla empleados)
+			
+			
+			
+			 // se puede usar la posicion de la columna  o el nombre de la columna  que quremos obtener
+			hlist.add(h);
+			
+		
+			System.out.println("Se hizo la consulta en listarturno "+""+h.getIdempleado()+""+h.getUsuario());
+		}
+
+			
+			
+		} catch (Exception e) {
+			System.out.println("Consulta no exitosa "+e.getMessage());
+			
+		}
+		finally {
+			
+		}
+		
+		return hlist;
+			
+		}
+	
+	
+	}
 
 
 
 	
-}
+
 	
 	
 	

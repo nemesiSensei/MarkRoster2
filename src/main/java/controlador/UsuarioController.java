@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Vo.AgendahorarioVo;
+import Vo.Hlist;
 import Vo.UsuarioVo;
 import Vo.getters;
 import Vo.horarioVo;
@@ -42,6 +43,7 @@ public class UsuarioController extends HttpServlet {
 	horariosDAO horarios = new horariosDAO();
 	horarioVo hv = new horarioVo();
 	AgendahorarioVo agenda = new AgendahorarioVo();
+	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -103,6 +105,14 @@ public class UsuarioController extends HttpServlet {
 						Agendarhorarios(request,response);
 						
 						break;
+					case "turno":
+						System.out.println("Entro al  caso de listarturnos");
+						
+						
+						turno(request,response);
+						
+						break;
+					
 					
 						
 					
@@ -145,6 +155,29 @@ public class UsuarioController extends HttpServlet {
 	
 	
 
+
+	
+
+	private void turno(HttpServletRequest request, HttpServletResponse response) {
+	try {
+	System.out.print("Entro al metodo listarh ");
+	 List hlist =horarios.Listarturno();
+	
+	 
+		 request.setAttribute("usuarios", hlist);// esto es para enviar los resultados de la busqueda
+		
+		 response.sendRedirect("verhorarios.jsp"); // esto es para especificar adonde quiero enviar los datos de una vista 
+		
+	 
+	
+} catch (Exception e) {
+	System.out.println("error"+e);
+}
+finally {
+	}
+}
+		
+	
 
 	private void Agendarhorarios(HttpServletRequest request, HttpServletResponse response) {
 		if (request.getParameter("turno") !=null) {
