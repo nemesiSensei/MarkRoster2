@@ -164,10 +164,11 @@ public class UsuarioController extends HttpServlet {
 	 List hlist =horarios.Listarturno();
 	
 	 
-		 request.setAttribute("usuarios", hlist);// esto es para enviar los resultados de la busqueda
-		
-		 response.sendRedirect("verhorarios.jsp"); // esto es para especificar adonde quiero enviar los datos de una vista 
-		
+		 request.setAttribute("horarios", hlist);// esto es para enviar los resultados de la busqueda
+	
+		 request.getRequestDispatcher("verhorarios.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		.forward(request, response);
+		 
 	 
 	
 } catch (Exception e) {

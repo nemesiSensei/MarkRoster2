@@ -1,8 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@include file="header.jsp" %>
+
 <link rel="stylesheet" href="dark.css">
    <body>    
+   
       <div class="modo" id="modo">
         <i class="fas fa-toggle-on"></i>
     </div> 

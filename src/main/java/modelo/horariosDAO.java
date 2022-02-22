@@ -184,7 +184,8 @@ public class horariosDAO {
 			Hlist h = new Hlist();
 			h.setIdempleado(rs.getInt(1));
 			h.setUsuario(rs.getString(3));
-			
+			h.setHorario_entrada_turno(rs.getString(14));
+			h.setHora_salida_turno(rs.getString(15));
 		
 		
 			
@@ -198,7 +199,7 @@ public class horariosDAO {
 			hlist.add(h);
 			
 		
-			System.out.println("Se hizo la consulta en listarturno "+""+h.getIdempleado()+""+h.getUsuario());
+			System.out.println("Se hizo la consulta en listarturno "+""+h.getIdempleado()+""+h.getUsuario()+""+h.getHorario_entrada_turno());
 		}
 
 			
