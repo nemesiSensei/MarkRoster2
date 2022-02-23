@@ -1,12 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<link rel="stylesheet" href="dark.css">
-   <body>    
-   
-      <div class="modo" id="modo">
-        <i class="fas fa-toggle-on"></i>
-    </div> 
+<%@include file="header.jsp" %>
+   <body>     
    <h1 class="text-center">Gestión de usuarios</h1>
    <br>
   <div class="container text-center"> 
@@ -60,11 +55,9 @@ var dataTable = new DataTable("#usuarios", {
 	    info: "Mostrando {start}  al  {end} de   {rows} filas",
 	}
 });
-
 </script>
 		<script src="cambiarestado.js"></script>
 
 </body>
 <%@include file="footer.jsp" %>
-  <script src="main.js"></script>
  </html>

@@ -33,9 +33,38 @@ public class horariosDAO {
 	horarioVo hv= new horarioVo();
 	AgendahorarioVo agenda = new AgendahorarioVo();
 	getters r = new getters();
+	Hlist h = new Hlist();
 	
 	
-	
+	public Hlist consulta(int id ) throws SQLException {
+		Hlist h = new Hlist();
+		sql="SELECT * FROM  turno WHERE idempleado=" +id;
+		System.out.print("Entro a la consulta de editar horarios");
+		try {
+			con=c.getConnection(); // opening the connection to database 
+			ps=con.prepareStatement(sql); // prepare that sentence 
+			ps.executeQuery(sql); // en sentencias select siempre va el executeQuery
+			rs=ps.executeQuery();
+			System.out.print("Se ejecuto la consulta");
+			// y el execute update va a ser utilizado en sentencias  de insert,update y delete.
+			
+		while (rs.next()) {
+			
+			
+			h.setHorario_entrada_turno(rs.getString("Horario_entrada_turno"));
+			h.setHora_salida_turno(rs.getString("Hora_salida_turno"));
+			System.out.print("La hora de entrada de este usuario es: "+h.getHorario_entrada_turno());
+			
+			System.out.print("Entro al ciclo while");
+		}
+		} catch (Exception e) {
+			System.out.println("Consulta no exitosa "+e.getMessage());
+			ps.close();
+		}
+		finally {			
+		}		
+		return h;			
+		}
 	
 	public int  registrar_hora_inicio(horarioVo hv) throws SQLException { //  este va a ser el metodo para hacer el registro de horario.
 		System.out.println("Entro a la sentencia preparada  ");

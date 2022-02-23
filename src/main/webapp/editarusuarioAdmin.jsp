@@ -28,13 +28,7 @@
       <input  type="hidden" id="id" class="fadeIn second" name="id"  value="${usuarios. getIdempresa()}">
             <input type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()}">
                <input type="text" id="usuario" class="fadeIn third" name="usuario" value="${usuarios. getNombreusuario()}">
-               <br>               
-                <select  name="privilegio" class="form-select fadeIn first" required title="Establece el privilegio" style="width:380px; margin-left:35px;padding:15px">
-                <option  >${usuarios. getPrivilegio()}</option>                                                 
-                <option value="Usuario">Usuario </option>
-                <option value="Administrador">Administrador</option>
-                </select>
-                <br>
+             
                <input type="submit"  onclick="editar(event,${r.getIdempresa() },'Controlador')"class="fadeIn fourth" value="Actualizar">      
 </form>
   </div>

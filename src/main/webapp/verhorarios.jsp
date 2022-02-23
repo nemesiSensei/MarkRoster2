@@ -17,6 +17,8 @@
 <th>Usuario</th>
 <th>Horario de entrada </th>
 <th>Horario de salida </th>
+<th>Editar </th>
+<th>Eliminar </th>
 
 </tr>
 <c:forEach items="${horarios}" var="r">
@@ -25,6 +27,9 @@
 	<td>${r.getUsuario()}</td>
 	<td>${r.getHorario_entrada_turno()}</td>
 	<td>${r.getHora_salida_turno()}</td>
+	<td> <a class="btn btn-warning" href="Controlador?accion=actualizarhorarios&id=${r.getIdempleado()}" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
+	<td> <a class="btn btn-danger"  role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
+	
 	
 	
 	

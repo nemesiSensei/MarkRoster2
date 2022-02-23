@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Vo.Hlist;
 import Vo.getters;
 import modelo.empleadosDAO;
+import modelo.horariosDAO;
 
 /**
  * Servlet implementation class Controlador
@@ -22,6 +24,9 @@ public class Controlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	getters r = new getters();
 	empleadosDAO empleadosDAO = new empleadosDAO();
+	Hlist h = new Hlist();
+	horariosDAO horarios = new horariosDAO();
+	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -118,6 +123,8 @@ public class Controlador extends HttpServlet {
 				default:
 					response.sendRedirect("iniciarSesion.jsp");
 					break;
+				case "actualizarhorarios":
+					actualizarhorarios(request,response);
 				}
 			}
 			
@@ -128,6 +135,31 @@ public class Controlador extends HttpServlet {
 	}
 		
 	
+	private void actualizarhorarios(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			if (request.getParameter("id")!=null) {
+				
+				System.out.print("Se recibio el id");
+			}
+			System.out.print("Entro al metodo consultar");
+			
+			h.setIdempleado(Integer.parseInt(request.getParameter("id")));
+		h=horarios.consulta(h.getIdempleado());
+			 request.setAttribute("horarios", h);// esto es para enviar los resultados de la busqueda
+			
+			 request.getRequestDispatcher("horarios-edit.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+			.forward(request, response);
+			
+		} catch (Exception e) {
+			
+		}
+		finally {
+			}
+		}
+		
+		
+	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
