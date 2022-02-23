@@ -34,7 +34,27 @@ public class horariosDAO {
 	AgendahorarioVo agenda = new AgendahorarioVo();
 	getters r = new getters();
 	Hlist h = new Hlist();
-	
+	public int editturno(Hlist h) throws SQLException {
+		sql="UPDATE turno SET Horario_entrada_turno = ?, Hora_salida_turno= ? WHERE idempleado="+h.getIdempleado();
+		
+		try {
+			con=c.getConnection(); //Abriendo la conexión a la BD
+			ps=con.prepareStatement(sql); //preparar sentencia
+			ps.setString(1, h.getHorario_entrada_turno());
+			ps.setString(2, h.getHora_salida_turno());
+			
+			
+			System.out.println(ps);
+			ps.executeUpdate();//Ejeución de la sentencia	
+			ps.close();
+			System.out.println("Se cambió el horario");			
+		}catch(Exception e) {
+			System.out.println("Error al cambiar el horario" +e.getMessage());
+		}
+		finally {			
+		}
+		return id;//Retorna cantidad de filas afectadas
+	}
 	
 	public Hlist consulta(int id ) throws SQLException {
 		Hlist h = new Hlist();
@@ -53,6 +73,7 @@ public class horariosDAO {
 			
 			h.setHorario_entrada_turno(rs.getString("Horario_entrada_turno"));
 			h.setHora_salida_turno(rs.getString("Hora_salida_turno"));
+			h.setIdempleado(rs.getInt("idempleado"));
 			System.out.print("La hora de entrada de este usuario es: "+h.getHorario_entrada_turno());
 			
 			System.out.print("Entro al ciclo while");

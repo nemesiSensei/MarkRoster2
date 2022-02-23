@@ -125,6 +125,10 @@ public class Controlador extends HttpServlet {
 					break;
 				case "actualizarhorarios":
 					actualizarhorarios(request,response);
+					break;
+				case "edithorarios":
+					edithorarios(request,response);
+					break;
 				}
 			}
 			
@@ -135,6 +139,39 @@ public class Controlador extends HttpServlet {
 	}
 		
 	
+	private void edithorarios(HttpServletRequest request, HttpServletResponse response) {
+		if(request.getParameter("idhorarios")!=null && request.getParameter("horario-entrada") !=null) {
+			
+			
+			h.setIdempleado(Integer.parseInt(request.getParameter("idhorarios")));
+			h.setHorario_entrada_turno(request.getParameter("horario-entrada"));;
+			h.setHora_salida_turno(request.getParameter("horario-salida"));
+			System.out.print(" La hora de entrada es : "+h.getHorario_entrada_turno()+"la fecha de salida es: "+h.getHora_salida_turno());
+			
+		}
+		try {
+			horarios.editturno(h);
+			
+				 List h =empleadosDAO.Listarusuarios();
+				 request.setAttribute("horarios", h);// esto es para enviar los resultados de la busqueda		
+				 request.getRequestDispatcher("UsuarioController?accion=turno") // esto es para especificar adonde quiero enviar los datos de una vista 
+				.forward(request, response);			
+				
+			
+			
+
+			
+					System.out.print("Se  actualizo el usuario");
+			
+		} catch (Exception e) {
+			System.out.println("No se actualizo el usuario "+e.getMessage());
+		}
+		
+		
+		
+		
+	}
+
 	private void actualizarhorarios(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			if (request.getParameter("id")!=null) {
