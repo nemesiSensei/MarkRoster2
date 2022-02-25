@@ -62,6 +62,16 @@ if(session.getAttribute("us")!=null)
                 </li>
                                
                 </c:if>
+                 <li><c:if test="${us.privilegio=='Administrador'}">
+                   <a href="UsuarioController?accion=turno">
+                       <i class="fa fa-tools"></i>
+                        <span class="nav-text">
+                            <strong>Ver listado de horarios</strong>
+                        </span>
+                    </a>
+                </li>
+                               
+                </c:if>
                   <li><c:if test="${us.privilegio=='Administrador'}">
                    <a href="UsuarioController?accion=Listarh">
                        <i class="fa fa-tools"></i>

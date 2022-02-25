@@ -68,7 +68,7 @@ public class Controlador extends HttpServlet {
 							
 						System.out.println("se encontró usuario activo");	
 						sesion.setAttribute("us", r);
-						response.sendRedirect("consultaUsuarioAdmin.jsp");
+						response.sendRedirect("Controlador?accion=Listarusuarios");
 						}
 						else if (r.isEstado()==false && r.getNombreusuario()!=null)
 						{
