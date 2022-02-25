@@ -12,9 +12,6 @@ if(session.getAttribute("us")!=null)
     <head>
     <script src="alertas.js"></script>   
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-        <link rel="icon" href="media/imagenes/MarkRosterlogo.png"> 
         <title>MarkRoster</title>
         <link rel="stylesheet" href="index.css"> 
         <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
@@ -23,9 +20,36 @@ if(session.getAttribute("us")!=null)
         crossorigin="anonymous">
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
+        <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Favicons -->
+  <link rel="icon" href="media/imagenes/MarkRosterlogo.png">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+ <link rel="stylesheet" href="index.css"> 
+ <meta charset="UTF-8">     
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">         
+    <link rel="stylesheet" href="dark.css">
     </head>
-    <header>    
-        <div class="area"></div><nav class="main-menu">       
+    <header>   
+    
+     
+      <!--  <div class="area"></div><nav class="main-menu">       
             <ul>
             	<li>
                     <a href="index.jsp">
@@ -52,7 +76,7 @@ if(session.getAttribute("us")!=null)
                     </a>                  
                 </li>
                 <!--importante para restringir vistas y funciones y botones -->                
-                 <li><c:if test="${us.privilegio=='Administrador'}">
+            <!--     <li><c:if test="${us.privilegio=='Administrador'}">
                    <a href="Controlador?accion=Listarusuarios">
                        <i class="fa fa-tools"></i>
                         <span class="nav-text">
@@ -108,7 +132,7 @@ if(session.getAttribute("us")!=null)
                 </li>  
             </ul>
         </nav>        
-    </header> 
+    </header> -->
      <%
 		}
 		else
