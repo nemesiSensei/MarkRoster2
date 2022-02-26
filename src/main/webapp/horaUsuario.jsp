@@ -113,6 +113,7 @@
 <br>
 </body>
   <script src="main.js"></script>
+  <script src="horario.js"></script>
  <%@include file="footer.jsp" %>
     <div class="modo" id="modo">
         <i class="fas fa-toggle-on"></i>

@@ -82,7 +82,7 @@
   <h3 class="text-center">Elige que horario registrar:</h3>
   <br>
   <br>  
-  <form method="post" action="UsuarioController?accion=Registrarhorario&id=${us.idempresa}">
+  <form method="post" action="">
   
 <select class="form-select "  name="opciones_horarios">
   <option selected >Selecciona el momento del día</option>
@@ -90,14 +90,17 @@
   <option value="salidaAlmuerzo">Salida para almorzar</option>
   <option value="entradaAlmuerzo">Entrada de almorzar</option>
   <option value="salida_laboral">Final de jornada laboral</option>
+  
+
 
   
 </select>
-	
+
+	s
 <h3 class="text-center">Finalmente, registra tu horario</h3>
 <br>
 <br>
-<button type="submit" class="btn btn-success"><i class="fas fa-check fa-4x" title="Confirmar"></i></button>
+<a class="btn btn-success btn-sm" onclick="horario(event,${us.getIdempresa()},'Usuario')" role="button"><i class="far fa-thumbs-up fa-2x"></i><strong> Ingresarr</strong></a>	
 </form>
 </div>
 <br>
@@ -141,6 +144,7 @@
 </div>
 </body>
   <script src="main.js"></script>
+   <script src="horario.js"></script>
  <%@include file="footer.jsp" %>
  
 </html>

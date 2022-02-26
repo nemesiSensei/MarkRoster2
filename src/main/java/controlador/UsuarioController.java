@@ -61,8 +61,10 @@ public class UsuarioController extends HttpServlet {
 	//	response.getWriter().append("Served at: ").append(request.getContextPath());
 		String accion =request.getParameter("accion");
 		System.out.print("Entro al controlador esta vez  ");
+		
 			
 			try {
+				
 				if (accion!=null) {
 					System.out.println("Entro al switch");
 					switch (accion) {
@@ -88,6 +90,7 @@ public class UsuarioController extends HttpServlet {
 						break;
 					case "Registrarhorario":
 						Registrarhorario(request,response);
+						hv.setOpciones(request.getParameter("opciones_horarios"));
 						break;
 						
 					case "Reportes":
@@ -96,10 +99,11 @@ public class UsuarioController extends HttpServlet {
 						break;
 					case "Listarh":
 						Listarh(request,response);
-						System.out.print("Entro  al metodo listarh");
+						System.out.print("Entro  al metodo listarh"); 
 						break;
 					case "Agendarhorarios":
 						System.out.println("Entro al  caso Listarusuarios");
+						
 						
 						
 						Agendarhorarios(request,response);
@@ -298,7 +302,7 @@ finally {
 			
 			
 			
-			hv.setOpciones(request.getParameter("opciones_horarios"));
+			
 			String opcion=hv.getOpciones();
 			System.out.print("Entro al metodo consultar"+opcion);
 			if (request.getParameter("id")!=null  && opcion.equals("salidaAlmuerzo"))  { 
