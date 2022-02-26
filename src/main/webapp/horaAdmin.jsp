@@ -84,7 +84,7 @@
   <br>  
   <form method="post" action="">
   
-<select class="form-select "  name="opciones_horarios">
+<select class="form-select "  name="opciones_horarios" id="opciones_horarios">
   <option selected >Selecciona el momento del día</option>
   <option value="horaentrada_laboral" >Inicio de jornada laboral</option>
   <option value="salidaAlmuerzo">Salida para almorzar</option>
@@ -96,8 +96,9 @@
   
 </select>
 
-	s
-<h3 class="text-center">Finalmente, registra tu horario</h3>
+	
+<h3 class="text-center">Finalmente, registra tu horario</h3>}
+
 <br>
 <br>
 <a class="btn btn-success btn-sm" onclick="horario(event,${us.getIdempresa()},'Usuario')" role="button"><i class="far fa-thumbs-up fa-2x"></i><strong> Ingresarr</strong></a>	

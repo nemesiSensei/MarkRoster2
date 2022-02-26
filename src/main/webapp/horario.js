@@ -1,7 +1,11 @@
 function horario(e,id,con){
+	
 	e.preventDefault();
 	console.log(id)
 	console.log(con)
+	var producto=document.getElementById("opciones_horarios").value;
+	console.log(producto)
+	
 	
 	
 	Swal.fire({
