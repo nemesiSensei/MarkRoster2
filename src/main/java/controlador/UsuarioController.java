@@ -90,7 +90,7 @@ public class UsuarioController extends HttpServlet {
 						break;
 					case "Registrarhorario":
 						Registrarhorario(request,response);
-						hv.setOpciones(request.getParameter("opciones_horarios"));
+						
 						break;
 						
 					case "Reportes":
@@ -303,7 +303,7 @@ finally {
 			
 			
 			
-			String opcion=hv.getOpciones();
+			String opcion=request.getParameter("producto");
 			System.out.print("Entro al metodo consultar"+opcion);
 			if (request.getParameter("id")!=null  && opcion.equals("salidaAlmuerzo"))  { 
 				String horario1 =opcion;

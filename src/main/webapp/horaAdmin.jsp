@@ -90,7 +90,11 @@
   <option value="salidaAlmuerzo">Salida para almorzar</option>
   <option value="entradaAlmuerzo">Entrada de almorzar</option>
   <option value="salida_laboral">Final de jornada laboral</option>
-  
+ <script>
+   var fechahora = new Date();
+ </script>
+   
+
 
 
   

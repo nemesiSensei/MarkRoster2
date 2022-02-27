@@ -1,10 +1,17 @@
 function horario(e,id,con){
+	let date = new Date();
+		
+let  hora = date.getHours() + ':' + date.getMinutes();
 	
 	e.preventDefault();
 	console.log(id)
 	console.log(con)
 	var producto=document.getElementById("opciones_horarios").value;
 	console.log(producto)
+	
+	
+	
+	
 	
 	
 	
@@ -18,11 +25,16 @@ function horario(e,id,con){
   confirmButtonText: 'si, quiero ingresar el horario!'
 }).then((result) => {
   if (result.isConfirmed) {
-    ruta=con+"Controller?accion=Registrarhorario&id="+id
-	window.setTimeout(function(){window.location.href=ruta},2000);
+    ruta=con+"Controller?accion=Registrarhorario&id="+id+"&producto="+producto;
+	
+	window.setTimeout(function(){window.location.href=ruta},5000);
     Swal.fire(
       'Registro enviado.!',
+	'La  hora registrada  fue: '+hora,
       'Base de datos actualizada.'
+		
+
+		
       
     )
   }
