@@ -495,10 +495,18 @@
                 <i class="ri-mail-send-line"></i>
                 <p>jdjimenez9378@misena.edu.co</p>
               </div>
+               <div>
+                <i class="ri-mail-send-line"></i>
+                <p>smendez67@misena.edu.co</p>
+              </div>
 
               <div>
                 <i class="ri-phone-line"></i>
                 <p>+57 3227147140</p>
+              </div>
+               <div>
+                <i class="ri-phone-line"></i>
+                <p>+57 3203334385</p>
               </div>
 
             </div>
