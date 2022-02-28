@@ -1,7 +1,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="header.jsp" %>
-   <body>     
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+</head>
+
+   <body>
+   
+   
    <h1 class="text-center">Gestión de usuarios</h1>
    <br>
   <div class="container text-center"> 
@@ -11,7 +18,8 @@
   <br> 
 </div>
 <div class="container text-center">
-<table  class="table table-dark table-striped" id="usuarios">
+
+<table  class="display"  id="usuarios">
 <tr>
 <th>ID</th>
 <th>Usuario</th>
@@ -43,20 +51,15 @@
 </c:forEach>
 	
 </table>
-</div>
-<script>
-var myTable = document.querySelector("#usuarios");
-var dataTable = new DataTable("#usuarios", {
-	perPage:5,
-	labels: { 
-	    placeholder: "Buscar usuario...",
-	    perPage: "{select} Registros en pagina ",
-	    noRows: "No se encuentra el usuario",
-	    info: "Mostrando {start}  al  {end} de   {rows} filas",
-	}
-});
-</script>
+</div><script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+
+
+
 		<script src="cambiarestado.js"></script>
+		<script src=' https://code.jquery.com/jquery-3.6.0.min.js'>-</script>
+		
 
 </body>
 <%@include file="footer.jsp" %>

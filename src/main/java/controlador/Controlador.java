@@ -222,13 +222,11 @@ private  void Listarusuarios(HttpServletRequest request, HttpServletResponse res
 			 List empleados =empleadosDAO.Listarusuarios();
 			 
 				 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
-				 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+				 request.getRequestDispatcher("prueba.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 				.forward(request, response);
 				 
 			 
-			 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
-			 request.getRequestDispatcher("consultaUsuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
-			.forward(request, response);			
+					
 		} catch (Exception e) {
 			System.out.println("error"+e);
 		}
