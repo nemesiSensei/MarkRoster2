@@ -10,8 +10,9 @@
   <br>
   <br> 
 </div>
-<div class="container text-center">
-<table  class="table table-dark table-striped" id="usuarios">
+<div></div>
+<div class="container text-center ">
+<table  class="table-striped" id="usuarios" align="center">
 <tr>
 <th>ID</th>
 <th>Usuario</th>
@@ -52,7 +53,7 @@ var dataTable = new DataTable("#usuarios", {
 	    placeholder: "Buscar usuario...",
 	    perPage: "{select} Registros en pagina ",
 	    noRows: "No se encuentra el usuario",
-	    info: "Mostrando {start}  al  {end} de   {rows} filas",
+	   
 	}
 });
 </script>

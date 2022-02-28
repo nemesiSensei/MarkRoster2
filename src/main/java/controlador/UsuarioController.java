@@ -199,7 +199,7 @@ finally {
 			 +request.getParameter("Hora-salida"));
 			 
 			 horarios.turno(agenda);
-			 response.sendRedirect("index.jsp");
+			 response.sendRedirect("UsuarioController?accion=turno");
 			 
 		
 		
