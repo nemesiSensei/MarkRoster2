@@ -1,11 +1,13 @@
 function horario(e,id,con){
 	let date = new Date();
-		
+	var usuario=document.getElementById("usuario").value;
+		console.log(usuario);
 let  hora = date.getHours() + ':' + date.getMinutes();
 	
 	e.preventDefault();
 	console.log(id)
 	console.log(con)
+	
 	var producto=document.getElementById("opciones_horarios").value;
 	console.log(producto)
 	
@@ -30,7 +32,8 @@ let  hora = date.getHours() + ':' + date.getMinutes();
 	window.setTimeout(function(){window.location.href=ruta},5000);
     Swal.fire(
       'Registro enviado.!',
-	'La  hora registrada  fue: '+hora,
+	
+	usuario  + '   La  hora registrada  fue: '+hora,
       'Base de datos actualizada.'
 		
 

@@ -82,6 +82,13 @@
   <h3 class="text-center">Elige que horario registrar:</h3>
   <br>
   <br>  
+  <style>
+  
+
+</style>
+<script >
+
+</script>
   <form method="post" action="">
   
 <select class="form-select "  name="opciones_horarios" id="opciones_horarios">
@@ -105,7 +112,8 @@
 
 <br>
 <br>
-<a class="btn btn-success btn-sm" onclick="horario(event,${us.getIdempresa()},'Usuario')" role="button"><i class="far fa-thumbs-up fa-2x"></i><strong> Ingresarr</strong></a>	
+<input type="hidden" name="usuario" id="usuario" value="${us.getNombreusuario()}">
+<a class="btn btn-success btn-sm" onclick="horario(event,${us.getIdempresa()},'Usuario',)" role="button"><i class="far fa-thumbs-up fa-2x"></i><strong> Ingresarr</strong></a>	
 </form>
 </div>
 <br>
