@@ -1,51 +1,40 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html>
-<footer>
-<section class="footer-distributed" style="margin:0px 0px 0px 56px; position:absolute">			
-			<div class="footer-left">
-				<img src="media/imagenes/MarkRosterBlack.png"  width="128" height="auto"></img>
-				<p class="footer-links">
-					<a href="#" class="link-1">Inicio</a>					
-					<a href="#">Nosotros</a>				
-					<a href="#">Precios</a>				
-					<a href="#">Sobre</a>					
-					<a href="#">Terminos y condiciones</a>					
-					<a href="#">Contacto</a>
-				</p>
-				<p class="footer-company-name">Copyright © Valhalla Technologies S.A.S. 2021</p>
-			</div>
-			<div class="footer-center">
-				<div>
-					<i class="fa fa-map-marker"></i>
-					<p><span>Calle 11c sur #23-18 Este</span> Bogotá, Colombia</p><br>
-					<p><span>Calle 77  #107a 16   </span> Bogotá, Colombia</p>
-				</div>
-				<div>
-					<i class="fa fa-phone"></i>
-					<p>322 714 7140</p><br>
-					<p>320 333 4385</p>
-				</div>
-				<div>
-					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">jdjimenez9378@misena.edu.co</a></p><br>
-				
-				</div>
-				</div>
-			<div class="footer-right">
-				<p class="footer-company-about">
-					<span>Sobre la compañía</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-				</p>
-				<div class="footer-icons">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
-				</div>
-			</div>
-			
-		</section>
-</footer>
+ <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>MarkRoster</strong>. Todos los derechos reservados.
+          </div>
+          <div class="credits">            
+            <a>Diseñado por Valhalla Technologies</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="index.jsp" class="scrollto">Inicio</a>           
+            <a href="#">Política de privacidad</a>
+            <a href="#">Térmimos de uso</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 </html>
