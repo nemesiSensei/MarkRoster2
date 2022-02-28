@@ -49,7 +49,7 @@ if(session.getAttribute("us")!=null)
     <header>   
     
      
-      <!--  <div class="area"></div><nav class="main-menu">       
+     <div class="area"></div><nav class="main-menu">       
             <ul>
             	<li>
                     <a href="index.jsp">
@@ -76,7 +76,7 @@ if(session.getAttribute("us")!=null)
                     </a>                  
                 </li>
                 <!--importante para restringir vistas y funciones y botones -->                
-            <!--     <li><c:if test="${us.privilegio=='Administrador'}">
+             <li><c:if test="${us.privilegio=='Administrador'}">
                    <a href="Controlador?accion=Listarusuarios">
                        <i class="fa fa-tools"></i>
                         <span class="nav-text">
@@ -132,7 +132,7 @@ if(session.getAttribute("us")!=null)
                 </li>  
             </ul>
         </nav>        
-    </header> -->
+    </header>
      <%
 		}
 		else
