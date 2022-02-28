@@ -68,8 +68,10 @@ public class Controlador extends HttpServlet {
 							
 						System.out.println("se encontró usuario activo");	
 						sesion.setAttribute("us", r);
-						response.sendRedirect("Controlador?accion=Listarusuarios");
+						response.sendRedirect("Controlador?accion=ListarUnico");
+						
 						}
+						
 						else if (r.isEstado()==false && r.getNombreusuario()!=null)
 						{
 							System.out.println("se encontró usuario inactivo");							

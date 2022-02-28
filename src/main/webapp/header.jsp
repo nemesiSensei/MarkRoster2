@@ -115,7 +115,7 @@ if(session.getAttribute("us")!=null)
                     </a>
                 </li>                 
                 </c:if>
-                <li> <c:if test="${us.privilegio=='Usuario'}">
+                <li> 
                    <a href="Controlador?accion=ListarUnico">
                        <i class="fa fa-tools"></i>
                         <span class="nav-text">
@@ -123,7 +123,7 @@ if(session.getAttribute("us")!=null)
                         </span>
                     </a>              
                 </li> 
-                   </c:if>             
+                      
                 <li class="has-subnav">
                     <a href="horaAdmin.jsp">
                        <i class="fa fa-clock"></i>
