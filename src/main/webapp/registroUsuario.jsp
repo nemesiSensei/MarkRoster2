@@ -76,7 +76,6 @@ function comprobarClave()
                          minlength="2" maxlength="30"  aria-describedby="usuariohelp" required
                          ><span class="text-danger"></span>
                           <div id="verificarusuario" class="text-danger">
-                         
                          </div>
       <input type="text" name="correo" id="correo" class="fadeIn second" placeholder="Ingresa tu correo" required pattern="\@[a-z0-9]{10,50}"  onchange="verificar()"title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
                          minlength="10" maxlength="50"
@@ -139,7 +138,7 @@ function comprobarClave()
                 </script>      
                        
     
-       
+       </form>
      
       
       
