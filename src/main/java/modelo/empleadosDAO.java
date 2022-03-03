@@ -55,7 +55,7 @@ public class empleadosDAO {
 		List<getters> empleados= new ArrayList<>();
 		sql="SELECT * FROM  empleados";
 		try {
-			con=c.getConnection(); // opening the connection to database 
+			con=c.getConnection(); // opening the connection to database 3
 			ps=con.prepareStatement(sql); // prepare that sentence 
 			ps.executeQuery(sql); // en sentencias select siempre va el executeQuery
 			rs=ps.executeQuery();

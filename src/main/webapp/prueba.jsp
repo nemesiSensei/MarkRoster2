@@ -73,6 +73,7 @@ function comprobarClave()
                 </script>  
                 
   <body> 
+ 
    <h1 class="text-center">Gestión de usuarios</h1>
    <br>
   <div class="container text-center"> 
@@ -151,7 +152,6 @@ function comprobarClave()
 </div>  
 </div>
 </div>
-
 <div class="container">
   <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
