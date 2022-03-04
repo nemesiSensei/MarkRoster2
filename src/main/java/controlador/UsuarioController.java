@@ -166,13 +166,15 @@ public class UsuarioController extends HttpServlet {
 	try {
 	System.out.print("Entro al metodo listarh ");
 	 List hlist =horarios.Listarturno();
-	
 	 
 		 request.setAttribute("horarios", hlist);// esto es para enviar los resultados de la busqueda
+		 this.Listarh(request, response);
+		 
 	
 		 request.getRequestDispatcher("verhorarios.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 		.forward(request, response);
-		 
+		
+		 System.out.print("ejecuto el listar h");
 	 
 	
 } catch (Exception e) {
@@ -199,13 +201,14 @@ finally {
 			 +request.getParameter("Hora-salida"));
 			 
 			 horarios.turno(agenda);
-			 response.sendRedirect("index.jsp");
+			 response.sendRedirect("UsuarioController?accion=turno");
 			 
 		
 		
 		 
 	     
 	}
+		
 		 catch (Exception e) {
 			
 			 System.out.print(" no Entro al metodo Registrar ");
@@ -222,7 +225,7 @@ finally {
 			
 			 
 				 request.setAttribute("usuarios", empleados1);// esto es para enviar los resultados de la busqueda		
-				 request.getRequestDispatcher("Agendahorario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+				 request.getRequestDispatcher("verhorarios.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 				.forward(request, response);
 				 
 			 

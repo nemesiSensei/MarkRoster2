@@ -23,7 +23,7 @@
 	<tr>	
 	<td>${r.getNombreusuario() }</td>
 	<td>${r.getCorreo()}</td>	
-	<td> <a class="btn btn-warning" href="UsuarioController?accion=verunico&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
+	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
 	</tr>
 </c:forEach>
 </table>

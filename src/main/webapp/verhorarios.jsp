@@ -77,7 +77,7 @@ function comprobarClave()
    <h1 class="text-center">Gestión de Horarios</h1>
    <br>
   <div class="container text-center"> 
-  <a class="btn btn-success" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
+  <a class="btn btn-success" role="button" data-bs-toggle="modal" data-bs-target="#horarios" data-bs-whatever="@mdo"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
   <a class="btn btn-danger btn-lg" href="UsuarioController?accion=Reportes" role="button"><i class="far fa-file-pdf"></i></a>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -171,7 +171,7 @@ function comprobarClave()
 	<td>${r.getUsuario()}</td>
 	<td>${r.getHorario_entrada_turno()}</td>
 	<td>${r.getHora_salida_turno()}</td>
-	<td> <a class="btn btn-warning" href="Controlador?accion=actualizarhorarios&id=${r.getIdempleado()}" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
+	<td> <a class="btn btn-info btn-xs" href="Controlador?accion=actualizarhorarios&id=${r.getIdempleado()}" role="button"><i class="fa fa-pencil"></i></a></td>
 	<td> <a class="btn btn-danger"  role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
 	
 	
@@ -186,6 +186,46 @@ function comprobarClave()
             </tbody>
 </table>
 </div>
+
+<div class="modal fade" id="horarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Asignacion de horarios</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="UsuarioController?accion=Agendarhorarios" method="post">
+<select name="turno"><br>
+
+<option> Seleccione al empleado</option><br>
+<c:forEach items="${usuarios}" var="r">
+<option value="${r.getIdempresa()}"> ${r.getNombreusuario() } </option>
+</c:forEach>
+
+</select><br>
+<label for="Hora-entrada"> selecione la hora de entrada correspondiete</label><br>
+<input type="time" name="Hora-entrada"></input><br>
+<label for="Hora-salida"> selecione la hora de salida correspondiete</label><br>
+<input type="time" name="Hora-salida"></input><br>
+
+
+
+
+
+
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
   
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

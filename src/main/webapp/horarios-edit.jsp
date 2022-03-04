@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <h1>LLegaron los datos panaaa</h1>
 <form action="Controlador?accion=edithorarios" method="post">
 <input type="hidden" name= "idhorarios" value="${horarios.getIdempleado()}">
