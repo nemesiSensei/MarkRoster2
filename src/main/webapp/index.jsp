@@ -32,12 +32,12 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="#about">Sobre Nosotros</a></li>
-          <li><a class="nav-link scrollto" href="#services">Servicios</a></li>          
+          <li><a class="nav-link scrollto" href="#about">Acerca de MarkRoster</a></li>
+          <li><a class="nav-link scrollto" href="#services">Módulos</a></li>          
           <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
           <li><a class="nav-link scrollto" href="#pricing">Planes</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
-          <li><a class="getstarted scrollto" href="Controlador?accion=abrirLogin">Login Clientes</a></li>
+          <li><a class="getstarted scrollto" href="Controlador?accion=abrirLogin">Iniciar Sesión</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -50,14 +50,14 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">Haz tu empresa más eficiente con MarkRoster</h1>
+          <h1 data-aos="fade-up">Gestiona los horarios de tu personal con MarkRoster</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">Aplicación web dedicada al control de horarios, implementada por un equipo de talentosos desarrolladores</h2>
           <div data-aos="fade-up" data-aos-delay="800">
             <a href="#about" class="btn-get-started scrollto">Mas información</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-          <img src="media/imagenes/fondo de pantalla.png" class="img animated" alt="" height="400" width="auto">
+          <img src="media/imagenes/fondo de pantalla.png" class="img animated rounded mx-auto d-block" alt="" height="400" width="auto">
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients clients">
       <div class="container">
-        <div class="row">
+        <div class="row d-flex justify-content-center">
 <h3>Nuestros clientes</h3>
           <div class="col-lg-2 col-md-4 col-6">
             <img src="media/imagenes/logoimpakto.png"  class="img-fluid" alt="" data-aos="zoom-in">
@@ -87,12 +87,12 @@
     <section id="about" class="about">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>Sobre nosotros</h2>
+          <h2>Acerca de MarkRoster</h2>
         </div>
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
             <p>
-              Somos una marca dedicada al control de horarios por medios  móviles 
+              MarkRoster es una marca dedicada al control de horarios por medios  móviles 
           (usando el teléfono móvil), con desarrolladores
           capacitados en diferentes tecnologías (Java, HTML, CSS, MySQL, entre otras) con 
           el ánimo de brindar soluciones eficientes de control de acceso de personal, ya sea 
@@ -106,13 +106,14 @@
               <li><i class="ri-check-double-line"></i> El sistema cuenta con estabilidad de red</li>
               <li><i class="ri-check-double-line"></i> Su uso unipersonal garantiza la no infección por SARS COV-2</li>
             </ul>
+            
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <p>
-              Brindamos soluciones de control de horarios para pequeñas, medianas y grandes empresas, con
-              soporte personalizado en todo momento para los usuarios premium, y un sistema robusto y eficiente para clientes gratuitos.
-            </p>
-            <a href="#" class="btn-learn-more">Saber más</a>
+          <div class="col-lg-6 pt-0 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
+          <img src="media/imagenes/acerca1.png" class="rounded mx-auto d-block" alt="" height="360" width="auto">
+          <br>           
+           <br>
+           <br>
+           <br> 
           </div>
         </div>
       </div>
@@ -122,7 +123,7 @@
       <div class="container">
         <div class="row">
           <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
-            <img src="media/imagenes/UsuariosOpen.png" alt="" class="img-fluid">
+            <img src="media/imagenes/usuarios2.png" alt="" class="img-fluid">
           </div>
           <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
             <div class="content d-flex flex-column justify-content-center">
@@ -163,7 +164,7 @@
     <section id="services" class="services">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>Servicios</h2>
+          <h2>Módulos</h2>
           <p>MarkRoster brinda servicios especializados para el control de accesos de personal y calculo de horas laborales.</p>
         </div>
         <div class="row">
@@ -202,7 +203,7 @@
     <section id="features" class="features">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>Características</h2>
+          <h2>Funcionalidades</h2>
           <p>Algunas de las mejores ventajas de adquirir los servicios de MarkRoster</p>
         </div>
         <div class="row" data-aos="fade-up" data-aos-delay="300">
@@ -311,13 +312,13 @@
     </section><!-- End Testimonials Section -->
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
-      <div class="container" >
+      <div class="container align-content-center" >
         <div class="section-title" data-aos="fade-up">
           <h2>Equipo de desarrollo</h2>
           <p>MarkRoster cuenta con un equipo de analistas y desarrolladores egresados del SENA, que garantizan la calidad y robustez de la app y de muchos otros proyectos, personales o corporativos.</p>
         </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-3 col-md-6 d-flex align-content-center">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
                 <img src="media/imagenes/sebasmendez.jpeg" class="img-fluid" alt="">
@@ -466,49 +467,30 @@
     <section id="contact" class="contact">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>Contactanos</h2>
+          <h2>Contáctenos</h2>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-about">
-             <img src="media/imagenes/MarkRosterlogo.png"  width="128" height="auto"></img>
-             <br>
-             <br>
-              <p>MarkRoster es una aplicación basada en web perteneciente a Valhalla technologies, todos los derechos reservados.</p>
-              <div class="social-links">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-              </div>
+             <img src="media/imagenes/contacto2.png"  width="350" height="auto"></img>                         
             </div>
           </div>
-
           <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
             <div class="info">
               <div>
                 <i class="ri-map-pin-line"></i>
                 <p>Calle 11c Sur #23-18 Este<br>Bogotá, Colombia</p>
               </div>
-
               <div>
                 <i class="ri-mail-send-line"></i>
                 <p>jdjimenez9378@misena.edu.co</p>
-              </div>
-               <div>
-                <i class="ri-mail-send-line"></i>
                 <p>smendez67@misena.edu.co</p>
-              </div>
-
+              </div>              
               <div>
                 <i class="ri-phone-line"></i>
                 <p>+57 3227147140</p>
-              </div>
-               <div>
-                <i class="ri-phone-line"></i>
                 <p>+57 3203334385</p>
               </div>
-
             </div>
           </div>
           <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
