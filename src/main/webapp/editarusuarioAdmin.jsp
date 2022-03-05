@@ -16,6 +16,33 @@
 <title>MarkRoster-Editar Usuario</title>
 </head>
 <body>
+<!-- Modal -->
+<div class="modal fade" id="usuarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2 class="active"> Editar usuario </h2> 
+    <form   action= "Controlador?accion=edit" method="post">
+      <input  type="hidden" id="id" class="fadeIn second" name="id"  value="${usuarios. getIdempresa()}">
+            <input type="text" id="correo" class="fadeIn second" name="correo" value="${usuarios. getCorreo()}">
+               <input type="text" id="usuario" class="fadeIn third" name="usuario" value="${usuarios. getNombreusuario()}">
+             
+               <input type="submit"  onclick="editar(event,${r.getIdempresa() },'Controlador')"class="fadeIn fourth" value="Actualizar">      
+</form>
+  </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
    <div class="modo" id="modo">
         <i class="fas fa-toggle-on"></i>
     </div>

@@ -73,6 +73,12 @@ function comprobarClave()
                 </script>  
                 
   <body> 
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#usuarios">
+  Launch demo modal
+</button>
+
+
  
    <h1 class="text-center">Gestión de usuarios</h1>
    <br>
@@ -182,7 +188,7 @@ function comprobarClave()
 	</c:if></td>
 
 	<td> <a class="btn btn-danger"  onclick="borrar(event,${r.getIdempresa() },'Controlador')"role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
-	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
+	<td> <a class="btn btn-warning"  href="Controlador?accion=ver&id=${r.getIdempresa() }"  role="button"> <i class="fas fa-user-cog fa-2x"></i></a></td>
 	
         </c:forEach>
           
@@ -192,6 +198,7 @@ function comprobarClave()
             </tbody>
 </table>
 </div>
+
 
   
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

@@ -9,6 +9,7 @@
 <title>Actualizar perfil</title>
 </head>
 <body>
+
    <div class="modo" id="modo">
         <i class="fas fa-toggle-on"></i>
     </div>

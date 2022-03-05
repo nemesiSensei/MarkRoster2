@@ -221,7 +221,7 @@ private  void Listarusuarios(HttpServletRequest request, HttpServletResponse res
 			System.out.print("Entro al metodo listarusuarios o empleados ");
 			 List empleados =empleadosDAO.Listarusuarios();
 			 
-				 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda		
+				 request.setAttribute("usuarios", empleados);// esto es para enviar los resultados de la busqueda
 				 request.getRequestDispatcher("prueba.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 				.forward(request, response);
 				 
@@ -292,6 +292,7 @@ private  void ver(HttpServletRequest request, HttpServletResponse response) thro
 	} catch (Exception e) {
 		
 	}
+	
 	finally {
 		}
 	}
