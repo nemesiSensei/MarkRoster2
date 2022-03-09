@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
  <!-- ======= Footer ======= -->
-  <footer id="footer">  
+  <footer id="footer" class="footer">  
     <div class="container"> 
     <div class="row d-flex align-items-center">
     <div class="col-lg-1 text-lg-center text-center"> 
