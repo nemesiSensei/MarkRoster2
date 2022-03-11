@@ -6,7 +6,7 @@
 
 <script src="prueba.js"></script>
 <%@include file="header.jsp" %>
-
+<h1> Hola como estan xD </h1>
 </body>
 <%@include file="footer.jsp" %>
 </html>
