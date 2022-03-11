@@ -48,9 +48,9 @@
     <form action="Controlador?accion=login" method="post">
       <input type="text" id="usuario" class="fadeIn first" name="usuario" placeholder="Ingresar usuario" style="margin: 0px"><br><br>
       <input type="password" id="pass" class="fadeIn second" name="pass" placeholder="Ingresar contraseña" style="margin: 0px"><br><br>
-      <input type="submit" class="fadeIn third" value="Iniciar sesión">    
+      <input type="submit" class="fadeIn third" value="Ingresar">    
      </form>     
-      <p>Olvidaste tu contraseña...? Recupérala <a class="underlineHover" href="index.jsp">Aquí</a></p>
+      <p>Olvido su contraseña? Recupérar contraseña <a class="underlineHover" href="index.jsp">Aquí</a></p>
       <br>
       <div id="formFooter">
       <p>
