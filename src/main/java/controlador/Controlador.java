@@ -68,7 +68,7 @@ public class Controlador extends HttpServlet {
 							
 						System.out.println("se encontró usuario activo");	
 						sesion.setAttribute("us", r);
-						response.sendRedirect("Controlador?accion=Listarusuarios");
+						response.sendRedirect("Controlador?accion=ListarUnico");
 						}
 						else if (r.isEstado()==false && r.getNombreusuario()!=null)
 						{
@@ -286,7 +286,7 @@ private  void ver(HttpServletRequest request, HttpServletResponse response) thro
 	r=empleadosDAO.consulta(r.getIdempresa());
 		 request.setAttribute("usuarios", r);// esto es para enviar los resultados de la busqueda
 		
-		 request.getRequestDispatcher("editarusuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		 request.getRequestDispatcher("prueba.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 		.forward(request, response);
 		
 	} catch (Exception e) {
