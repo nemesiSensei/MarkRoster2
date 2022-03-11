@@ -39,7 +39,7 @@ public class horariosDAO {
 	public List reportehorario () throws SQLException {
 		System.out.println("Ingreso al metodo listar usuarios");
 		List<reportehorarioVo> reportehorarioVo= new ArrayList<>();
-		sql="SELECT usuario, horario_entrada, Horario_entrada.Descripcion, Horario_salida, hora_salida.Descripcion from empleados INNER JOIN Horario_entrada on Horario_entrada.id_empleados=empleados.id_empleados INNER JOIN hora_salida on hora_salida.id_empleado=empleados.id_empleados;";
+		sql="SELECT usuario, horario_entrada, Horario_entrada.Descripcion, Horario_entrada.diferencia, Horario_salida, hora_salida.Descripcion from empleados INNER JOIN Horario_entrada on Horario_entrada.id_empleados=empleados.id_empleados INNER JOIN hora_salida on hora_salida.id_empleado=empleados.id_empleados;";
 		try {
 			con=c.getConnection(); // opening the connection to database 
 			ps=con.prepareStatement(sql); // prepare that sentence 
@@ -54,8 +54,10 @@ public class horariosDAO {
 			reporte.setUsuario(rs.getString(1));
 			reporte.setHorario_entrada(rs.getString(2));
 			reporte.setDescripcion_horaentrada(rs.getString(3));
-			reporte.setHorario_salida(rs.getString(4));
-			reporte.setDescripcion_horasalida(rs.getString(5));
+			reporte.setDiferencia(rs.getString(4));
+			reporte.setHorario_salida(rs.getString(5));
+			reporte.setDescripcion_horasalida(rs.getString(6));
+			
 			
 	
 		

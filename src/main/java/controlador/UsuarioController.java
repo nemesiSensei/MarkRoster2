@@ -2,6 +2,7 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -111,9 +112,7 @@ public class UsuarioController extends HttpServlet {
 						Agendarhorarios(request,response);
 						
 						break;
-					case "reporte":
-						reporte(request,response);
-						break;
+					
 					case "turno":
 						System.out.println("Entro al  caso de listarturnos");
 						
@@ -121,6 +120,11 @@ public class UsuarioController extends HttpServlet {
 						turno(request,response);
 						
 						break;
+					case "reportedehorarios":
+						System.out.println("Entro al metodo de reporte de horarios");
+						reportedehorarios(request,response);
+						break;
+				
 					
 					
 						
@@ -167,29 +171,31 @@ public class UsuarioController extends HttpServlet {
 
 	
 
-	private void reporte(HttpServletRequest request, HttpServletResponse response) {
-		try {
-			System.out.print("Entro al metodo reportehorario ");
-			 List reportehorario =horarios.reportehorario();
-			 
-				 request.setAttribute("reporte", reportehorario);// esto es para enviar los resultados de la busqueda
-				 this.Listarh(request, response);
+
+	private void reportedehorarios(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, SQLException {
+		System.out.println("Entro al metodo reporte  de horarios");
+		 List reportehorario =horarios.reportehorario();
+		 try {
+				System.out.print("Entro al metodo listarh ");
+				 List reportee =horarios.reportehorario();
 				 
-			
-				 request.getRequestDispatcher("horarios.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
-				.forward(request, response);
+					 request.setAttribute("reporte", reportee);// esto es para enviar los resultados de la busqueda
+									
+					 request.getRequestDispatcher("reportehorarios.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+					.forward(request, response);
+					
+					 System.out.print("ejecuto el listar h");
+				 
 				
-				 System.out.print("ejecuto el metodo reportehorario");
-			 
-			
-		} catch (Exception e) {
-			System.out.println("error"+e);
-		}
-		finally {
+			} catch (Exception e) {
+				System.out.println("error"+e);
 			}
+			finally {
+				}
+			}
+		 
 		
-		
-	}
+	
 
 	private void turno(HttpServletRequest request, HttpServletResponse response) {
 	try {
