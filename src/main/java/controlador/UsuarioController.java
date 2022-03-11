@@ -19,6 +19,7 @@ import Vo.Hlist;
 import Vo.UsuarioVo;
 import Vo.getters;
 import Vo.horarioVo;
+import Vo.reportehorarioVo;
 import horarios.horario;
 import modelo.UsuarioDao;
 import modelo.empleadosDAO;
@@ -43,6 +44,7 @@ public class UsuarioController extends HttpServlet {
 	horariosDAO horarios = new horariosDAO();
 	horarioVo hv = new horarioVo();
 	AgendahorarioVo agenda = new AgendahorarioVo();
+	reportehorarioVo reportehorario = new reportehorarioVo();
 	
        
     /**
@@ -109,6 +111,9 @@ public class UsuarioController extends HttpServlet {
 						Agendarhorarios(request,response);
 						
 						break;
+					case "reportehorario":
+						reportehorario(request,response);
+						break;
 					case "turno":
 						System.out.println("Entro al  caso de listarturnos");
 						
@@ -161,6 +166,30 @@ public class UsuarioController extends HttpServlet {
 
 
 	
+
+	private void reportehorario(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			System.out.print("Entro al metodo reportehorario ");
+			 List reportehorario =horarios.reportehorario();
+			 
+				 request.setAttribute("reporte", reportehorario);// esto es para enviar los resultados de la busqueda
+				 this.Listarh(request, response);
+				 
+			
+				 request.getRequestDispatcher("reportehorario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+				.forward(request, response);
+				
+				 System.out.print("ejecuto el metodo reportehorario");
+			 
+			
+		} catch (Exception e) {
+			System.out.println("error"+e);
+		}
+		finally {
+			}
+		
+		
+	}
 
 	private void turno(HttpServletRequest request, HttpServletResponse response) {
 	try {
