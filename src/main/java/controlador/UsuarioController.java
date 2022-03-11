@@ -111,8 +111,8 @@ public class UsuarioController extends HttpServlet {
 						Agendarhorarios(request,response);
 						
 						break;
-					case "reportehorario":
-						reportehorario(request,response);
+					case "reporte":
+						reporte(request,response);
 						break;
 					case "turno":
 						System.out.println("Entro al  caso de listarturnos");
@@ -167,7 +167,7 @@ public class UsuarioController extends HttpServlet {
 
 	
 
-	private void reportehorario(HttpServletRequest request, HttpServletResponse response) {
+	private void reporte(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			System.out.print("Entro al metodo reportehorario ");
 			 List reportehorario =horarios.reportehorario();
@@ -176,7 +176,7 @@ public class UsuarioController extends HttpServlet {
 				 this.Listarh(request, response);
 				 
 			
-				 request.getRequestDispatcher("reportehorario.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+				 request.getRequestDispatcher("horarios.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 				.forward(request, response);
 				
 				 System.out.print("ejecuto el metodo reportehorario");

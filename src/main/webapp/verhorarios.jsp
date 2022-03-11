@@ -239,5 +239,3 @@ function comprobarClave()
 </body>
 <%@include file="footer.jsp" %>
 </html>
-
-
