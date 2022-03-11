@@ -33,7 +33,8 @@
    <link href="assets/css/style.css" rel="stylesheet">
    <link href="assets/vendor/aos/aos.css" rel="stylesheet">  
     </head>
-    <body>
+    <body>   
+    <div style="background-image: url('media/imagenes/fondo2.png'); background-attachment: fixed; background-size: cover; background-repeat:no-repeat;  background-position-x:center; background-position-y:center;"> 
    <div class="wrapper fadeInDown">
   <div id="formContent">
     <br><br>
@@ -65,7 +66,8 @@
     </div>
   </div>
     <script src="main.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> 
+  </div>
  </body>
  <%@include file="footer.jsp"%>
 </html>
