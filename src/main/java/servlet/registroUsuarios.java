@@ -73,7 +73,9 @@ Contrasena contrasena = new Contrasena();
         consultas co=new consultas();
         String destinatario = request.getParameter("correo");
         String asunto = "Bienvenido (a) a markroster";
-        String contenido = "Su contraseña generada es: " +pass+""+" Y su usuario es: "+usuario;
+        String contenido = "Su contraseña generada es: " +pass+""+" Y su usuario es: "+usuario+"<br>"+
+        "<img src='https://scontent.fbog2-5.fna.fbcdn.net/v/t39.30808-6/275761253_503098924808328_7787860947077493973_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeHRniWqvkjxq0Q2WLeCJViWYMUrCZgNH6RgxSsJmA0fpBJJrf251UlRbOhermvGG8YHWSmwb208SDKlw8B8ijvP&_nc_ohc=mAi3U-h3pfoAX-wBBBO&_nc_ht=scontent.fbog2-5.fna&oh=00_AT8i4t1J5xnECVgJw_aGij7x6WFeQsfggWhrT0TJXSAlag&oe=6231C585'>";
+        
         String contrasena =pass;
        
         try {

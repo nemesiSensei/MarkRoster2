@@ -158,8 +158,9 @@ function comprobarClave()
         <tr>
           <th>Usuario</th>
              <th>Hora de ingreso</th>
+               <th>Tiempo</th>
               <th>Cumplimiento</th>
-              <th>Tiempo</th>
+            
               
               <th>Fin de jornada laboral</th>
                <th>Cumplimiento</th>
@@ -174,9 +175,9 @@ function comprobarClave()
 	<tr>
 	<td>${r. getUsuario() }</td>
 	<td>${r. getHorario_entrada()}</td>
-	
-	<td>${r. getDescripcion_horaentrada()}</td>
 	<td>${r. getDiferencia() }</td>
+	<td>${r. getDescripcion_horaentrada()}</td>
+	
 	
 	<td>${r. getHorario_salida()}</td>
 	<td>${r. getDescripcion_horasalida()}</td>
