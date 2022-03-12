@@ -115,7 +115,7 @@ public class horariosDAO {
 	
 	public Hlist consulta(int id ) throws SQLException {
 		Hlist h = new Hlist();
-		sql="SELECT * FROM  turno WHERE idempleado=" +id;
+		sql="select Horario_entrada_turno,Hora_salida_turno, correo from turno inner JOIN empleados on empleados.id_empleados=turno.idempleado where id_empleados=" +id;
 		System.out.print("Entro a la consulta de editar horarios");
 		try {
 			con=c.getConnection(); // opening the connection to database 
@@ -127,7 +127,7 @@ public class horariosDAO {
 			
 		while (rs.next()) {
 			
-			
+			h.setCorrreo(rs.getString("correo"));
 			h.setHorario_entrada_turno(rs.getString("Horario_entrada_turno"));
 			h.setHora_salida_turno(rs.getString("Hora_salida_turno"));
 			h.setIdempleado(rs.getInt("idempleado"));

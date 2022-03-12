@@ -155,12 +155,13 @@ public class Controlador extends HttpServlet {
 		
 	
 	private void edithorarios(HttpServletRequest request, HttpServletResponse response) {
-		if(request.getParameter("idhorarios")!=null && request.getParameter("horario-entrada") !=null) {
+		if(request.getParameter("idhorarios")!=null ) {
 		       
 			
 					 
 			
 			h.setCorrreo(request.getParameter("correo"));
+			
 			
 			h.setIdempleado(Integer.parseInt(request.getParameter("idhorarios")));
 			h.setHorario_entrada_turno(request.getParameter("horario-entrada"));;
@@ -168,6 +169,22 @@ public class Controlador extends HttpServlet {
 			System.out.print(" La hora de entrada es : "+h.getHorario_entrada_turno()+"la fecha de salida es: "+h.getHora_salida_turno());
 			
 		}
+		
+		String correo=h.getCorrreo();
+		System.out.println("El correo es:"+correo);
+		String ingreso=request.getParameter("horario-entrada");
+		String salida=request.getParameter("horario-salida");
+		  String destinatario = request.getParameter("correo");
+	        String asunto = "Cambios de horario";
+	        String contenido = "Su horario se cambio"+"Ahora su nueva hora de ingreso es: "+ingreso+ "Y su hora de saida es: "+salida;
+	        try {
+	        	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario,asunto,contenido);
+	        	 System.out.print("El  mensaje se envio correctamente en el edit ");
+			} catch (Exception e) {
+				 System.out.print("El  mensaje no se envio correctamente"+e.getMessage());
+				 
+				
+			}
 		try {
 			horarios.editturno(h);
 			
@@ -192,20 +209,7 @@ public class Controlador extends HttpServlet {
 	}
 
 	private void actualizarhorarios(HttpServletRequest request, HttpServletResponse response) {
-		h.setCorrreo(request.getParameter("correo"));
-		String correo=h.getCorrreo();
-		System.out.println("El correo es:"+correo);
-		  String destinatario = request.getParameter("correo");
-	        String asunto = "Cambios de horario";
-	        String contenido = "Su horario se cambio";
-	        try {
-	        	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario,asunto,contenido);
-	        	 System.out.print("El  mensaje se envio correctamente en el edit ");
-			} catch (Exception e) {
-				 System.out.print("El  mensaje no se envio correctamente"+e.getMessage());
-				 
-				
-			}
+		
 	       
 	      
 		
