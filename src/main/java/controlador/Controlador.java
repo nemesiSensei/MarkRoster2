@@ -432,9 +432,37 @@ private  void changePass(HttpServletRequest request, HttpServletResponse respons
 {
 		if(request.getParameter("id")!=null && request.getParameter("passNew")!=null)
 		{
+			System.out.println("entro al meto de cambiar contraseña");
 			r.setIdempresa(Integer.parseInt(request.getParameter("id")));
+			
 			r.setPass(request.getParameter("passNew"));
+			String correo=request.getParameter("correo");
+			System.out.println("El correo es: "+correo);
+			
+			
+	        
 		}
+		String contraseña=r.getPass();
+		String contraseñaantigua=(request.getParameter("passAnt"));
+		
+		 String destinatario = request.getParameter("correo");
+	        String asunto = "Cambio de contraseña";
+	        String contenido = "<h1>Su contraseña antigua es: </h1>"+contraseñaantigua
+	        		+ "<h1> Su nueva contraseña es: </h1> "
+	        +contraseña;
+	        
+	       
+	        try {
+	        	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario,asunto,contenido);
+	        	 System.out.print("El  mensaje se envio correctamente");
+			} catch (Exception e) {
+				 System.out.print("El  mensaje no se envio correctamente"+e.getMessage());
+				 
+				
+			}
+		
+		
+	      
 		try {
 			empleadosDAO.cambiarPass(r);
 			request.getRequestDispatcher("Controlador?accion=logout").forward(request, response);

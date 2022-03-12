@@ -36,6 +36,7 @@
     <!-- Login Form -->
     <form action="Controlador?accion=changePass" method="post">
       <input type="hidden" id="id"  name="id" value="${us.idempresa}"><br><br>
+       <input type="hidden" id="correo"  name="correo" value="${us.correo}"><br><br>
       <input type="hidden" id="passU" name="passU" value="${us.pass}"><br><br>
       <input type="password" id="passAnt" class="fadeIn first" name="passAnt" placeholder="Ingresa contraseña actual" onchange="verifyPass()" style="margin: 0px" ><br><br>
       <input type="password" id="passNew" class="fadeIn second" name="passNew" placeholder="Ingresa nueva contraseña" style="margin: 0px"><br><br>

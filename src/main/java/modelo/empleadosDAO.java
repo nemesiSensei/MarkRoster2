@@ -212,13 +212,17 @@ public class empleadosDAO {
 	{
 		sql="UPDATE empleados SET Contraseña=? WHERE id_empleados="+r.getIdempresa();		
 		try {
+			
+			
 			con=c.getConnection(); //Abriendo la conexión a la BD
 			ps=con.prepareStatement(sql); //preparar sentencia
 			ps.setString(1, r.getPass());			
 			System.out.println(ps);
 			ps.executeUpdate();//Ejeución de la sentencia	
+			
 			ps.close();
-			System.out.println("Se cambió la contraseña");			
+			System.out.println("Se cambió la contraseña");		
+		
 		}catch(Exception e) {
 			System.out.println("Error al cambiar la contraseña" +e.getMessage());
 			System.out.println("" +e.getMessage());
