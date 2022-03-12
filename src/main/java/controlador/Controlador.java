@@ -3,6 +3,7 @@ package controlador;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import Vo.Hlist;
 import Vo.getters;
+import emails.Configmail;
 import modelo.empleadosDAO;
 import modelo.horariosDAO;
 
@@ -26,7 +28,20 @@ public class Controlador extends HttpServlet {
 	empleadosDAO empleadosDAO = new empleadosDAO();
 	Hlist h = new Hlist();
 	horariosDAO horarios = new horariosDAO();
-	
+	 private String host;
+		private  String puerto;
+	 	 private String  remitente;
+	 	 private String password;
+	 	public void init () {
+	 		ServletContext xml =getServletContext(); // para acceder a las variables de contexto de web.xml
+	 		host=xml.getInitParameter("host");
+	 		puerto=xml.getInitParameter("puerto");
+	 		remitente=xml.getInitParameter("remitente");
+	 		password=xml.getInitParameter("password");
+	 		
+	 		
+	 		 
+	 	 }
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -141,7 +156,11 @@ public class Controlador extends HttpServlet {
 	
 	private void edithorarios(HttpServletRequest request, HttpServletResponse response) {
 		if(request.getParameter("idhorarios")!=null && request.getParameter("horario-entrada") !=null) {
+		       
 			
+					 
+			
+			h.setCorrreo(request.getParameter("correo"));
 			
 			h.setIdempleado(Integer.parseInt(request.getParameter("idhorarios")));
 			h.setHorario_entrada_turno(request.getParameter("horario-entrada"));;
@@ -173,7 +192,27 @@ public class Controlador extends HttpServlet {
 	}
 
 	private void actualizarhorarios(HttpServletRequest request, HttpServletResponse response) {
+		h.setCorrreo(request.getParameter("correo"));
+		String correo=h.getCorrreo();
+		System.out.println("El correo es:"+correo);
+		  String destinatario = request.getParameter("correo");
+	        String asunto = "Cambios de horario";
+	        String contenido = "Su horario se cambio";
+	        try {
+	        	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario,asunto,contenido);
+	        	 System.out.print("El  mensaje se envio correctamente en el edit ");
+			} catch (Exception e) {
+				 System.out.print("El  mensaje no se envio correctamente"+e.getMessage());
+				 
+				
+			}
+	       
+	      
+		
+		 
+		 		
 		try {
+			 
 			if (request.getParameter("id")!=null) {
 				
 				System.out.print("Se recibio el id");
@@ -181,6 +220,8 @@ public class Controlador extends HttpServlet {
 			System.out.print("Entro al metodo consultar");
 			
 			h.setIdempleado(Integer.parseInt(request.getParameter("id")));
+			
+			
 		h=horarios.consulta(h.getIdempleado());
 			 request.setAttribute("horarios", h);// esto es para enviar los resultados de la busqueda
 			

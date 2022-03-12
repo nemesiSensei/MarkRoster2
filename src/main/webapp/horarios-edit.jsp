@@ -11,6 +11,8 @@
 
 <h1>Actualizacion de horarios</h1>
 <form action="Controlador?accion=edithorarios" method="post">
+
+
 <input type="hidden" name= "idhorarios" value="${horarios.getIdempleado()}">
 <input type="time" name="horario-entrada" value="${horarios.getHorario_entrada_turno()}">
 <input type="time" name="horario-salida" value="${horarios.getHora_salida_turno() }">

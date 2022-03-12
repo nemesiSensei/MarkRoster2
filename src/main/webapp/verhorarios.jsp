@@ -158,6 +158,7 @@ function comprobarClave()
         <tr>
           <th>ID</th>
 	<th>Usuario</th>
+	<th>Correo</th>
 	<th>Horario de entrada </th>
 	<th>Horario de salida </th>
 	<th>Editar </th>
@@ -169,10 +170,12 @@ function comprobarClave()
 	<tr>
 	<td>${r.getIdempleado()}</td>
 	<td>${r.getUsuario()}</td>
+	<td> ${r.getCorrreo()}</td>
 	<td>${r.getHorario_entrada_turno()}</td>
 	<td>${r.getHora_salida_turno()}</td>
-	<td> <a class="btn btn-info btn-xs" href="Controlador?accion=actualizarhorarios&id=${r.getIdempleado()}" role="button"><i class="fa fa-pencil"></i></a></td>
+	<td> <a class="btn btn-info btn-xs" href="Controlador?accion=actualizarhorarios&id=${r.getIdempleado()}&correo=${r.getCorrreo()}" role="button"><i class="fa fa-pencil"></i></a></td>
 	<td> <a class="btn btn-danger"  role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
+		
 	
 	
 	

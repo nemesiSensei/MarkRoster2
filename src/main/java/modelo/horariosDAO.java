@@ -291,6 +291,7 @@ public class horariosDAO {
 			Hlist h = new Hlist();
 			h.setIdempleado(rs.getInt(1));
 			h.setUsuario(rs.getString(3));
+			h.setCorrreo(rs.getString(4));
 			h.setHorario_entrada_turno(rs.getString(14));
 			h.setHora_salida_turno(rs.getString(15));
 		
