@@ -115,7 +115,7 @@ public class horariosDAO {
 	
 	public Hlist consulta(int id ) throws SQLException {
 		Hlist h = new Hlist();
-		sql="select Horario_entrada_turno,Hora_salida_turno, correo from turno inner JOIN empleados on empleados.id_empleados=turno.idempleado where id_empleados=" +id;
+		sql="select idempleado, Horario_entrada_turno,Hora_salida_turno, correo from turno inner JOIN empleados on empleados.id_empleados=turno.idempleado where id_empleados=" +id;
 		System.out.print("Entro a la consulta de editar horarios");
 		try {
 			con=c.getConnection(); // opening the connection to database 

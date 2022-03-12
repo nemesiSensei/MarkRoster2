@@ -176,7 +176,9 @@ public class Controlador extends HttpServlet {
 		String salida=request.getParameter("horario-salida");
 		  String destinatario = request.getParameter("correo");
 	        String asunto = "Cambios de horario";
-	        String contenido = "Su horario se cambio"+"Ahora su nueva hora de ingreso es: "+ingreso+ "Y su hora de saida es: "+salida;
+	        String contenido = "<h1> Su nueva hora de ingreso   es: </h1>"
+	        		+ingreso+ "<h1> Su nueva hora de salida es: </h1>"
+	        		+salida;
 	        try {
 	        	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario,asunto,contenido);
 	        	 System.out.print("El  mensaje se envio correctamente en el edit ");

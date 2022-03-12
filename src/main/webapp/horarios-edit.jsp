@@ -13,7 +13,7 @@
 <form action="Controlador?accion=edithorarios" method="post">
 
 <input type="text" name="correo" value="${horarios.getCorrreo()}">
-<input type="hidden" name= "idhorarios" value="${horarios.getIdempleado()}">
+<input type="text" name= "idhorarios" value="${horarios.getIdempleado()}">
 <input type="time" name="horario-entrada" value="${horarios.getHorario_entrada_turno()}">
 <input type="time" name="horario-salida" value="${horarios.getHora_salida_turno() }">
 <input type="submit"  onclick="editar(event,${horarios.getIdempleado()},'Controlador')"class="fadeIn fourth" value="Actualizar">
