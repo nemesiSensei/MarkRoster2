@@ -113,6 +113,7 @@
 <br>
 <br>
 <input type="hidden" name="usuario" id="usuario" value="${us.getNombreusuario()}">
+<input type="hidden" name="correo" id="correo" value="${us.getCorreo()}">
 <a class="btn btn-success btn-sm" onclick="horario(event,${us.getIdempresa()},'Usuario',)" role="button"><i class="far fa-thumbs-up fa-2x"></i><strong> Ingresarr</strong></a>	
 </form>
 </div>

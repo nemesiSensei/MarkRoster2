@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +22,7 @@ import Vo.UsuarioVo;
 import Vo.getters;
 import Vo.horarioVo;
 import Vo.reportehorarioVo;
+import emails.Configmail;
 import horarios.horario;
 import modelo.UsuarioDao;
 import modelo.empleadosDAO;
@@ -46,6 +48,21 @@ public class UsuarioController extends HttpServlet {
 	horarioVo hv = new horarioVo();
 	AgendahorarioVo agenda = new AgendahorarioVo();
 	reportehorarioVo reportehorario = new reportehorarioVo();
+	 private String host;
+		private  String puerto;
+	 	 private String  remitente;
+	 	 private String password;
+	 	public void init () {
+	 		ServletContext xml =getServletContext(); // para acceder a las variables de contexto de web.xml
+	 		host=xml.getInitParameter("host");
+	 		puerto=xml.getInitParameter("puerto");
+	 		remitente=xml.getInitParameter("remitente");
+	 		password=xml.getInitParameter("password");
+	 		
+	 		
+	 		 
+	 	 }
+    
 	
        
     /**
@@ -342,6 +359,10 @@ finally {
 			
 			
 			String opcion=request.getParameter("producto");
+			String correo=request.getParameter("correo");
+			String hora=request.getParameter("hora");
+			System.out.println("La hora actual es: "+hora);
+			System.out.println(" entro al metodo registrar horario,El correo es: "+correo);
 			System.out.print("Entro al metodo consultar"+opcion);
 			if (request.getParameter("id")!=null  && opcion.equals("salidaAlmuerzo"))  { 
 				String horario1 =opcion;
@@ -458,8 +479,24 @@ finally {
 				
 				
 				 System.out.print("Entro al metodo registrar horario en el bloquee if");
+				 System.out.print("Entro al metodo registrar horario en el bloquee if");
+				  String destinatario = request.getParameter("correo");
+			        String asunto = "Registro de horario exitoso";
+			        String contenido = "Su horario de salida  fue registrado sastifactoriamente "
+			        		+"Usted salio a las: "+hora;
+			        
+			       
+			        
 				 
 				 response.sendRedirect("index.jsp");
+				 try {
+			        	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario,asunto,contenido);
+			        	 System.out.print("El  mensaje se envio correctamente");
+					} catch (Exception e) {
+						 System.out.print("El  mensaje no se envio correctamente"+e.getMessage());
+						 
+						
+					}
 				}
 		
 		
@@ -471,6 +508,8 @@ finally {
 			if (request.getParameter("id")!=null  && opcion.equals("horaentrada_laboral"))  { 
 				String horario1 =opcion;
 				System.out.print("la opcion escojida es; "+horario1);
+				
+				System.out.println(" entro al metodo registrar horario,El correo es: "+correo);
 				
 				
 		
@@ -495,6 +534,20 @@ finally {
 				
 				 horarios.registrar_hora_inicio(hv);
 				 System.out.print("Entro al metodo registrar horario en el bloquee if");
+				  String destinatario = request.getParameter("correo");
+			        String asunto = "Registro de horario exitoso";
+			        String contenido = "Su horario fue registrado sastifactoriamente "
+			        		+"Usted ingreso a las: "+hora;
+			        
+			       
+			        try {
+			        	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario,asunto,contenido);
+			        	 System.out.print("El  mensaje se envio correctamente");
+					} catch (Exception e) {
+						 System.out.print("El  mensaje no se envio correctamente"+e.getMessage());
+						 
+						
+					}
 				 
 				 response.sendRedirect("index.jsp");
 				}
