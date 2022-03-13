@@ -77,7 +77,7 @@ function comprobarClave()
    <h1 class="text-center">Gestión de Horarios</h1>
    <br>
   <div class="container text-center"> 
-  <a class="btn btn-success" role="button" data-bs-toggle="modal" data-bs-target="#horarios" data-bs-whatever="@mdo"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
+  <a class="btn btn-success" role="button" data-bs-toggle="modal" data-bs-target="#horarios" data-bs-whatever="@mdo"><i class="fas fa-clock fa-2x" title="Nuevo Usuario"></i><i class="fas fa-plus"></i></a>
   <a class="btn btn-danger btn-lg" href="UsuarioController?accion=Reportes" role="button"><i class="far fa-file-pdf"></i></a>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
