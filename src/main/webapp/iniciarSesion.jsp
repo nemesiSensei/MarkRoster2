@@ -34,7 +34,7 @@
    <link href="assets/vendor/aos/aos.css" rel="stylesheet">  
     </head>
     <body>   
-    <div style="background-image: url('media/imagenes/fondo2.png'); background-attachment: fixed; background-size: cover; background-repeat:no-repeat;  background-position-x:center; background-position-y:center;"> 
+    <div class="body"> 
    <div class="wrapper fadeInDown">
   <div id="formContent">
     <br><br>
