@@ -39,18 +39,18 @@
   <div id="formContent">
     <br><br>
     <!-- Icon -->
-  <img src="media/imagenes/MarkRosterlogo.png" width="128" height="auto"/>
+  <a href="index.jsp"><img src="media/imagenes/MarkRosterlogo.png" width="128" height="auto"/></a>
   <br>
   <br>
   <br>
     <h2 class="active"><strong>Iniciar sesión</strong></h2><br><br>
     <!-- Login Form -->
     <form action="Controlador?accion=login" method="post">
-      <input type="text" id="usuario" class="fadeIn first" name="usuario" placeholder="Ingresar usuario" style="margin: 0px"><br><br>
-      <input type="password" id="pass" class="fadeIn second" name="pass" placeholder="Ingresar contraseña" style="margin: 0px"><br><br>
+      <input type="text" id="usuario" class="fadeIn first" name="usuario" placeholder="Ingresar usuario" ><br><br>
+      <input type="password" id="pass" class="fadeIn second" name="pass" placeholder="Ingresar contraseña"><br><br>
       <input type="submit" class="fadeIn third" value="Ingresar">    
      </form>     
-      <p>Olvido su contraseña? Recupérar contraseña <a class="underlineHover" href="index.jsp">Aquí</a></p>
+      <p>Olvidó su contraseña? Recupérela <a class="underlineHover" href="index.jsp">Aquí</a></p>
       <br>
       <div id="formFooter">
       <p>
@@ -69,5 +69,5 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> 
   </div>
  </body>
- <%@include file="footer.jsp"%>
+ 
 </html>

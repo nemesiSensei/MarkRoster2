@@ -89,6 +89,7 @@ input[type=button], input[type=submit], input[type=reset]  {
   color: white;
   padding: 15px 80px;
   text-align: center;
+  width: 80%;
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
@@ -129,7 +130,7 @@ input[type=text] {
   display: inline-block;
   font-size: 16px;
   margin: 5px;
-  width: 50%;
+  width: 80%;
   border: 2px solid #f6f6f6;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -148,7 +149,7 @@ input[type=password] {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  width: 50%;
+  width: 80%;
   border: 2px solid #f6f6f6;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;

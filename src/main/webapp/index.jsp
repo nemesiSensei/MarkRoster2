@@ -33,10 +33,11 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
           <li><a class="nav-link scrollto" href="#about">Acerca de MarkRoster</a></li>
-          <li><a class="nav-link scrollto" href="#services">Módulos</a></li>          
+          <li><a class="nav-link scrollto" href="#services">Módulos</a></li>
+<li><a class="nav-link scrollto" href="#benefits">Beneficios</a></li>         
           <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
           <li><a class="nav-link scrollto" href="#pricing">Planes</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>          
           <li><a class="getstarted scrollto" href="Controlador?accion=abrirLogin">Iniciar Sesión</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -200,11 +201,11 @@
       </div>
     </section><!-- End Services Section -->   
     <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
+    <section id="benefits" class="features">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>Funcionalidades</h2>
-          <p>Algunas de las mejores ventajas de adquirir los servicios de MarkRoster</p>
+          <h2>Beneficios</h2>
+          <p>Algunas de las ventajas de adquirir los servicios de MarkRoster</p>
         </div>
         <div class="row" data-aos="fade-up" data-aos-delay="300">
           <div class="col-lg-3 col-md-4">
