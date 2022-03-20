@@ -1,8 +1,9 @@
 <%@include file="header.jsp" %>
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
-</head>
+
+
+
+
+<div class="container">
 <script>
         function limpiarCorreo()
         {
@@ -72,7 +73,7 @@ function comprobarClave()
                
                 </script>  
                 
-  <body> 
+  
   <!-- Button trigger modal -->
 
 
@@ -80,8 +81,8 @@ function comprobarClave()
    <h1 class="text-center">Gestión de usuarios</h1>
    <br>
   <div class="container text-center"> 
-  <a class="btn btn-success" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
-  <a class="btn btn-danger btn-lg" href="UsuarioController?accion=Reportes" role="button"><i class="far fa-file-pdf"></i></a>
+  <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-user-plus" title="Nuevo Usuario"></i></a>
+  <a class="btn btn-danger btn-lg" href="UsuarioController?accion=Reportes"><i class="fas fa-file-pdf"></i></a>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -155,7 +156,7 @@ function comprobarClave()
 </div>  
 </div>
 </div>
-<div class="container">
+
   <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
@@ -222,7 +223,7 @@ function comprobarClave()
        
             </tbody>
 </table>
-</div>
+
 
 
   
@@ -235,6 +236,9 @@ function comprobarClave()
 <script src="editar.js"></script>
 <%@include file="header.jsp" %>
 
-</body>
+
+</div>
+
 <%@include file="footer.jsp" %>
+
 </html>
