@@ -243,9 +243,8 @@ function comprobarClave()
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
   <script src="cambiarestado.js"></script>
-
 <script src="prueba.js"></script>
-<%@include file="header.jsp" %>
+
 
 </body>
 <%@include file="footer.jsp" %>

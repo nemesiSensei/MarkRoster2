@@ -132,13 +132,12 @@ if(session.getAttribute("us")!=null)
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">											
-											<i class="fas fa-user-gear fa-2x"></i>
-											
-										</span>
-										</span>
+											<i class="fas fa-user-edit fa-2x"></i>											
+										</span>										
                    <a href="Controlador?accion=ListarUnico">
                       <span class="menu-title">Opciones de usuario</span>
                     </a> 
+                    </span>
                     </div>
                    </c:if>
                    

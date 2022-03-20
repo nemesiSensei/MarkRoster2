@@ -1,15 +1,8 @@
 <%@include file="header.jsp"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%> 
-<%@include file="header.jsp"%>
 <!DOCTYPE html>
-
-<html>
- <link rel="stylesheet" href="dark.css">
-   <body> 
-   <!-- Button trigger modal -->
-
-
-<!-- Modal -->
+<html> 
+   <body> >
 <div class="modal fade" id="usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -22,18 +15,15 @@
       <input type="hidden" id="id" name="id" value="${us.getIdempresa() }">
           <input  type="hidden"  id="privilegio" name="privilegio"value="${us.getPrivilegio()}"><br>
            <label for="usuario">Usuario: </label>
-          <input type="text" id="usuario" class="fadeIn first" name="usuario" value="${us.getNombreusuario()}" placeholder="Nombre de Usuario"><br>  
+          <input type="text" id="usuario" class="form-control" name="usuario" value="${us.getNombreusuario()}" placeholder="Nombre de Usuario"><br>  
            <label for="usuario">Correo: </label>       
-             <input type="text" id="correo" class="fadeIn second" name="correo" value="${us.getCorreo()}"placeholder="Correo electrónico">
-             
-     
-      
-          
+             <input type="text" id="correo" class="form-control" name="correo" value="${us.getCorreo()}"placeholder="Correo electrónico">
+              </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         <button type="submit" class="btn btn-primary">Actualizar</button>
-        </form>
+       
       </div>
     </div>
   </div>
@@ -44,9 +34,8 @@
    <h1 class="text-center">Gestión Personal</h1>
    <br> 
    <div class="container text-center"> 
-<table  class="table table-dark table-striped" id="usuarios">
+<table  class="table table-striped" id="usuarios">
 <tr>
-
 <th>Usuario</th>
 <th> Corrreo</th>
 <th> editar </th>
