@@ -167,8 +167,6 @@ function comprobarClave()
 	<td>${r. getHorario_entrada()}</td>
 	<td>${r. getDiferencia() }</td>
 	<td>${r. getDescripcion_horaentrada()}</td>
-	
-	
 	<td>${r. getHorario_salida()}</td>
 	<td>${r. getDescripcion_horasalida()}</td>
 </tr>

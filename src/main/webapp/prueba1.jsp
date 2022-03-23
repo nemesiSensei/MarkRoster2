@@ -44,7 +44,7 @@ function comprobarClave()
     }
 </script>
 </head>
-  <body> 
+  <body>   
    <h1 class="text-center">Gestión de usuarios</h1>
    <br>
   <div class="container text-center"> 
@@ -70,10 +70,6 @@ function comprobarClave()
 <label for="Hora-salida"> selecione la hora de salida correspondiete</label><br>
 <input type="time" name="Hora-salida"></input><br>
 <input type="submit" value="Enviar">
-
-
-
-
 </form>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -84,10 +80,7 @@ function comprobarClave()
     <img src="media/imagenes/MarkRosterlogo.png" width="128" height="auto"/><br>
     <!-- Icon -->
   <br>
-  <br>
-    <!-- Login Form -->
-  		
-  		
+  <br>    
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>        
         <a class="btn btn-success" type="submit" id="registrar" role="button"><i class="fas fa-user-plus fa-2x" title="Registrar Usuario"></i></a>
@@ -97,7 +90,6 @@ function comprobarClave()
 </div>  
 </div>
 </div>
-
 <div class="container">
 <table  class="display"  id="usuarios">
 <tr>
@@ -115,27 +107,18 @@ function comprobarClave()
 	<td>${r.getNombreusuario() }</td>	
 	<td>${r.getCorreo()}</td>	
 	<td>${r.getPrivilegio()}</td>
-	<td><c:if test="${r.isEstado()==false}">
-	
+	<td><c:if test="${r.isEstado()==false}">	
 		<a class="btn btn-success btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button"><i class="far fa-thumbs-up fa-2x"></i><strong>    Activar</strong></a>		
-	</c:if> <c:if test="${r.isEstado()==true}">
-	
+	</c:if> <c:if test="${r.isEstado()==true}">	
 	<a class="btn btn-danger btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button"><i class="far fa-thumbs-down fa-2x"></i><strong>    Inactivar</strong></a>
 	</c:if></td>
 
 	<td> <a class="btn btn-danger"  onclick="borrar(event,${r.getIdempresa() },'Controlador')"role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
 	<td> <a class="btn btn-warning" href="Controlador?accion=ver&id=${r.getIdempresa() }" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
-	
-	
 	</tr>
-</c:forEach>
-	
+</c:forEach>	
 </table>
-</div><script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
-		<script src="cambiarestado.js"></script>
-		<script src=' https://code.jquery.com/jquery-3.6.0.min.js'>-</script>
+</div>
 </body>
 <%@include file="footer.jsp" %>
  </html>

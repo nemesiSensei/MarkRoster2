@@ -12,17 +12,14 @@ if(session.getAttribute("us")!=null)
  <head>
   <script src="alertas.js"></script>   
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <title>MarkRoster</title>
   <link rel="stylesheet" href="index.css"> 
   <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
-        rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
-        crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script> 
   <meta content="" name="description">
   <meta content="" name="keywords">  
   <link rel="icon" href="media/imagenes/MarkRosterlogo.png">
@@ -39,12 +36,7 @@ if(session.getAttribute("us")!=null)
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">  
-  <link href="assets/css/style.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="index.css"> 
-  <meta charset="UTF-8">     
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">         
+  <link href="assets/css/style.css" rel="stylesheet">            
   <link rel="stylesheet" href="dark.css">
 </head>
     <header id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-fixed"> 
@@ -54,7 +46,7 @@ if(session.getAttribute("us")!=null)
      
      <div class="aside-logo flex-column-auto pt-9 pb-7 px-9" id="kt_aside_logo">     
 			<a href="index.jsp">
-			<img src="media/imagenes/MarkRosterlogo.png" width="56" height="auto"/>							
+			<img src="media/imagenes/logo3.png" width="230" height="auto"/>							
 			</a>						
 			</div> 
 			<div class="aside-menu flex-column-fluid px-3 px-lg-6">						
@@ -66,8 +58,8 @@ if(session.getAttribute("us")!=null)
 											<i class="fas fa-user fa-2x"></i>		
 										</span>
                                   <a href="">                           
-                        <span class="menu-title">Bienvenido, ${us.nombreusuario}</span>
-                        <span class="menu-title">Rol ${us.privilegio}</span>
+                        <span class="menu-title">Bienvenid@, ${us.nombreusuario}</span>
+                        <span class="menu-title">Rol: ${us.privilegio}</span>
                     </a> 
                     </span>				
 					</div>	
@@ -87,10 +79,10 @@ if(session.getAttribute("us")!=null)
 											<i class="fas fa-toolbox"></i>										
 										</span>		
                    <a href="Controlador?accion=Listarusuarios">                       
-                        <span class="menu-title">Opciones Administrativas</span>
+                        <span class="menu-title">Opciones</span>
                     </a> 
                     </span>				
-										</div>      
+				</div>      
                 </c:if>
 										 <c:if test="${us.privilegio=='Administrador'}">
 										 <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
@@ -99,7 +91,7 @@ if(session.getAttribute("us")!=null)
 											<i class="fas fa-calendar"></i>							
 										</span>
                    <a href="UsuarioController?accion=turno">                     
-                        <span class="menu-title">Ver listado de horarios</span>
+                        <span class="menu-title">Listado de horarios</span>
                     </a>  
                     	</span>
 								</div>                                            
@@ -111,7 +103,7 @@ if(session.getAttribute("us")!=null)
 											<i class="fas fa-calendar-check"></i>									
 										</span>			
                    <a href="UsuarioController?accion=reportedehorarios"> 
-                             <span class="menu-title">Reporte de cumplimiento</span>
+                             <span class="menu-title">Reportes</span>
                     </a>  
                      </span>
 									</div>     
@@ -123,7 +115,7 @@ if(session.getAttribute("us")!=null)
 											<i class="fas fa-info"></i>							
 										</span>			
                    <a href="UsuarioController?accion=listar">                       
-                        <span class="menu-title">Información Adicional</span>
+                        <span class="menu-title">Información</span>
                     </a> 
                     </span>
                     	</div>	                               
@@ -135,7 +127,7 @@ if(session.getAttribute("us")!=null)
 											<i class="fas fa-user-edit"></i>											
 										</span>										
                    <a href="Controlador?accion=ListarUnico">
-                      <span class="menu-title">Opciones de usuario</span>
+                      <span class="menu-title">Opciones</span>
                     </a> 
                     </span>
                     </div>
@@ -159,7 +151,7 @@ if(session.getAttribute("us")!=null)
 											<i class="fas fa-key"></i>								
 										</span>
                     <a href="cambiarPass.jsp">
-                         <span class="menu-title">Cambiar contraseña</span>                                                                                                                                                                                                                                                                          
+                         <span class="menu-title">Cambiar clave</span>                                                                                                                                                                                                                                                                          
                     </a>   
                     </span>
                         </div>           
@@ -168,7 +160,7 @@ if(session.getAttribute("us")!=null)
 						  <div data-kt-menu-trigger="click" class="menu-item mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">											
-											<i class="fas fa-power-off"></i>							
+											<i class="fas fa-power-off fa-2x"></i>							
 										</span>
                     <a href="Controlador?accion=logout">
                          <span class="menu-title">Cerrar Sesión</span>                                                                                                                                                                                                                                                                          
@@ -189,5 +181,6 @@ if(session.getAttribute("us")!=null)
 					</div>	 
 					</div>
 					</div>	
-					</div>
+					</div>					
 					<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+					
