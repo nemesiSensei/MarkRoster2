@@ -70,8 +70,7 @@ function comprobarClave()
                     
                 }
                
-                </script>  
-                
+                </script> 
   <body> 
  
    <h1 class="text-center">Reporte de cumplimiento</h1>
@@ -100,16 +99,14 @@ function comprobarClave()
       
                          minlength="2" maxlength="30"  aria-describedby="usuariohelp" required
                          ><span class="text-danger"></span>
-                          <div id="verificarusuario" class="text-danger">
-                         
+                          <div id="verificarusuario" class="text-danger">                         
                          </div>
                          <br>
       <input type="text" name="correo" id="correo" class="form-control" placeholder="Ingresa tu correo" required pattern="\@[a-z0-9]{10,50}"  onchange="verificar()"title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
                          minlength="10" maxlength="50" 
                          ><span class="text-danger"></span>
                          <div id="verificar" class="text-danger"> </div>
-                         <br>
-                        
+                         <br>                        
       <input type="text" name="ccorreo" id="ccorreo" class="form-control" placeholder="Confirma tu correo" onchange="comprobarCorreo()" pattern="\@[a-z0-9]{10,50}" title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
                          minlength="10" maxlength="50" 
                          ><span class="text-danger"></span>
@@ -143,8 +140,7 @@ function comprobarClave()
         <button class="btn btn-success" type="submit" id="registrar"><i class="fas fa-user-plus fa-2x" title="Registrar Usuario"></i></button>
         </form>
       </div>      
-      <div class="modal-footer">
-        
+      <div class="modal-footer">        
         </div>
       </div>
     </div>
@@ -160,14 +156,8 @@ function comprobarClave()
              <th>Hora de ingreso</th>
                <th>Tiempo</th>
               <th>Cumplimiento</th>
-            
-              
               <th>Fin de jornada laboral</th>
                <th>Cumplimiento</th>
-            
-	
-	
-	
         </tr>
     </thead>
     <tbody>
@@ -181,23 +171,12 @@ function comprobarClave()
 	
 	<td>${r. getHorario_salida()}</td>
 	<td>${r. getDescripcion_horasalida()}</td>
-		
-		
-		
-
-	
-	
-	
 </tr>
 </c:forEach>
-     
         </tr>
-       
-       
             </tbody>
 </table>
 </div>
-
 <div class="modal fade" id="horarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -208,24 +187,15 @@ function comprobarClave()
       <div class="modal-body">
       <form action="UsuarioController?accion=Agendarhorarios" method="post">
 <select name="turno"><br>
-
 <option> Seleccione al empleado</option><br>
 <c:forEach items="${usuarios}" var="r">
 <option value="${r.getIdempresa()}"> ${r.getNombreusuario() } </option>
 </c:forEach>
-
 </select><br>
 <label for="Hora-entrada"> selecione la hora de entrada correspondiete</label><br>
 <input type="time" name="Hora-entrada"></input><br>
 <label for="Hora-salida"> selecione la hora de salida correspondiete</label><br>
 <input type="time" name="Hora-salida"></input><br>
-
-
-
-
-
-
-        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -235,16 +205,10 @@ function comprobarClave()
     </div>
   </div>
 </div>
-
-
-
-  
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
   <script src="cambiarestado.js"></script>
 <script src="prueba.js"></script>
-
-
 </body>
 <%@include file="footer.jsp" %>

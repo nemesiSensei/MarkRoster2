@@ -18,7 +18,7 @@ if(session.getAttribute("us")!=null)
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
         rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
         crossorigin="anonymous">
-         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
   <meta charset="utf-8">
@@ -74,7 +74,7 @@ if(session.getAttribute("us")!=null)
 								<div class="menu-item mb-1">
 									<a class="menu-link active" href="index.jsp">
 										<span class="menu-icon">											
-											<i class="fas fa-fingerprint fa-2x"></i>											
+											<i class="fas fa-fingerprint"></i>											
 										</span>										
 										<span class="menu-title">Inicio</span>
 									</a>
@@ -84,7 +84,7 @@ if(session.getAttribute("us")!=null)
              <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">											
-											<i class="fas fa-toolbox fa-2x"></i>										
+											<i class="fas fa-toolbox"></i>										
 										</span>		
                    <a href="Controlador?accion=Listarusuarios">                       
                         <span class="menu-title">Opciones Administrativas</span>
@@ -96,7 +96,7 @@ if(session.getAttribute("us")!=null)
 										 <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">											
-											<i class="fas fa-calendar fa-2x"></i>							
+											<i class="fas fa-calendar"></i>							
 										</span>
                    <a href="UsuarioController?accion=turno">                     
                         <span class="menu-title">Ver listado de horarios</span>
@@ -108,7 +108,7 @@ if(session.getAttribute("us")!=null)
 										  <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">
-											<i class="fas fa-calendar-check fa-2x"></i>									
+											<i class="fas fa-calendar-check"></i>									
 										</span>			
                    <a href="UsuarioController?accion=reportedehorarios"> 
                              <span class="menu-title">Reporte de cumplimiento</span>
@@ -120,7 +120,7 @@ if(session.getAttribute("us")!=null)
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">											
-											<i class="fas fa-info fa-2x"></i>							
+											<i class="fas fa-info"></i>							
 										</span>			
                    <a href="UsuarioController?accion=listar">                       
                         <span class="menu-title">Información Adicional</span>
@@ -132,7 +132,7 @@ if(session.getAttribute("us")!=null)
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">											
-											<i class="fas fa-user-edit fa-2x"></i>											
+											<i class="fas fa-user-edit"></i>											
 										</span>										
                    <a href="Controlador?accion=ListarUnico">
                       <span class="menu-title">Opciones de usuario</span>
@@ -144,7 +144,7 @@ if(session.getAttribute("us")!=null)
                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">											
-											<i class="fas fa-check fa-2x"></i>							
+											<i class="fas fa-check"></i>							
 										</span>			
 										
                     <a href="horaAdmin.jsp">
@@ -156,7 +156,7 @@ if(session.getAttribute("us")!=null)
                <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">											
-											<i class="fas fa-key fa-2x"></i>								
+											<i class="fas fa-key"></i>								
 										</span>
                     <a href="cambiarPass.jsp">
                          <span class="menu-title">Cambiar contraseña</span>                                                                                                                                                                                                                                                                          
@@ -168,7 +168,7 @@ if(session.getAttribute("us")!=null)
 						  <div data-kt-menu-trigger="click" class="menu-item mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">											
-											<i class="fas fa-power-off fa-2x"></i>							
+											<i class="fas fa-power-off"></i>							
 										</span>
                     <a href="Controlador?accion=logout">
                          <span class="menu-title">Cerrar Sesión</span>                                                                                                                                                                                                                                                                          
@@ -176,10 +176,7 @@ if(session.getAttribute("us")!=null)
                     </span>
                         </div> 
 					</div>
-               
-             
-                   <!--fin de header --> 
-                   
+                   <!--fin de header -->                    
      <%
 		}
 		else
@@ -193,3 +190,4 @@ if(session.getAttribute("us")!=null)
 					</div>
 					</div>	
 					</div>
+					<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
