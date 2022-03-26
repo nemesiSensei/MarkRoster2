@@ -472,31 +472,14 @@ finally {
 				
 				System.out.print("Entro al metodo  entrada almuerzo ");
 				horarios.registrarsalida_laboral(hv);
-				
+				 response.sendRedirect("index.jsp");
+
 				
 			
 				
 				
 				
-				 System.out.print("Entro al metodo registrar horario en el bloquee if");
-				 System.out.print("Entro al metodo registrar horario en el bloquee if");
-				  String destinatario = request.getParameter("correo");
-			        String asunto = "Registro de horario exitoso";
-			        String contenido = "Su horario de salida  fue registrado sastifactoriamente "
-			        		+"Usted salio a las: "+hora;
-			        
-			       
-			        
-				 
-				 response.sendRedirect("index.jsp");
-				 try {
-			        	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario,asunto,contenido);
-			        	 System.out.print("El  mensaje se envio correctamente");
-					} catch (Exception e) {
-						 System.out.print("El  mensaje no se envio correctamente"+e.getMessage());
-						 
-						
-					}
+			
 				}
 		
 		
@@ -532,22 +515,6 @@ finally {
 			
 				
 				
-				 horarios.registrar_hora_inicio(hv);
-				 System.out.print("Entro al metodo registrar horario en el bloquee if");
-				  String destinatario = request.getParameter("correo");
-			        String asunto = "Registro de horario exitoso";
-			        String contenido = "Su horario fue registrado sastifactoriamente "
-			        		+"Usted ingreso a las: "+hora;
-			        
-			       
-			        try {
-			        	Configmail.Enviarcorreo(host, puerto,remitente,password, destinatario,asunto,contenido);
-			        	 System.out.print("El  mensaje se envio correctamente");
-					} catch (Exception e) {
-						 System.out.print("El  mensaje no se envio correctamente"+e.getMessage());
-						 
-						
-					}
 				 
 				 response.sendRedirect("index.jsp");
 				}

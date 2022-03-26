@@ -39,6 +39,7 @@
   <script src="main.js"></script>
    <script src="horario.js"></script>
  <%@include file="footer.jsp" %>
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>     
  </div>
 </div>
 </html>
