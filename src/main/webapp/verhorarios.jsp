@@ -196,8 +196,8 @@ function comprobarClave()
       </div>
       <div class="modal-body">
       <form action="UsuarioController?accion=Agendarhorarios" method="post">
-<select name="turno" class="form-control"><br>
-<option> Seleccione el empleado</option><br>
+<select name="turno" class="form-control">
+<option selected disabled> Seleccione el empleado</option>
 <c:forEach items="${usuarios}" var="r">
 <option value="${r.getIdempresa()}"> ${r.getNombreusuario() } </option>
 </c:forEach>

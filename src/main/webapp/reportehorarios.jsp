@@ -67,81 +67,11 @@ function comprobarClave()
                 }
                
                 </script> 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Registrar nuevo Usuario</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" oncopy="return false" onpaste="return false">
-        <div class="container">
-  <div id="formContent">
-    <br><br>
-    <img src="media/imagenes/MarkRosterlogo.png" width="128" height="auto"/><br>
-    <!-- Icon -->
-  <br>
-  <br>
-    <!-- Login Form -->
-    <form action="registrar" method="post" name="formulario" id="formulario">
-      <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingresa usuario" required pattern="[A-Za-z0-9]{2,30}" onchange="verificarusuario()" title="Letras. Tamaño mínimo: 2. Tamaño máximo: 30"
-      
-                         minlength="2" maxlength="30"  aria-describedby="usuariohelp" required
-                         ><span class="text-danger"></span>
-                          <div id="verificarusuario" class="text-danger">                         
-                         </div>
-                         <br>
-      <input type="text" name="correo" id="correo" class="form-control" placeholder="Ingresa tu correo" required pattern="\@[a-z0-9]{10,50}"  onchange="verificar()"title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
-                         minlength="10" maxlength="50" 
-                         ><span class="text-danger"></span>
-                         <div id="verificar" class="text-danger"> </div>
-                         <br>                        
-      <input type="text" name="ccorreo" id="ccorreo" class="form-control" placeholder="Confirma tu correo" onchange="comprobarCorreo()" pattern="\@[a-z0-9]{10,50}" title="texto@host.com. Tamaño mínimo: 10. Tamaño máximo: 50"
-                         minlength="10" maxlength="50" 
-                         ><span class="text-danger"></span>
-      
-      <div style="margin: 35px">
-                        <select class="form-control" name="idempresa" required title="elije tu empresa" >
-                <option value="0"  selected >Selecciona tu empresa...</option>                                                 
-                <option value="1">Unloft S.A.S</option>
-                <option value="2">Argotty</option>
-                <option value="3">Impakto Producciones</option></select>
-                        <i></i>
-                    </div> 
-      <div style="margin: 35px">
-                        <select name="privilegio" class="form-control" required title="Establece el privilegio" >
-                <option value="0" selected >Selecciona tu nivel de privilegio...</option>                                                 
-                <option value="Usuario">Usuario standard</option>
-                <option value="Administrador">Administrador</option>
-                </select>
-                        <i></i>
-                    </div> 
-      <input class="checkbox" name="aceptar" type="checkbox"
-                         required><strong>  ACEPTO</strong> los 
-                         <a type="link" class="enlace" data-toggle="modal" data-target="#exampleModal" role="link">
-                         terminos y condiciones 
-                      </a>
-                        <p>Ya tienes una cuenta? ... <a class="span" href="iniciarSesion.jsp" >Inicia Sesión</a></p> 
-                        <div id="formFooter">
-      <p>Vuelve a la  <a class="underlineHover" href="index.jsp">Página principal</a></p>
-    </div> 
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>        
-        <button class="btn btn-success" type="submit" id="registrar"><i class="fas fa-user-plus fa-2x" title="Registrar Usuario"></i></button>
-        </form>
-      </div>      
-      <div class="modal-footer">        
-        </div>
-      </div>
-    </div>
-  </div>
-</div>  
-</div>
 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
                             <h2 class="pageheader-title">Reporte de cumplimiento</h2>
                             <p class="pageheader-text"></p>
-<a class="btn btn-success" role="button" data-bs-toggle="modal" data-bs-target="#horarios" data-bs-whatever="@mdo"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
   <a class="btn btn-danger" href="UsuarioController?accion=Reportes" role="button"><i class="far fa-file-pdf fa-2x"></i></a>                             
                         </div>
                     </div>
@@ -180,34 +110,6 @@ function comprobarClave()
 </div>
 </div>
 </div>
-</div>
-<div class="modal fade" id="horarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Asignacion de horarios</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <form action="UsuarioController?accion=Agendarhorarios" method="post">
-<select name="turno" class="form-control">
-<option> Seleccione al empleado</option>
-<c:forEach items="${usuarios}" var="r">
-<option value="${r.getIdempresa()}"> ${r.getNombreusuario() } </option>
-</c:forEach>
-</select><br>
-<label for="Hora-entrada"> Selecione la hora de entrada correspondiente</label><br>
-<input type="time" name="Hora-entrada" class="form-control"></input><br>
-<label for="Hora-salida"> Selecione la hora de salida correspondiente</label><br>
-<input type="time" name="Hora-salida" class="form-control"></input><br>
-</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-success">Guardar</button>
-      </div>
-    </div>
-  </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
