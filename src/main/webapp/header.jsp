@@ -10,165 +10,99 @@ if(session.getAttribute("us")!=null)
 %>
 <html>
  <head>
+ <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
   <script src="alertas.js"></script>   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <title>MarkRoster</title>
-  <link rel="stylesheet" href="index.css"> 
-  <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script> 
-  <meta content="" name="description">
-  <meta content="" name="keywords">  
-  <link rel="icon" href="media/imagenes/MarkRosterlogo.png">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-  		rel="stylesheet">
-  <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">  
-  <link href="assets/css/style.css" rel="stylesheet">            
-  <link rel="stylesheet" href="dark.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">  
+   <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+   <link rel="stylesheet" href="assets/libs/css/style.css">
+   <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+   <link rel="stylesheet" type="text/css" href="assets/vendor/datatables/css/dataTables.bootstrap4.css">
+   <link rel="stylesheet" type="text/css" href="assets/vendor/datatables/css/buttons.bootstrap4.css">
+   <link rel="stylesheet" type="text/css" href="assets/vendor/datatables/css/select.bootstrap4.css">
+   <link rel="stylesheet" type="text/css" href="assets/vendor/datatables/css/fixedHeader.bootstrap4.css">  
 </head>
-    <header id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-fixed"> 
-     <div class="d-flex flex-column flex-root">
-     <div class="page d-flex flex-row flex-column-fluid">
-     <div id="kt_aside" class="aside bg-white" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_toggle">
-     
-     <div class="aside-logo flex-column-auto pt-9 pb-7 px-9" id="kt_aside_logo">     
-			<a href="index.jsp">
+    <body> 
+    <!-- main wrapper -->
+          <div class="dashboard-main-wrapper">
+           <!-- navbar -->
+           <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <a href="index.jsp">
 			<img src="media/imagenes/logo3.png" width="230" height="auto"/>							
-			</a>						
+			</a>	            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+				<div class="collapse navbar-collapse " id="navbarSupportedContent">
+					 <ul class="navbar-nav ml-auto navbar-right-top">
+					 <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="media/imagenes/item1.png" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">Bienvenid@, ${us.nombreusuario}</h5>
+                                    <span class="status"></span><span class="ml-2">Rol: ${us.privilegio}</span>
+                                </div>
+                                <a class="dropdown-item" href="Controlador?accion=listarUnico"><i class="fas fa-user mr-2"></i>Perfil</a>                                
+                                <a class="dropdown-item" href="Controlador?accion=logout"><i class="fas fa-power-off mr-2"></i>Cerrar Sesión</a>
+                            </div>
+                        </li>
+                    </ul>
+                 </div>
+            </nav> 			
 			</div> 
-			<div class="aside-menu flex-column-fluid px-3 px-lg-6">						
-						<div class="menu menu-column menu-pill menu-title-gray-600 menu-icon-gray-400 menu-state-primary menu-arrow-gray-500 menu-active-bg-primary fw-bold fs-5 my-5 mt-lg-2 mb-lg-0" id="kt_aside_menu" data-kt-menu="true">
-							<div class="hover-scroll-y me-n3 pe-3" id="kt_aside_menu_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-offset="20px">
-								<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-									<span class="menu-link">
-										<span class="menu-icon">											
-											<i class="fas fa-user fa-2x"></i>		
-										</span>
-                                  <a href="">                           
-                        <span class="menu-title">Bienvenid@, ${us.nombreusuario}</span>
-                        <span class="menu-title">Rol: ${us.privilegio}</span>
-                    </a> 
-                    </span>				
-					</div>	
-								<div class="menu-item mb-1">
-									<a class="menu-link active" href="index.jsp">
-										<span class="menu-icon">											
-											<i class="fas fa-fingerprint"></i>											
-										</span>										
-										<span class="menu-title">Inicio</span>
-									</a>
-								</div>						
-			<!--importante para restringir vistas y funciones y botones -->                
-             <c:if test="${us.privilegio=='Administrador'}">
-             <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-									<span class="menu-link">
-										<span class="menu-icon">											
-											<i class="fas fa-toolbox"></i>										
-										</span>		
-                   <a href="Controlador?accion=Listarusuarios">                       
-                        <span class="menu-title">Opciones</span>
-                    </a> 
-                    </span>				
-				</div>      
-                </c:if>
-										 <c:if test="${us.privilegio=='Administrador'}">
-										 <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-									<span class="menu-link">
-										<span class="menu-icon">											
-											<i class="fas fa-calendar"></i>							
-										</span>
-                   <a href="UsuarioController?accion=turno">                     
-                        <span class="menu-title">Listado de horarios</span>
-                    </a>  
-                    	</span>
-								</div>                                            
-                </c:if>				
-										  <c:if test="${us.privilegio=='Administrador'}">
-										  <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-									<span class="menu-link">
-										<span class="menu-icon">
-											<i class="fas fa-calendar-check"></i>									
-										</span>			
-                   <a href="UsuarioController?accion=reportedehorarios"> 
-                             <span class="menu-title">Reportes</span>
-                    </a>  
-                     </span>
-									</div>     
-                </c:if>									
-										<c:if test="${us.privilegio=='Administrador'}">
-										<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-									<span class="menu-link">
-										<span class="menu-icon">											
-											<i class="fas fa-info"></i>							
-										</span>			
-                   <a href="UsuarioController?accion=listar">                       
-                        <span class="menu-title">Información</span>
-                    </a> 
-                    </span>
-                    	</div>	                               
-                </c:if>	
-										<c:if test="${us.privilegio=='Usuario'}">
-										<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-									<span class="menu-link">
-										<span class="menu-icon">											
-											<i class="fas fa-user-edit"></i>											
-										</span>										
-                   <a href="Controlador?accion=ListarUnico">
-                      <span class="menu-title">Opciones</span>
-                    </a> 
-                    </span>
-                    </div>
-                   </c:if>
-                   
-                   <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-									<span class="menu-link">
-										<span class="menu-icon">											
-											<i class="fas fa-check"></i>							
-										</span>			
-										
-                    <a href="horaAdmin.jsp">
-                         <span class="menu-title">Registrar Horario</span>                                                                                                                                                                                                                                                                          
-                    </a>   
-                    </span>
-                        </div>           
-                
-               <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-									<span class="menu-link">
-										<span class="menu-icon">											
-											<i class="fas fa-key"></i>								
-										</span>
-                    <a href="cambiarPass.jsp">
-                         <span class="menu-title">Cambiar clave</span>                                                                                                                                                                                                                                                                          
-                    </a>   
-                    </span>
-                        </div>           
-                   
-              		<div class="aside-footer flex-column-auto px-6 pb-5" id="kt_aside_footer">
-						  <div data-kt-menu-trigger="click" class="menu-item mb-1">
-									<span class="menu-link">
-										<span class="menu-icon">											
-											<i class="fas fa-power-off fa-2x"></i>							
-										</span>
-                    <a href="Controlador?accion=logout">
-                         <span class="menu-title">Cerrar Sesión</span>                                                                                                                                                                                                                                                                          
-                    </a>   
-                    </span>
-                        </div> 
-					</div>
-                   <!--fin de header -->                    
+			<div class="nav-left-sidebar sidebar" style="background-color: #69bee8;">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="d-xl-none d-lg-none" href="#">Menú de Opciones</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                	<div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                	<li class="nav-item">
+                                <a class="nav-link active" href="index.jsp"><i class="fa fa-fw fa-fingerprint"></i>Inicio</a>                                
+                            </li>
+                            <li class="nav-item">
+                             <c:if test="${us.privilegio=='Administrador'}">
+                                <a class="nav-link active" href="Controlador?accion=Listarusuarios"><i class="fa fa-fw fa-tools"></i>Opciones</a> 
+                                  </c:if>							                               
+                            </li>
+                            <li class="nav-item ">
+                             <c:if test="${us.privilegio=='Administrador'}">
+                                <a class="nav-link active" href="UsuarioController?accion=turno"><i class="fa fa-fw fa-calendar-alt"></i>Listado de horarios</a> 
+                                  </c:if>							                               
+                            </li>
+                             <li class="nav-item ">
+                             <c:if test="${us.privilegio=='Administrador'}">
+                                <a class="nav-link active" href="UsuarioController?accion=reportedehorarios"><i class="fa fa-fw fa-book"></i>Reportes</a> 
+                                  </c:if>							                               
+                            </li>
+                             <li class="nav-item ">
+                             <c:if test="${us.privilegio=='Administrador'}">
+                                <a class="nav-link active" href="UsuarioController?accion=listar"><i class="fa fa-fw fa-info-circle"></i>Información</a> 
+                                  </c:if>							                               
+                            </li>
+                             <li class="nav-item ">
+                             <c:if test="${us.privilegio=='Usuario'}">
+                                <a class="nav-link active" href="Controlador?accion=ListarUnico"><i class="fa fa-fw fa-check-circle"></i>Opciones</a> 
+                                  </c:if>							                               
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="horaAdmin.jsp"><i class="fa fa-fw fa-calendar-check"></i>Registrar Horario</a>                                
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="cambiarPass.jsp"><i class="fa fa-fw fa-key"></i>Cambiar clave</a>                                
+                            </li>   
+                             </ul>                        
+					</div> 
+					 </nav>
      <%
 		}
 		else
@@ -178,9 +112,7 @@ if(session.getAttribute("us")!=null)
     %>
     </div>
 					</div>
-					</div>	 
-					</div>
-					</div>	
-					</div>					
-					<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+					</div> 		
+					 <div class="dashboard-wrapper">
+					  <div class="container-fluid  dashboard-content">
 					

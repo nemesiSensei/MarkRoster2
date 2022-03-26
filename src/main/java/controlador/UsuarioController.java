@@ -366,7 +366,7 @@ finally {
 			System.out.print("Entro al metodo consultar"+opcion);
 			if (request.getParameter("id")!=null  && opcion.equals("salidaAlmuerzo"))  { 
 				String horario1 =opcion;
-				System.out.print("Entro al metodo  salida almuerzo xD"+horario1);
+				System.out.print("Entro al metodo  salida almuerzo"+horario1);
 				hv.setFechaentrada(horario.horaactual());
 				hv.setFechafin(horario.horaactual());
 				hv.setFechainicio(horario.horaactual());

@@ -2,7 +2,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html> 
-   <body> >
 <div class="modal fade" id="usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -22,34 +21,53 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-success">Actualizar</button>
        
       </div>
     </div>
   </div>
-</div>
-      <div class="modo" id="modo">
-        <i class="fas fa-toggle-on"></i>
-    </div>   
-   <h1 class="text-center">Gestión Personal</h1>
-   <br> 
-   <div class="container text-center"> 
-<table  class="table table-striped" id="usuarios">
+</div> 
+				<div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Gestión Personal</h2>
+                            <p class="pageheader-text"></p>                            
+                        </div>
+                    </div>
+                </div>
+
+<div class="row">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+<div class="card">
+<h5 class="card-header">Control de Usuario</h5>
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-striped table-bordered first" id="usuarios">
+ <thead> 
 <tr>
 <th>Usuario</th>
 <th> Corrreo</th>
 <th> editar </th>
 </tr>
+</thead>
+ <tbody>
 <c:forEach items="${usuarios}" var="r">
 	<tr>	
 	<td>${r.getNombreusuario() }</td>
 	<td>${r.getCorreo()}</td>	
-	<td> <a class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#usuario" role="button"><i class="fas fa-user-cog fa-2x"></i></a></td>
+	<td class="text-center"> <a class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#usuario" role="button"><i class="fa fa-user-cog fa-2x"></i></a></td>
 	</tr>
 </c:forEach>
+</tbody>
 </table>
+ </div>
+</div>
+</div>
+</div>
 </div>
 </body>
   <%@include file="footer.jsp" %>
-    <script src="main.js"></script>
+  </div>
+</div>
+    <script src="main.js"></script>    
 </html>

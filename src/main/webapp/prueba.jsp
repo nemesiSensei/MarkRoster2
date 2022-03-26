@@ -1,5 +1,4 @@
 <%@include file="header.jsp" %>
-<div class="container">
 <script>
         function limpiarCorreo()
         {
@@ -71,14 +70,6 @@ function comprobarClave()
                 
   
   <!-- Button trigger modal -->
-
-
- 
-   <h1 class="text-center">Gestión de usuarios</h1>
-   <br>
-  <div class="container text-center"> 
-  <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-user-plus" title="Nuevo Usuario"></i></a>
-  <a class="btn btn-danger btn-lg" href="UsuarioController?accion=Reportes"><i class="fas fa-file-pdf"></i></a>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -151,10 +142,25 @@ function comprobarClave()
   </div>
 </div>  
 </div>
-</div>
 
-  <table id="example" class="table table-striped table-bordered" style="width:100%">
-    <thead>
+<div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Gestión de usuarios</h2>
+                            <p class="pageheader-text"></p>  
+                            <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-user-plus fa-2x" title="Nuevo Usuario"></i></a>
+  							<a class="btn btn-danger" href="UsuarioController?accion=Reportes"><i class="fas fa-file-pdf fa-2x"></i></a>                          
+                        </div>
+                    </div>
+                </div>
+ <div class="row">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+<div class="card">
+<h5 class="card-header">Control de Usuario</h5>
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-striped table-bordered first" id="usuarios">
+ <thead> 
         <tr>
             <th> Usuario</th>
             <th>Correo</th>
@@ -203,12 +209,19 @@ function comprobarClave()
         </c:forEach>
             </tbody>
 </table>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</body>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 <script src="cambiarestado.js"></script>
 <script src="prueba.js"></script>
 <script src="editar.js"></script>
-</div>
 <%@include file="footer.jsp" %>
+ </div>
+</div>
 </html>

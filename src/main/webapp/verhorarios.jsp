@@ -1,8 +1,4 @@
 <%@include file="header.jsp" %>
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
-</head>
 <script>
         function limpiarCorreo()
         {
@@ -70,16 +66,8 @@ function comprobarClave()
                     
                 }
                
-                </script>  
-                
-  <body> 
- 
-   <h1 class="text-center">Gestión de Horarios</h1>
-   <br>
-  <div class="container text-center"> 
-  <a class="btn btn-success" role="button" data-bs-toggle="modal" data-bs-target="#horarios" data-bs-whatever="@mdo"><i class="fas fa-clock fa-2x" title="Nuevo Usuario"></i><i class="fas fa-plus"></i></a>
-  <a class="btn btn-danger btn-lg" href="UsuarioController?accion=Reportes" role="button"><i class="far fa-file-pdf"></i></a>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                </script> 
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -151,10 +139,24 @@ function comprobarClave()
   </div>
 </div>  
 </div>
-</div>
-<div class="container">
-  <table id="example" class="table table-striped table-bordered" style="width:100%">
-    <thead>
+<div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Gestión de Horarios</h2>
+                            <p class="pageheader-text"></p> 
+<a class="btn btn-success" role="button" data-bs-toggle="modal" data-bs-target="#horarios" data-bs-whatever="@mdo"><i class="fas fa-clock fa-2x" title="Nuevo Usuario"></i><i class="fas fa-plus"></i></a>
+  <a class="btn btn-danger" href="UsuarioController?accion=Reportes" role="button"><i class="far fa-file-pdf fa-2x" title="Generar Reporte"></i></a>
+                      </div>
+                    </div>
+                </div>
+<div class="row">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+<div class="card">
+<h5 class="card-header">Control de Usuario</h5>
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-striped table-bordered first" id="usuarios">
+ <thead> 
         <tr>
           <th>ID</th>
 	<th>Usuario</th>
@@ -173,23 +175,18 @@ function comprobarClave()
 	<td> ${r.getCorrreo()}</td>
 	<td>${r.getHorario_entrada_turno()}</td>
 	<td>${r.getHora_salida_turno()}</td>
-	<td> <a class="btn btn-info btn-xs" href="Controlador?accion=actualizarhorarios&id=${r.getIdempleado()}&correo=${r.getCorrreo()}" role="button"><i class="fa fa-pencil"></i></a></td>
-	<td> <a class="btn btn-danger"  role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
-		
-	
-	
-	
-	
-</tr>
+	<td> <a class="btn btn-info" href="Controlador?accion=actualizarhorarios&id=${r.getIdempleado()}&correo=${r.getCorrreo()}" role="button"><i class="fa fa-pencil"></i></a></td>
+	<td> <a class="btn btn-danger"  role="button"><i class="fas fa-user-times"></i></a></td>
+	</tr>
 </c:forEach>
-     
-        </tr>
-       
-       
-            </tbody>
+</tbody>
 </table>
 </div>
-
+</div>
+</div>
+</div>
+</div>
+</body>
 <div class="modal fade" id="horarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -199,46 +196,32 @@ function comprobarClave()
       </div>
       <div class="modal-body">
       <form action="UsuarioController?accion=Agendarhorarios" method="post">
-<select name="turno"><br>
-
-<option> Seleccione al empleado</option><br>
+<select name="turno" class="form-control"><br>
+<option> Seleccione el empleado</option><br>
 <c:forEach items="${usuarios}" var="r">
 <option value="${r.getIdempresa()}"> ${r.getNombreusuario() } </option>
 </c:forEach>
-
 </select><br>
 <label for="Hora-entrada"> selecione la hora de entrada correspondiete</label><br>
-<input type="time" name="Hora-entrada"></input><br>
+<input type="time" name="Hora-entrada"  class="form-control"></input><br>
 <label for="Hora-salida"> selecione la hora de salida correspondiete</label><br>
-<input type="time" name="Hora-salida"></input><br>
-
-
-
-
-
-
-        
+<input type="time" name="Hora-salida"  class="form-control"></input><br>
+</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-        </form>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-success">Guardar</button>
       </div>
     </div>
   </div>
 </div>
-
-
-
-  
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
   <script src="cambiarestado.js"></script>
-
 <script src="prueba.js"></script>
-<%@include file="header.jsp" %>
-
 </body>
 <%@include file="footer.jsp" %>
+ </div>
+</div>
 </html>
