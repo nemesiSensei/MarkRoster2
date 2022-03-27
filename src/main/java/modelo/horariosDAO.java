@@ -146,25 +146,14 @@ public class horariosDAO {
 	
 	public int  registrar_hora_inicio(horarioVo hv) throws SQLException { //  este va a ser el metodo para hacer el registro de horario.
 		System.out.println("Entro a la sentencia preparada  ");
-		
-		
-		
-		
 		try {
-			con=c.getConnection(); // opening the connection to database 
-			
+			con=c.getConnection(); // opening the connection to database 			
 			 CallableStatement cst = con.prepareCall("{call sp_horavalida (?)}");
 			 cst.setInt(1, hv.getIdempleados().getIdempresa());
 			 cst.execute();
-		
-			
 			System.out.println("Se logro ejecutar el procedimiento!!!! ");
-			
-			
-		
 		}catch (Exception e) { 
-			System.out.println("Algo sucedio mal  al registrar la fecha actual"+e.getMessage());
-			
+			System.out.println("Algo sucedio mal  al registrar la fecha actual"+e.getMessage());			
 		}		
 		return register;
 	}

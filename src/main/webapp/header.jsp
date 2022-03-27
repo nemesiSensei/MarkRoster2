@@ -10,6 +10,7 @@ if(session.getAttribute("us")!=null)
 %>
 <html>
  <head>
+ <link rel="icon" href="media/imagenes/MarkRosterlogo.png">
  <script src="https://kit.fontawesome.com/4a02ae2b25.js" crossorigin="anonymous"></script>
   <script src="alertas.js"></script>   
   <meta charset="UTF-8">

@@ -297,8 +297,7 @@ finally {
 
 	private void Reportes(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		System.out.print("Entro al metodo de reportes");
-		ServletOutputStream out = response.getOutputStream();
-		
+		ServletOutputStream out = response.getOutputStream();		
 		try {
 			System.out.print(" Entro al try");
 		    java.io.InputStream logo = this.getServletConfig() // asi se llama el objeto 
@@ -306,8 +305,7 @@ finally {
                     .getResourceAsStream("media/imagenes/MarkRosterlogo.jpg"); // esta es la ruta del recurso que quiero vincular
 			java.io.InputStream reporteUsuario = this.getServletConfig()
                     .getServletContext()
-                    .getResourceAsStream("Blank_A4_1.jasper"); // aca le esto diciendo la ruta donde esta el reporte 
-			
+                    .getResourceAsStream("Blank_A4_1.jasper"); // aca le esto diciendo la ruta donde esta el reporte 			
 	//Validar que no vengan vacios
 			  if (logo != null && reporteUsuario != null) {
 				  System.out.print("LLego la imagen y el repoprte");
@@ -316,8 +314,6 @@ finally {
 	                reporteUsuario1=empleados.Listarusuarios(); // aca estamos guardando los resultados del metodo listarusuarios en la clase dao
 	                JasperReport report = (JasperReport) JRLoader.loadObject(reporteUsuario); // n esye archivo se va a cargar la informacion
 	                JRBeanArrayDataSource dc = new JRBeanArrayDataSource(reporteUsuario1.toArray()); // este es el dataset
-	               
-	               
 					Map<String, Object> parameters = new HashMap();
 	                parameters.put("ds", dc);
 	                parameters.put("imagen", logo);
@@ -329,8 +325,7 @@ finally {
 	                JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, dc);
 	                JasperExportManager.exportReportToPdfStream(jasperPrint, out);
 	                out.flush();
-	                out.close();
-	                
+	                out.close();               
 			  }
 			  else {
 	                response.setContentType("text/plain");
@@ -338,8 +333,7 @@ finally {
 	                out.println("esto puede deberse a que la lista de datos no fue recibida o el "
 	                		+ "archivo plantilla del reporte no se ha encontrado");
 	                out.println("contacte a soporte");
-	            }
-			
+	            }			
 		} catch (Exception e) {
 			response.setContentType("text/plain");
             out.print("ocurrió un error al intentar generar el reporte:" + e.getMessage());
@@ -349,15 +343,7 @@ finally {
 	}
 
 	private void Registrarhorario(HttpServletRequest request, HttpServletResponse response) {
-		
-		
-		
-		
 		try {
-			
-			
-			
-			
 			String opcion=request.getParameter("producto");
 			String correo=request.getParameter("correo");
 			String hora=request.getParameter("hora");
@@ -373,168 +359,71 @@ finally {
 				hv.setFechasalida(horario.horaactual());
 				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
 				hv.setIdempleados(r);
-				
-				
 				System.out.print("la opcion seleccionada fue: "+opcion);
-				
-				
 				System.out.print("Entro al metodo  salida almuerzo");
-				
-				
-			
-				
-				
-				
-				horarios.registrar_hora_salidaAlmuerzo(hv);
-				 
-				 response.sendRedirect("index.jsp");
-			}
+				horarios.registrar_hora_salidaAlmuerzo(hv);				 
+				 response.sendRedirect("index.jsp");			}
 			if (request.getParameter("id")!=null  && opcion.equals("entradaAlmuerzo"))  { 
 				String horario1 =opcion;
 				System.out.print("la opcion escojida es; "+horario1);
-				
-				
-		
-				
-				
 				hv.setFechaentrada(horario.horaactual());
 				hv.setFechafin(horario.horaactual());
 				hv.setFechainicio(horario.horaactual());
 				hv.setFechasalida(horario.horaactual());
 				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
 				hv.setIdempleados(r);
-				
-				
 				System.out.print("la opcion seleccionada fue: "+opcion);
-				
-				
 				System.out.print("Entro al metodo  entrada almuerzo ");
 				horarios.registrarinicio_almuerzo(hv);
-				
-				
-			
-				
-				
-				
-				 System.out.print("Entro al metodo registrar horario en el bloquee if");
-				 
-				 response.sendRedirect("index.jsp");
-				}
+				 System.out.print("Entro al metodo registrar horario en el bloquee if");				 
+				 response.sendRedirect("index.jsp");				}
 			if (request.getParameter("id")!=null  && opcion.equals(""))  { 
 				String horario1 =opcion;
 				System.out.print("la opcion escojida es; "+horario1);
-				
-				
-		
-				
-				
 				hv.setFechaentrada(horario.horaactual());
 				hv.setFechafin(horario.horaactual());
 				hv.setFechainicio(horario.horaactual());
 				hv.setFechasalida(horario.horaactual());
 				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
 				hv.setIdempleados(r);
-				
-				
 				System.out.print("la opcion seleccionada fue: "+opcion);
-				
-				
 				System.out.print("Entro al metodo  entrada almuerzo ");
 				horarios.registrarinicio_almuerzo(hv);
-				
-				
-			
-				
-				
-				
-				 System.out.print("Entro al metodo registrar horario en el bloquee if");
-				 
-				 response.sendRedirect("index.jsp");
-				}
+				 System.out.print("Entro al metodo registrar horario en el bloquee if");				 
+				 response.sendRedirect("index.jsp");				}
 			if (request.getParameter("id")!=null  && opcion.equals("salida_laboral"))  { 
 				String horario1 =opcion;
 				System.out.print("la opcion escojida es; "+horario1);
-				
-				
-		
-				
-				
 				hv.setFechaentrada(horario.horaactual());
 				hv.setFechafin(horario.horaactual());
 				hv.setFechainicio(horario.horaactual());
 				hv.setFechasalida(horario.horaactual());
 				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
 				hv.setIdempleados(r);
-				
-				
 				System.out.print("la opcion seleccionada fue: "+opcion);
-				
-				
 				System.out.print("Entro al metodo  entrada almuerzo ");
 				horarios.registrarsalida_laboral(hv);
-				 response.sendRedirect("index.jsp");
-
-				
-			
-				
-				
-				
-			
-				}
-		
-		
-			
-		
-			
-			
-			
+				 response.sendRedirect("index.jsp");				}
 			if (request.getParameter("id")!=null  && opcion.equals("horaentrada_laboral"))  { 
 				String horario1 =opcion;
-				System.out.print("la opcion escojida es; "+horario1);
-				
+				System.out.print("la opcion escojida es; "+horario1);				
 				System.out.println(" entro al metodo registrar horario,El correo es: "+correo);
-				
-				
-		
-				
-				
 				hv.setFechaentrada(horario.horaactual());
 				hv.setFechafin(horario.horaactual());
 				hv.setFechainicio(horario.horaactual());
 				hv.setFechasalida(horario.horaactual());
 				r.setIdempresa(Integer.parseInt(request.getParameter("id")));
 				hv.setIdempleados(r);
-				
-				
 				System.out.print("la opcion seleccionada fue: "+opcion);
-				
-				
-				System.out.print("Entro al metodo consultar");
-				
-				
-			
-				
-				
-				 
+				System.out.print("Entro al metodo consultar");				
 				 response.sendRedirect("index.jsp");
 				}
-		
-			
-				
-		
-		 
-	     
 	}
-		 catch (Exception e) {
-			
-			 System.out.print(" no Entro al metodo Registrar "+e.getMessage());
-			
-	}
-		
-		
+		 catch (Exception e) {			
+			 System.out.print(" no Entro al metodo Registrar "+e.getMessage());			
 	}
 	
-
+	}
 	private void validarusuario(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html; charset=iso-8859-1");
 		PrintWriter out=response.getWriter();
