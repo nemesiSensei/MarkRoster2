@@ -26,10 +26,12 @@
   </head>  
    <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
+     <div class="logo">
          <img src="media/imagenes/logo2.png" width="auto" height="45"/>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      <nav id="navbar" class="navbar">
+         </div>
+      <nav id="navbar" class="navbar">      
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
           <li><a class="nav-link scrollto" href="#about">Acerca de MarkRoster</a></li>
@@ -519,7 +521,14 @@
         </div>
       </div>
     </section><!-- End Contact Section -->
-  </main><!-- End #main -->
-     <%@include file="footer.jsp"%>
-     <script src="main.js"></script>
+  </main><!-- End #main -->    
+     <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>  
+  <script src="assets/js/main.js"></script> 
+      <%@include file="footer.jsp"%>
     </html>
