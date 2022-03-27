@@ -1,5 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <%@page session="true" %>
 <%
 response.setHeader("Pragma", "No-cache");
@@ -17,6 +18,10 @@ if(session.getAttribute("us")!=null)
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <title>MarkRoster</title>
+  <script  src="alertas2.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">  
    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
    <link rel="stylesheet" href="assets/libs/css/style.css">
@@ -48,7 +53,7 @@ if(session.getAttribute("us")!=null)
                                     <span class="status"></span><span class="ml-2">Rol: ${us.privilegio}</span>
                                 </div>
                                 <a class="dropdown-item" href="Controlador?accion=listarUnico"><i class="fas fa-user mr-2"></i>Perfil</a>                                
-                                <a class="dropdown-item" href="Controlador?accion=logout"><i class="fas fa-power-off mr-2"></i>Cerrar Sesión</a>
+                                <a class="dropdown-item" href="Controlador?accion=logout"><i class="fas fa-power-off mr-2"></i>Cerrar SesiÃ³n</a>
                             </div>
                         </li>
                     </ul>
@@ -58,7 +63,7 @@ if(session.getAttribute("us")!=null)
 			<div class="nav-left-sidebar sidebar" style="background-color: #69bee8;">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="d-xl-none d-lg-none" href="#">Menú de Opciones</a>
+                <a class="d-xl-none d-lg-none" href="#">MenÃº de Opciones</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -87,7 +92,7 @@ if(session.getAttribute("us")!=null)
                             </li>
                              <li class="nav-item ">
                              <c:if test="${us.privilegio=='Administrador'}">
-                                <a class="nav-link active" href="UsuarioController?accion=listar"><i class="fa fa-fw fa-info-circle"></i>Información</a> 
+                                <a class="nav-link active" href="UsuarioController?accion=listar"><i class="fa fa-fw fa-info-circle"></i>InformaciÃ³n</a> 
                                   </c:if>							                               
                             </li>
                              <li class="nav-item ">

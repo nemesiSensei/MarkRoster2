@@ -1,5 +1,4 @@
 <%@include file="header.jsp"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html> 
 <div class="modal fade" id="usuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -16,13 +15,12 @@
            <label for="usuario">Usuario: </label>
           <input type="text" id="usuario" class="form-control" name="usuario" value="${us.getNombreusuario()}" placeholder="Nombre de Usuario"><br>  
            <label for="usuario">Correo: </label>       
-             <input type="text" id="correo" class="form-control" name="correo" value="${us.getCorreo()}"placeholder="Correo electrÃ³nico">
+             <input type="text" id="correo" class="form-control" name="correo" value="${us.getCorreo()}"placeholder="Correo electrónico">
               </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-success">Actualizar</button>
-       
+        <button type="submit" class="btn btn-success">Actualizar</button>       
       </div>
     </div>
   </div>
@@ -30,12 +28,11 @@
 				<div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">GestiÃ³n Personal</h2>
+                            <h2 class="pageheader-title">Gestión Personal</h2>
                             <p class="pageheader-text"></p>                            
                         </div>
                     </div>
                 </div>
-
 <div class="row">
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 <div class="card">
@@ -68,6 +65,5 @@
 </body>
   <%@include file="footer.jsp" %>
   </div>
-</div>
-    <script src="main.js"></script>    
+</div>    
 </html>

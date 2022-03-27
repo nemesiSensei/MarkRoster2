@@ -62,13 +62,9 @@ function comprobarClave()
                 		success: function (result){
                 			$("#verificarusuario").html(result);
                 		}
-                	})
-                    
-                }
-               
-                </script>  
-                
-  
+                	})                    
+                }               
+                </script> 
   <!-- Button trigger modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -134,8 +130,7 @@ function comprobarClave()
         <button class="btn btn-success" type="submit" id="registrar"><i class="fas fa-user-plus fa-2x" title="Registrar Usuario"></i></button>
         </form>
       </div>      
-      <div class="modal-footer">
-        
+      <div class="modal-footer">        
         </div>
       </div>
     </div>
@@ -162,7 +157,7 @@ function comprobarClave()
 <table class="table table-striped table-bordered first" id="usuarios">
  <thead> 
         <tr>
-            <th> Usuario</th>
+            <th>Usuario</th>
             <th>Correo</th>
             <th>Privilegio</th>
             <th>Estado</th>
@@ -185,8 +180,8 @@ function comprobarClave()
         </c:if>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar cambios</button>
       </div>
     </div>
   </div>
@@ -198,13 +193,12 @@ function comprobarClave()
           <td><c:if test="${r.isEstado()==false}">
           <script>         
           </script>	
-		<a class="btn btn-success btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button"><i class="far fa-thumbs-up fa-2x"></i><strong>    Activar</strong></a>		
-	</c:if> <c:if test="${r.isEstado()==true}">
-	
-	<a class="btn btn-danger btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button"><i class="far fa-thumbs-down fa-2x"></i><strong>    Inactivar</strong></a>
+		<a class="btn btn-success btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button"><i class="far fa-thumbs-up fa-2x"></i><strong>    Habilitar</strong></a>		
+	</c:if> <c:if test="${r.isEstado()==true}">	
+	<a class="btn btn-danger btn-sm" onclick="cambiarestado(event,${r.getIdempresa()},${r.isEstado()},'Controlador')" role="button"><i class="far fa-thumbs-down fa-2x"></i><strong>    Deshabilitar</strong></a>
 	</c:if></td>
 	<td> <a class="btn btn-danger"  onclick="borrar(event,${r.getIdempresa() },'Controlador')"role="button"><i class="fas fa-user-times fa-2x"></i></a></td>
-	<td> <a class="btn btn-warning" onclick="editarusu(event,${r.getIdempresa() },'Controlador')" role="button"> <i class="fas fa-user-cog fa-2x"></i></a></td>
+	<td> <a class="btn btn-warning" onclick="edit(event,${r.getIdempresa() },'Controlador')" role="button"> <i class="fas fa-user-cog fa-2x"></i></a></td>
 	 </tr>
         </c:forEach>
             </tbody>
