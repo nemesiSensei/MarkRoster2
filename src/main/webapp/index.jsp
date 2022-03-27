@@ -72,8 +72,8 @@
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients clients">
       <div class="container">
-        <div class="row d-flex justify-content-center">
-<h3>Nuestros clientes</h3>
+      <h3>Nuestros clientes</h3>
+        <div class="row d-flex justify-content-center">		
           <div class="col-lg-2 col-md-4 col-6">
             <img src="media/imagenes/logoimpakto.png"  class="img-fluid" alt="" data-aos="zoom-in">
           </div>
@@ -81,12 +81,14 @@
             <a href="https://unloft.co/"><img src="media/imagenes/logoUnloft1.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100"></a>
           </div>
           <div class="col-lg-2 col-md-4 col-6">
+            <a href=""><img src="media/imagenes/kalu.jpeg" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100"></a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
             <img src="media/imagenes/logoargoti.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
           </div>
         </div>
       </div>
-    </section><!-- End Clients Section -->
-    <!-- ======= About Us Section ======= -->
+    </section>
     <section id="about" class="about">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
@@ -108,8 +110,7 @@
               <li><i class="ri-check-double-line"></i> Contamos con desarrolladores egresados del SENA</li>
               <li><i class="ri-check-double-line"></i> El sistema cuenta con estabilidad de red</li>
               <li><i class="ri-check-double-line"></i> Su uso unipersonal garantiza la no infección por SARS COV-2</li>
-            </ul>
-            
+            </ul>            
           </div>
           <div class="col-lg-6 pt-0 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
           <img src="media/imagenes/acerca1.png" class="rounded mx-auto d-block" alt="" height="360" width="auto">
@@ -120,8 +121,7 @@
           </div>
         </div>
       </div>
-    </section><!-- End About Us Section -->
-    <!-- ======= Counts Section ======= -->
+    </section>
     <section id="counts" class="counts">
       <div class="container">
         <div class="row">
@@ -134,7 +134,7 @@
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-emoji-smile"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
                     <p><strong>Clientes Felices</strong> Nuestros clientes han encontrado apoyo y soporte en nuestros productos.</p>
                   </div>
                 </div>
@@ -158,12 +158,11 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End .content-->
+            </div>
           </div>
         </div>
       </div>
-    </section><!-- End Counts Section -->
-    <!-- ======= Services Section ======= -->
+    </section>
     <section id="services" class="services">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
@@ -201,8 +200,7 @@
           </div>
         </div>
       </div>
-    </section><!-- End Services Section -->   
-    <!-- ======= Features Section ======= -->
+    </section>
     <section id="benefits" class="features">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
@@ -266,8 +264,7 @@
           </div>
         </div>
       </div>
-    </section><!-- End Features Section -->
-    <!-- ======= Testimonials Section ======= -->
+    </section>
     <section id="testimonials" class="testimonials section-bg">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
@@ -275,8 +272,8 @@
           <p>Opiniones sobre el uso de MarkRoster por parte de nuestros clientes</p>
         </div>
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-            
+          <div class="swiper-wrapper">          
+            <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <img src="media/imagenes/omar.jpg" class="testimonial-img" alt="">
@@ -288,6 +285,10 @@
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
                 </div>
+                </div>
+                </div>
+                 <div class="swiper-slide">
+              <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <img src="media/imagenes/adriana.jpg" class="testimonial-img" alt="">
                   <h3>Adriana Argotty</h3>
@@ -297,7 +298,25 @@
                    Buenísima app, así se puede controlar mejor el horario de mis empleados, además que la fila de la mañana para marcar huella es cosa del pasado.
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
+                  </div>
                 </div>
+                </div>
+                <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="media/imagenes/valentina.jpeg" class="testimonial-img" alt="">
+                  <h3>Valentina Virguez</h3>
+                  <h4>Ejecutiva en Area de talento humano en KALU Producciones</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Me gustó mucho la app, es fácil de usar y gestiono mejor los horarios de los empleados.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+                </div>
+                </div>
+                 <div class="swiper-slide">
+              <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <img src="media/imagenes/miguelangel.jpg" class="testimonial-img" alt="">
                   <h3>Miguel Argotty</h3>
@@ -309,11 +328,12 @@
                   </p>
                 </div>
               </div>
-               </div>            
-            </div><!-- End testimonial item --> 
-        </div>     
-    </section><!-- End Testimonials Section -->
-    <!-- ======= Team Section ======= -->
+               </div>   
+            </div>
+             <div class="swiper-pagination"></div>
+        </div>
+      </div>             
+    </section>
     <section id="team" class="team section-bg">
       <div class="container align-content-center" >
         <div class="section-title" data-aos="fade-up">
