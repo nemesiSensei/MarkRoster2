@@ -333,7 +333,7 @@ private  void ver(HttpServletRequest request, HttpServletResponse response) thro
 	r=empleadosDAO.consulta(r.getIdempresa());
 		 request.setAttribute("usuarios", r);// esto es para enviar los resultados de la busqueda
 		
-		 request.getRequestDispatcher("prueba.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
+		 request.getRequestDispatcher("editarusuarioAdmin.jsp") // esto es para especificar adonde quiero enviar los datos de una vista 
 		.forward(request, response);
 		
 	} catch (Exception e) {
@@ -379,6 +379,7 @@ try {
 	System.out.println("No se actualizo el usuario "+e.getMessage());
 }
 }
+
 
 
 
